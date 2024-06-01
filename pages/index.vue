@@ -12,7 +12,7 @@ function updateStep(resp){
             <div id="main">
                 <div id="scroll">
                     <ScrollytellingComponent :offset="0.1" :progress="true" :threshold="4" :once="false" :debug="false" @step-enter="updateStep">
-                        <div v-for="i in 10" :key="i" style="height: 200vh; background-color: #f0f0f0">
+                        <div v-for="i in 10" :key="i" class="bg-white h-[100vh] text-center border">
                             <h1>Hello</h1>
                         </div>
                     </ScrollytellingComponent>
@@ -21,7 +21,6 @@ function updateStep(resp){
                     <h1>{{ value }}</h1>
                 </div>
             </div>
-
         <AppFooter />
     </div>
 </template>

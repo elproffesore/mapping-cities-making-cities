@@ -1,5 +1,6 @@
 <script setup>
-import { ref, onUpdated } from 'vue'
+import { ref } from 'vue'
+
 import scrollama from 'scrollama'
 
 const props = defineProps({
@@ -61,13 +62,7 @@ onMounted(() => {
 <template>
     <div>
         <div ref="parent">
-            <slot id="object"></slot>
+            <slot></slot>
         </div>
     </div>
 </template>
-<style>
-#object{
-    background-color: white;
-    text-align: center;
-}
-</style>

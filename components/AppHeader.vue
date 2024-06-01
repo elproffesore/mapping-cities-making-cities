@@ -1,13 +1,8 @@
-<script setup lang="ts">
-
-</script>
 <template>
-    <nav>
-      <ul>
+    <nav class="flex justify-end pr-4">
+      <ul class="flex gap-4">
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/info">Info</NuxtLink></li>
       </ul>
     </nav>
 </template>
-<style>
-</style>
