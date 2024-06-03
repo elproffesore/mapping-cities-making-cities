@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "latest",
+    "d3": "^7.9.0",
     "lorem-ipsum": "^2.0.8",
     "nuxt": "^3.11.2",
     "scrollama": "^3.2.0",

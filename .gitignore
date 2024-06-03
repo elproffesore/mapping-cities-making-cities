@@ -5,7 +5,7 @@
 .nitro
 .cache
 dist
-
+sosec.json
 # Node dependencies
 node_modules
 bun.lockb

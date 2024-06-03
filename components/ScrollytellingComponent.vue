@@ -46,15 +46,12 @@ onMounted(() => {
     scroller
         .setup({ step, offset, progress, threshold, once, debug})
         .onStepEnter(resp => {
-            // console.log(resp)
             emit('step-enter', resp);
         })
         .onStepProgress(resp => {
-            // console.log(resp)
             emit('step-progress', resp)
         })
         .onStepExit(resp => {
-            // console.log(resp)
             emit('step-exit', resp);
         })
 })
