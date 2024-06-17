@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-
 import scrollama from 'scrollama'
 
 const props = defineProps({
@@ -42,13 +41,13 @@ onMounted(() => {
     const { offset, progress, threshold, once, debug } = props
 
     const step = [...parent.value.children]
-
     scroller
         .setup({ step, offset, progress, threshold, once, debug})
         .onStepEnter(resp => {
             emit('step-enter', resp);
         })
         .onStepProgress(resp => {
+            console.log(resp)
             emit('step-progress', resp)
         })
         .onStepExit(resp => {
