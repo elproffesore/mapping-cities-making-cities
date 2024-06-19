@@ -1,3 +1,22 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+    h1 {
+        @apply text-2xl font-bold py-8;
+    }
+    h2 {
+        @apply text-2xl;
+    }
+    h3 {
+        @apply text-base;
+    }
+    li {
+        @apply text-2xl p-2;
+    }
+    .heading {
+        @apply text-8xl;
+        padding: unset;
+    }
+}
