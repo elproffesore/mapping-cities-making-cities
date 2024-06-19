@@ -10,5 +10,8 @@ export default defineNuxtConfig({
     options: {
       scrollBehaviorType: 'smooth'
     }
-  }
+  },
+  css: [
+    '~/assets/css/tailwind.css',
+  ]
 })
