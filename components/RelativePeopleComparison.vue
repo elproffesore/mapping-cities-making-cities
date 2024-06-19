@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 import { ref, onMounted } from 'vue'
 const props = defineProps({
     data: {
-        type: Array,
+        type: Object,
         required: false
     },
     left: {
@@ -11,19 +11,19 @@ const props = defineProps({
         required: false
     }
 })
+//set index of shown data
 const index = ref(0)
+//update the view according to the index
 function updatePeopleComparison() {
-    let total = []
-    props.data.map(d => {
-        for (let n = 0; n < d.amount; n++) {
-            if (d.index == index.value) {
-                total.push(d.status)
-            }
+    let array = []
+    props.data[index.value].forEach((d) => {
+        for (let i = 0; i < d.amount; i++) {
+            array.push(d.status)
         }
     })
     let update = d3.select('#relativePeopleComparison')
         .selectAll('path')
-        .data(total)
+        .data(array)
 
     update.exit().remove()
 
@@ -44,7 +44,7 @@ function updatePeopleComparison() {
 
     enter.merge(update)
         .transition()
-        .duration(1000)
+        .duration(300)
         .attr('fill', (d, i) => {
             switch (d) {
                 case 'depressed':
@@ -66,12 +66,14 @@ function newStage(e) {
 </script>
 <template>
     <GridComponent>
-        <ScrollytellingComponent :offset="0.1" :progress="false" :threshold="4" :once="false" :debug="false"
-            @step-enter="newStage" :class="left ? 'col-span-6' : 'col-span-7 col-start-6'">
+        <h1 class="text-center col-span-12 row-start-1">Out of 100 people ...</h1>
+        <ScrollytellingComponent :offset="0.5" :progress="false" :threshold="4" :once="false" :debug="false"
+            @step-enter="newStage" class="col-span-6 row-start-2" :class="left ? '' : 'col-start-7'">
             <slot></slot>
         </ScrollytellingComponent>
-        <svg id="relativePeopleComparison" width="100%" height="50%"
-            :class="left ? 'self-start sticky top-[25vh] mb-[25vh] col-start-8 col-span-5' : 'self-start sticky mb-[25vh] top-[25vh] row-start-1 col-span-5 col-start-1'"></svg>
+        <svg id="relativePeopleComparison" width="100%" height="30%"
+        class="self-start sticky top-[25vh] col-span-5"
+        :class="left ? 'col-start-8' : 'row-start-2 col-start-1'"></svg>
     </GridComponent>
 </template>
 <style></style>
