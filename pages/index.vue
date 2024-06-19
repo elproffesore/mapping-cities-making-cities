@@ -6,8 +6,8 @@ import ScrollytellingComponent from '~/components/ScrollytellingComponent.vue';
 //params
 const range = 10
 const scroll = ref(0)
-const data = await useFetch('/api/data', { query: { padding: scroll, range } })
-const reactiveData = reactive(data)
+//const data = await useFetch('/api/data', { query: { padding: scroll, range } })
+//const reactiveData = reactive(data)
 const scaleX = d3.scaleLinear().domain([0, range]).range([0, width - padding])
 const scaleY = d3.scaleLinear().domain([0, 7]).range([height - padding, 0])
 const height = 300;
@@ -16,9 +16,9 @@ const padding = 50;
 const updateMenuNumber = ref(0)
 const updateMenuProgress = ref(0)
 
-watch(reactiveData, () => {
-    updateVisualization()
-})
+// watch(reactiveData, () => {
+//     updateVisualization()
+// })
 function updateMenu(resp) {
     updateMenuNumber.value = resp.index
     updateMenuProgress.value = resp.progress
