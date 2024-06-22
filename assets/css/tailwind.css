@@ -3,6 +3,29 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+    :root {
+        --primary: #BEB6F2;
+        --secondary: #E25029;
+        --vprimary: #2F8D59;
+        --vsecondary: #242021;
+    }
+    @font-face {
+        font-family: 'OverusedGrotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(/fonts/OverusedGrotesk/OverusedGrotesk-Medium.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'OverusedGrotesk';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(/fonts/OverusedGrotesk/OverusedGrotesk-Light.woff2) format('woff2');
+    }
+    body {
+        @apply bg-background text-text;
+    }
     h1 {
         @apply text-2xl font-bold py-8;
     }
@@ -18,5 +41,8 @@
     .heading {
         @apply text-8xl;
         padding: unset;
+    }
+    .highlight {
+        @apply bg-primary rounded px-1;
     }
 }

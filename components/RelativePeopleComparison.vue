@@ -34,25 +34,21 @@ function updatePeopleComparison() {
         .attr('fill', (d, i) => {
             switch (d) {
                 case 'depressed':
-                    return 'red'
+                    return '#242021'
                 case 'not depressed':
-                    return 'blue'
-                default:
-                    return 'black'
+                    return '#BEB6F2'
             }
         })
 
     enter.merge(update)
         .transition()
-        .duration(300)
+        .duration(500)
         .attr('fill', (d, i) => {
             switch (d) {
                 case 'depressed':
-                    return 'red'
+                    return '#242021'
                 case 'not depressed':
-                    return 'blue'
-                default:
-                    return 'black'
+                    return '#BEB6F2'
             }
         })
 }
@@ -71,8 +67,8 @@ function newStage(e) {
             @step-enter="newStage" class="col-span-6 row-start-2" :class="left ? '' : 'col-start-7'">
             <slot></slot>
         </ScrollytellingComponent>
-        <svg id="relativePeopleComparison" width="100%" height="30%"
-        class="self-start sticky top-[25vh] col-span-5"
+        <svg id="relativePeopleComparison" width="100%" height="25%"
+        class="self-start sticky top-[25vh] col-span-5 mb-[25vh]"
         :class="left ? 'col-start-8' : 'row-start-2 col-start-1'"></svg>
     </GridComponent>
 </template>

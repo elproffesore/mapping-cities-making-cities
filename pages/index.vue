@@ -1,5 +1,4 @@
 <script setup>
-import { reactive } from 'vue';
 import * as d3 from 'd3'
 import GridComponent from '~/components/GridComponent.vue';
 import ScrollytellingComponent from '~/components/ScrollytellingComponent.vue';
@@ -37,43 +36,28 @@ const dummyData = {
         { status: "not depressed", amount: 50 }
     ]
 }
-
 </script>
 <template>
-    <div>
-        <ScrollytellingComponent :offset="0" :progress="true" :threshold="4" :once="false" :debug="false"
+    <ScrollytellingComponent :offset="0" :progress="true" :threshold="4" :once="false" :debug="false"
         @step-progress="updateMenu">
-
-        <GridComponent class="items-center">
-            <div class="text-center mt-16 col-span-12" id="intro">
-                <h1 class="heading"><b>Gefühlte Krise</b></h1>
-                <h3>- zwischen Doomsday & Wut</h3>
-            </div>
-            <div class="col-span-7">
+        <GridComponent class="items-center h-[90vh]">
+            <div class="col-span-8">
+                <h1 class="heading text-center my-8"><b>Gefühlte Krisen, Finstere Herzen</b></h1>
                 <p class="text-justify">
                     Das 19. und 20.Jahrhundert waren die Epoche der expansiven Moderne.
                     Immer weitere Teile der Welt folgten dem industriegesellschaftlichen und wachstumswirtschaftlichen
                     Pfad, ihre Bewohnerinnen und Bewohner erlebten materiellen und vor allem auch immateriellen
-                    Fortschritt: Die Gesellschaften demokratisierten sich, wurden freiheitliche Rechtsstaaten,
-                    Arbeitsschutzrechte, Bildungs-, Gesundheits- und Sozialversorgung wurden erkämpft. Im 21.
-                    Jahrhundert, da die Globalisierung fast den ganzen Planeten in den wachstumswirtschaftlichen Sog
-                    gezogen, aber dabei keineswegs überall Freiheit, Demokratie und Recht etabliert hat, stehen wir vor
-                    der Herausforderung, den erreichten zivilisatorischen Standard zu sichern, denn dieser gerät immer
-                    mehr unter den Druck von Umweltzerstörung, Ressourcenkonkurrenz, Klimaerwärmung - um nur einige der
-                    gravierendsten Probleme zu nennen. Wie sieht eine moderne Gesellschaft aus, die nicht mehr dem
-                    Prinzip der immerwährenden Expansion folgt, sondern gutes Leben mit nur einem fünftel des heutigen
-                    Verbrauchs an Material und Energie sichert? Das weiß im Augenblick niemand; einen Masterplan für
-                    eine solche Modeme gibt es nicht.
+                    Fortschritt.
+
                 </p>
             </div>
-            <img class="col-span-5 p-8"
+            <img class="col-span-4 scale-[1.25] p-4"
                 src="/images/lightning-strike-thunderstorm-weather-icon-meteorological-sign-3d-render-png.png"><img>
-        </GridComponent>
-
-
+    </GridComponent>
+    <StickyMenu :updateMenuNumber="updateMenuNumber" :updateMenuProgress="updateMenuProgress" />
            <RelativePeopleComparison :data="dummyData" id="section1">
             <p class="h-[75vh]">
-                    Das 19. und 20.Jahrhundert waren die Epoche der expansiven Moderne.
+                    <span class="highlight">Das 19. und 20.Jahrhundert</span> waren die Epoche der expansiven Moderne.
                     Immer weitere Teile der Welt folgten dem industriegesellschaftlichen und wachstumswirtschaftlichen
                     Pfad, ihre Bewohnerinnen und Bewohner erlebten materiellen und vor allem auch immateriellen
                     Fortschritt: Die Gesellschaften demokratisierten sich, wurden freiheitliche Rechtsstaaten,
@@ -120,7 +104,6 @@ const dummyData = {
            </RelativePeopleComparison>
         </ScrollytellingComponent>
         <AppFooter />
-        <StickyMenu :updateMenuNumber="updateMenuNumber" :updateMenuProgress="updateMenuProgress" />
-    </div>
 </template>
-<style></style>
+<style>
+</style>
