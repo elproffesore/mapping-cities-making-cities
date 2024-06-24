@@ -13,11 +13,10 @@ module.exports = {
       extend: {},
       colors: {
         text: "#000",
-        background: "#EBE7DE",
-        primary: "#BEB6F2",
-        secondary: "#E25029",
-        vprimary: "#2F8D59",
-        vsecondary: "#242021",
+        white: "#fff",
+        background: "#ccc",
+        primary: "#f00",
+        secondary: "#00f",
       }
     },
 

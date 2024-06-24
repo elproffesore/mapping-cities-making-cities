@@ -2,7 +2,7 @@
 
 </script>
 <template>
-    <div id="gridComponent" class="grid grid-cols-12 p-8 mx-36">
+    <div id="gridComponent" class="grid grid-cols-12 p-8 mx-8">
         <slot></slot>
     </div>
 </template>

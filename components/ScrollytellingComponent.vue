@@ -47,7 +47,6 @@ onMounted(() => {
             emit('step-enter', resp);
         })
         .onStepProgress(resp => {
-            console.log(resp)
             emit('step-progress', resp)
         })
         .onStepExit(resp => {

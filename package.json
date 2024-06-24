@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "latest",
-    "d3": "^7.9.0",   
+    "@splinetool/runtime": "^1.7.6",
+    "d3": "^7.9.0",
     "nuxt": "^3.11.2",
     "scrollama": "^3.2.0",
     "vue": "^3.4.27",

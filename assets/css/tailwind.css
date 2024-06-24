@@ -4,30 +4,27 @@
 
 @layer base {
     :root {
-        --primary: #BEB6F2;
-        --secondary: #E25029;
-        --vprimary: #2F8D59;
-        --vsecondary: #242021;
+        --primary: #f00;
+        --secondary: #00f;
+        --background: #ccc
     }
     @font-face {
-        font-family: 'OverusedGrotesk';
+        font-family: 'Keroine Doux';
         font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(/fonts/OverusedGrotesk/OverusedGrotesk-Medium.woff2) format('woff2');
+        src: url(/fonts/Keroine/KeroinePRO-DouxExtreme.otf) format('opentype');
     }
     @font-face {
-        font-family: 'OverusedGrotesk';
+        font-family: 'Keroine Intense';
         font-style: normal;
-        font-weight: 200;
-        font-display: swap;
-        src: url(/fonts/OverusedGrotesk/OverusedGrotesk-Light.woff2) format('woff2');
+        src: url(/fonts/Keroine/KeroinePRO-IntenseLegere.otf) format('opentype');
     }
     body {
         @apply bg-background text-text;
+        font-family: Keroine Doux, sans-serif;
     }
     h1 {
-        @apply text-2xl font-bold py-8;
+        @apply text-2xl pb-12;
+        font-family: Keroine Intense, sans-serif;
     }
     h2 {
         @apply text-2xl;
@@ -40,9 +37,11 @@
     }
     .heading {
         @apply text-8xl;
-        padding: unset;
+    }
+    .section-heading {
+        @apply text-4xl mt-8 text-center;
     }
     .highlight {
-        @apply bg-primary rounded px-1;
+        @apply bg-secondary text-white rounded p-1;
     }
 }
