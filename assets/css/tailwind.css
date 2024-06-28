@@ -5,7 +5,9 @@
 @layer base {
     :root {
         --primary: #f00;
+        --primaryOpaque: #f00a;
         --secondary: #00f;
+        --secondaryOpaque: #00fa;
         --background: #ccc
     }
     @font-face {
@@ -32,6 +34,9 @@
     h3 {
         @apply text-base;
     }
+    p {
+        @apply text-lg;
+    }
     li {
         @apply text-2xl p-2;
     }
@@ -42,6 +47,9 @@
         @apply text-4xl mt-8 text-center;
     }
     .highlight {
-        @apply bg-secondary text-white rounded p-1;
+        @apply bg-primary text-white rounded p-1;
+    }
+    select{
+        transition: visibility 0.5s;
     }
 }

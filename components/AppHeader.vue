@@ -10,7 +10,7 @@ const props = defineProps({
     }
 })
 watch(() => props.updateMenuProgress, (nv) => {
-    document.getElementById('menu'+props.updateMenuNumber).style.backgroundImage = `linear-gradient(to right, var(--primary) 50%, #fff 50%)`;
+    document.getElementById('menu'+props.updateMenuNumber).style.backgroundImage = `linear-gradient(to right, var(--secondaryOpaque) 50%, #fff 50%)`;
     document.getElementById('menu'+props.updateMenuNumber).style.backgroundPosition = -100-nv*100+'%';
 })
 function scrollTop() {
@@ -22,13 +22,13 @@ function scrollTop() {
 </script>
 <template>
     <nav class="sticky top-[2.5vh] w-[100vw] z-10">
-        <ul  class="flex flex-row justify-center text-center gap-8 m-4">
-            <li id="menu0" ><NuxtLink to="#" @click="scrollTop"><b>Introduction</b></NuxtLink></li>
-            <li id="menu2" ><NuxtLink to="#who-is-concerned"><b>Who is concerned?</b></NuxtLink></li>
-            <li id="menu3" ><NuxtLink to="#just-feelings"><b>Just Feelings?</b></NuxtLink></li>
-            <li id="menu4" ><NuxtLink to="#effects-on-democracy"><b>Effects on Democracy</b></NuxtLink></li>
-            <li id="menu5" ><NuxtLink to="#strengthen-resilience"><b>Crisis Resilience</b></NuxtLink></li>
-            <li id="menu6" ><NuxtLink to="#credits"><b>Credits</b></NuxtLink></li>
+        <ul class="flex flex-row justify-center text-center gap-8 m-4">
+            <NuxtLink to="#" @click="scrollTop"><li id="menu0" ><b>Introduction</b></li></NuxtLink>
+            <NuxtLink to="#who-is-concerned"><li id="menu1" ><b>Who is concerned?</b></li></NuxtLink>
+            <NuxtLink to="#just-feelings"><li id="menu2" ><b>Just Feelings?</b></li></NuxtLink>
+            <NuxtLink to="#effects-on-democracy"><li id="menu3" ><b>Effects on Democracy</b></li></NuxtLink>
+            <NuxtLink to="#strengthen-resilience"><li id="menu4" ><b>Crisis Resilience</b></li></NuxtLink>
+            <NuxtLink to="#sources"><li id="menu5" ><b>Sources</b></li></NuxtLink>
         </ul>
     </nav>
 </template>
@@ -44,5 +44,4 @@ function scrollTop() {
     background-position: -100%;
     background-size: 200%;
 } 
-
 </style>
