@@ -10,7 +10,7 @@ const props = defineProps({
     }
 })
 watch(() => props.updateMenuProgress, (nv) => {
-    document.getElementById('menu'+props.updateMenuNumber).style.backgroundImage = `linear-gradient(to right, var(--secondaryOpaque) 50%, #fff 50%)`;
+    document.getElementById('menu'+props.updateMenuNumber).style.backgroundImage = `linear-gradient(to right, var(--secondary) 50%, #fff 50%)`;
     document.getElementById('menu'+props.updateMenuNumber).style.backgroundPosition = -100-nv*100+'%';
 })
 function scrollTop() {
@@ -36,7 +36,7 @@ function scrollTop() {
  li {
     font-weight: 200;
     font-size: 14px;
-    padding: 2px 35px;
+    padding: 6px 35px;
     border: 1px solid #000;
     border-radius: 30px;
     box-shadow: 0px 4px 4px rgba(0,0,0,0.25);

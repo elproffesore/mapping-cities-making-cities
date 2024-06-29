@@ -5,10 +5,10 @@
 @layer base {
     :root {
         --primary: #f00;
-        --primaryOpaque: #f00a;
-        --secondary: #00f;
-        --secondaryOpaque: #00fa;
-        --background: #ccc
+        --primaryOpaque: #ff0000aa;
+        --secondary: #a75fff;
+        --secondaryOpaque: #a75fffaa;
+        --background: #e3e3e3
     }
     @font-face {
         font-family: 'Keroine Doux';
@@ -22,10 +22,11 @@
     }
     body {
         @apply bg-background text-text;
+        overflow-x: hidden;
         font-family: Keroine Doux, sans-serif;
     }
     h1 {
-        @apply text-2xl pb-12;
+        @apply text-2xl pb-8;
         font-family: Keroine Intense, sans-serif;
     }
     h2 {

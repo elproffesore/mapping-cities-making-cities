@@ -30,7 +30,7 @@ const crisis = [
 </script>
 <template>
     <GridComponent class="items-center h-[90vh] my-[5vh] text-wrap">
-        <div class="row-start-2 col-span-12 text-left md:col-span-8 md:row-start-1">
+        <div class="row-start-1 col-span-12 leading-none text-left md:col-span-8 md:row-start-1">
             <h1 class="text-3xl md:heading">Felt Crisis – Effects on Democracy</h1>
             <h1 class="text-2xl md:text-3xl">
                 Democracy put to the test: dealing with crisis moods
@@ -38,13 +38,13 @@ const crisis = [
         </div>
 
         <!-- <canvas id="canvas3d" class="col-span-12 row-start-1 row-span-1 md:col-span-4 md:col-start-9 md:row-span-2 "></canvas> -->
-        <p class="row-start-2 col-span-12 md:col-span-6 self-end">
+        <p class="row-start-3 col-span-12 md:col-span-6 self-end">
             The phenomena of crises are omnipresent in our times - whether climate crisis, financial crisis,
             migration crisis or crisis of democracy among others. We are currently confronted with ever new crisis
             analyses that puts us into a permanent state of emergency. But what exactly does that mean for us? And
             which groups are experiencing which crises?
         </p>
-        <CountingNumbers class="row-start-1 row-span-2 col-span-4 col-start-9 self-end">
+        <CountingNumbers class="row-start-2 row-span-2 col-span-4 col-start-9 self-end">
             <template v-slot:number>75</template>
             <template v-slot:text>
                 Percentage of people that feeled worried or very concerned about the top 5 problems in Germany in 2022.<sup>[1]</sup> 
@@ -80,7 +80,7 @@ const crisis = [
             </BarComparison>
         </GridComponent> -->
 
-        <GridComponent>
+        <!-- <GridComponent>
             <h1 class="section-heading col-span-12">Point on Line Comparison</h1>
             <PointOnLineComparison :data="crisis" :left="false" :progress="updateMenuProgress"
                 :current-index="updateMenuNumber" :component-index="1" class="col-span-12"></PointOnLineComparison>
@@ -94,6 +94,12 @@ const crisis = [
             <h1 class="section-heading col-span-12">Bar Comparison</h1>
             <BarComparison :data="crisis" :left="false" :progress="updateMenuProgress" :current-index="updateMenuNumber"
                 :component-index="3" class="col-span-12"></BarComparison>
+        </GridComponent> -->
+        <GridComponent>
+            <h1 class="section-heading col-span-12" id="who-is-concerned">Who is concerned?</h1>
+            <p class="col-span-12">
+                The topic of generational justice became very prominent with a rising awareness on climate justice. If we take a look to the perception of crisis of different generation, we can observe that the feeling of crisis is shared by all generations.
+            </p>
         </GridComponent>
         <GridComponent>
             <h1 class="section-heading col-span-12" id="just-feelings">Just Feelings?</h1>
