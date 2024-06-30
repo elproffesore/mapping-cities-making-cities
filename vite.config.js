@@ -4,9 +4,8 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: "/",
+  base: process.env.NODE_ENV == "production"? "/mapping-cities-making-cities-final-project":"",
   build: {
     outDir: "dist",
-    assetsDir: "assets",
   }
 })
