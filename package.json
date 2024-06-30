@@ -13,6 +13,7 @@
     "d3": "^7.9.0",
     "postcss": "latest",
     "scrollama": "^3.2.0",
+    "tailwindcss": "^3.4.4",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
   },

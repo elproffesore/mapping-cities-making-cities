@@ -11,7 +11,7 @@
             <h3 ><b>Development: </b>Philipp</h3>
         </div>
         <div class="flex flex-col gap-2 self-start">
-            <img src="./assets/images/FHP_logo.svg" alt="" class="w-1/4 pb-4">
+            <img src="../assets/images/FHP_logo.svg" alt="" class="w-1/4 pb-4">
             <p>This project was done during the class <a href="https://uclab.fh-potsdam.de/mapping/" _blank class="underline">"Mapping Cities - Making Cities"</a> at FH Potsdam in the summer semester 2024. We kindly thank Marian Dörk and Hendrik Lehman for the well taught input and the support during the development of the project.</p>
         </div>
     </div>

@@ -7,7 +7,8 @@ import RelativePeopleComparison from './components/Visualizations/RelativePeople
 import CountingNumbers from './components/CountingNumbers.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-import {ref } from 'vue';
+import SelectionComponent from './components/SelectionComponent.vue';
+import { ref } from 'vue';
 
 const updateMenuNumber = ref(0)
 const updateMenuProgress = ref(0)
@@ -15,7 +16,7 @@ function updateMenu(resp) {
     updateMenuNumber.value = resp.index
     updateMenuProgress.value = resp.progress
 }
-
+const options = ["Old", "Young", "Low-Income Group", "High-Income Group"]
 const crisis = [
     { "who": "Out of 100 people ...", "crisis": 0.0, "noCrisis": 100.0 },
     { "who": "of the <span class='highlight'>young</span> are crisis", "crisis": 13, "noCrisis": 87 },
@@ -43,7 +44,8 @@ const crisis = [
         <CountingNumbers class="row-start-2 row-span-2 col-span-4 col-start-9 self-end">
             <template v-slot:number>75</template>
             <template v-slot:text>
-                Percentage of people that feeled worried or very concerned about the top 5 problems in Germany in 2022.<sup>[1]</sup> 
+                Percentage of people that feeled worried or very concerned about the top 5 problems in Germany in
+                2022.<sup>[1]</sup>
             </template>
         </CountingNumbers>
 
@@ -74,13 +76,7 @@ const crisis = [
             <h1 class="section-heading col-span-12">Bar Chart</h1>
             <BarComparison :data="crisis" :left="false" :progress="updateMenuProgress" class="col-span-12">
             </BarComparison>
-        </GridComponent> -->
-
-        <!-- <GridComponent>
-            <h1 class="section-heading col-span-12">Point on Line Comparison</h1>
-            <PointOnLineComparison :data="crisis" :left="false" :progress="updateMenuProgress"
-                :current-index="updateMenuNumber" :component-index="1" class="col-span-12"></PointOnLineComparison>
-        </GridComponent>
+        </GridComponent> --><!--
         <GridComponent>
             <h1 class="section-heading col-span-12">RelativePeopleComparison</h1>
             <RelativePeopleComparison :data="crisis" :left="false" :progress="updateMenuProgress"
@@ -93,9 +89,61 @@ const crisis = [
         </GridComponent> -->
         <GridComponent>
             <h1 class="section-heading col-span-12" id="who-is-concerned">Who is concerned?</h1>
-            <p class="col-span-12">
-                The topic of generational justice became very prominent with a rising awareness on climate justice. If we take a look to the perception of crisis of different generation, we can observe that the feeling of crisis is shared by all generations.
-            </p>
+            <PointOnLineComparison :data="crisis" :left="false" :progress="updateMenuProgress"
+                :current-index="updateMenuNumber" :component-index="1" class="col-span-12" v-slot="scope">
+                The topic of generational <SelectionComponent :options="options" v-on:change="scope.updateSelection">
+                </SelectionComponent> became very prominent with a rising awareness on climate justice. If we take a
+                look to
+                the perception of crisis of different generation, we can observe that the feeling of crisis is shared by
+                all
+                generations.
+            </PointOnLineComparison>
+
+        </GridComponent>
+        <GridComponent>
+            <PointOnLineComparison :data="crisis" :left="false" :progress="updateMenuProgress"
+                :current-index="updateMenuNumber" :component-index="2" class="col-span-12" :scrollable="true">
+                <p class="col-span-12">
+                    "If people define situations as real, then their consequences are also real."
+                    Thomas-Theorem (1928)
+                    According to famous Thomas Theorem, formulated by by William and Dorothy Thomas in 1928, we can
+                    point
+                    out, that
+                    the interpretation of a situation (however "objectively" false it may appear) has real consequences
+                    because the
+                    actions of actors are based on their definition of the situation. In other words, the interpretation
+                    of
+                    a
+                    situation causes the action. This interpretation is not objective. Actions are affected by
+                    subjective
+                    perceptions of situations. Whether there even is an objectively correct interpretation is not
+                    important
+                    for the
+                    purposes of helping guide individuals' behavior.
+
+                    [ hier Daten zu Angst vor Rechnungen zahlen obwohl real keine finanzielle Schieflage besteht]
+                </p>
+                <p class="col-span-12">
+                    "If people define situations as real, then their consequences are also real."
+                    Thomas-Theorem (1928)
+                    According to famous Thomas Theorem, formulated by by William and Dorothy Thomas in 1928, we can
+                    point
+                    out, that
+                    the interpretation of a situation (however "objectively" false it may appear) has real consequences
+                    because the
+                    actions of actors are based on their definition of the situation. In other words, the interpretation
+                    of
+                    a
+                    situation causes the action. This interpretation is not objective. Actions are affected by
+                    subjective
+                    perceptions of situations. Whether there even is an objectively correct interpretation is not
+                    important
+                    for the
+                    purposes of helping guide individuals' behavior.
+
+                    [ hier Daten zu Angst vor Rechnungen zahlen obwohl real keine finanzielle Schieflage besteht]
+                </p>
+            </PointOnLineComparison>
         </GridComponent>
         <GridComponent>
             <h1 class="section-heading col-span-12" id="just-feelings">Just Feelings?</h1>

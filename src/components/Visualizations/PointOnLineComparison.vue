@@ -1,8 +1,9 @@
 <script setup>
 import * as d3 from 'd3'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted,watch } from 'vue'
 import useProgressCalculator from '../../functions/useProgressCalculator.js'
-
+import GridComponent from '../GridComponent.vue'
+import SelectionComponent from '../SelectionComponent.vue'
 const props = defineProps({
     data: {
         type: Array,
@@ -23,6 +24,11 @@ const props = defineProps({
     componentIndex: {
         type: Number,
         required: true
+    },
+    scrollable: {
+        type: Boolean,
+        required: false,
+        default: () => false
     }
 })
 const padding = ref(50)
@@ -33,7 +39,7 @@ onMounted(() => {
     width.value = window.innerWidth * 0.3;
     const scaleX = d3.scaleLinear().domain([0, 100]).range([0 + padding.value, width.value - padding.value])
 
-    svg.value = d3.select('#pointOnLineComparison')
+    svg.value = d3.select('#pointOnLineComparison'+props.componentIndex)
         .attr('width', width.value)
         .attr('height', 100)
 
@@ -101,24 +107,27 @@ function updatePointOnLineComparison() {
         .attr('cy', 50)
 }
 watch(() => props.progress, function (nv) {
-    if(props.currentIndex != props.componentIndex) return
+    if((props.currentIndex != props.componentIndex) || !props.scrollable) return
     let indexNew = useProgressCalculator(props.progress,props.data.length-1)
     if(indexNew == index.value) return
     index.value = indexNew
     // if yes update the visualization according to the current scroll state
     updatePointOnLineComparison()
 })
+function updateSelection(target) {
+    index.value = target.explicitOriginalTarget.value
+    updatePointOnLineComparison()
+}
 </script>
 <template>
     <GridComponent>
-        <div class="w-[100vw] self-start sticky top-[42.5vh] h-[15vh] md:col-span-5 mb-[42.5vh]"
-            :class="left ? 'col-start-8' : 'col-start-1'">
-            <svg id="pointOnLineComparison"></svg>
+        <div class="w-[100vw] self-start top-[42.5vh] h-[15vh] md:col-span-5 mb-[42.5vh]"
+            :class="left ? 'col-start-8' : 'col-start-1', scrollable?'sticky':''">
+            <svg :id="'pointOnLineComparison'+componentIndex"></svg>
         </div>
-        <div class="col-span-6" :class="left ? '' : 'col-start-7'">
-            <p v-for="(fact,index) in data" :key="index" class="m-12">
-                <span class="highlight">{{ fact.crisis }}%</span> <span v-html="fact.who"></span>
-            </p>
+        <div class="col-span-6" :class="left ? '' : 'col-start-7'" >
+            <slot v-if="scrollable"></slot>
+            <slot v-if="!scrollable" :updateSelection="updateSelection"></slot>
         </div>
     </GridComponent>
 </template>
