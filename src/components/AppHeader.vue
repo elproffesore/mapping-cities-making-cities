@@ -1,4 +1,6 @@
 <script setup>
+import { defineProps, watch } from 'vue';
+
 const props = defineProps({
     updateMenuNumber: {
         type: Number,
@@ -23,12 +25,12 @@ function scrollTop() {
 <template>
     <nav class="sticky top-[2.5vh] w-[100vw] z-10">
         <ul class="flex flex-row justify-center text-center gap-8 m-4">
-            <NuxtLink to="#" @click="scrollTop"><li id="menu0" ><b>Introduction</b></li></NuxtLink>
-            <NuxtLink to="#who-is-concerned"><li id="menu1" ><b>Who is concerned?</b></li></NuxtLink>
-            <NuxtLink to="#just-feelings"><li id="menu2" ><b>Just Feelings?</b></li></NuxtLink>
-            <NuxtLink to="#effects-on-democracy"><li id="menu3" ><b>Effects on Democracy</b></li></NuxtLink>
-            <NuxtLink to="#strengthen-resilience"><li id="menu4" ><b>Crisis Resilience</b></li></NuxtLink>
-            <NuxtLink to="#sources"><li id="menu5" ><b>Sources</b></li></NuxtLink>
+            <a to="#" @click="scrollTop"><li id="menu0" ><b>Introduction</b></li></a>
+            <a to="#who-is-concerned"><li id="menu1" ><b>Who is concerned?</b></li></a>
+            <a to="#just-feelings"><li id="menu2" ><b>Just Feelings?</b></li></a>
+            <a to="#effects-on-democracy"><li id="menu3" ><b>Effects on Democracy</b></li></a>
+            <a to="#strengthen-resilience"><li id="menu4" ><b>Crisis Resilience</b></li></a>
+            <a to="#sources"><li id="menu5" ><b>Sources</b></li></a>
         </ul>
     </nav>
 </template>

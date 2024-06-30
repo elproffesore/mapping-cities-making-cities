@@ -1,24 +1,23 @@
 {
-  "name": "Krise",
+  "name": "crisis-and-democracy",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "latest",
-    "@splinetool/runtime": "^1.7.6",
+    "autoprefixer": "latest",
     "d3": "^7.9.0",
-    "nuxt": "^3.11.2",
+    "postcss": "latest",
     "scrollama": "^3.2.0",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
   },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "vite": "^5.3.1"
   }
 }

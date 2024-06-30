@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue'
 import scrollama from 'scrollama'
+import { defineProps, ref, onMounted } from 'vue';
 
 const props = defineProps({
     offset: {

@@ -1,13 +1,14 @@
 <script setup>
-import GridComponent from '~/components/GridComponent.vue';
-import ScrollytellingComponent from '~/components/ScrollytellingComponent.vue';
-import BarComparison from '~/components/Visualizations/BarComparison.vue';
-import PointOnLineComparison from '~/components/Visualizations/PointOnLineComparison.vue';
-import RelativePeopleComparison from '~/components/Visualizations/RelativePeopleComparison.vue';
-import { Application } from '@splinetool/runtime';
-//params
-//const data = await useFetch('/api/data', { query: { padding: scroll, range } })
-//const reactiveData = reactive(data)
+import GridComponent from './components/GridComponent.vue';
+import ScrollytellingComponent from './components/ScrollytellingComponent.vue';
+import BarComparison from './components/Visualizations/BarComparison.vue';
+import PointOnLineComparison from './components/Visualizations/PointOnLineComparison.vue';
+import RelativePeopleComparison from './components/Visualizations/RelativePeopleComparison.vue';
+import CountingNumbers from './components/CountingNumbers.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
+import {ref } from 'vue';
+
 const updateMenuNumber = ref(0)
 const updateMenuProgress = ref(0)
 function updateMenu(resp) {
@@ -22,11 +23,7 @@ const crisis = [
     { "who": "of the <span class='highlight'>low-income group</span> (< 2000€/m)  are crisis", "crisis": 65.0, "noCrisis": 35.0 },
     { "who": "of the <span class='highlight'>high-income group</span> (> 7000€/m)  are crisis", "crisis": 35.0, "noCrisis": 65.0 }
 ]
-// onMounted(() => {
-//     const canvas = document.getElementById('canvas3d');
-//     const spline = new Application(canvas);
-//     spline.load("https://prod.spline.design/mUBhU03LIxr8n6bZ/scene.splinecode")
-// })
+
 </script>
 <template>
     <GridComponent class="items-center h-[90vh] my-[5vh] text-wrap">
@@ -37,7 +34,6 @@ const crisis = [
             </h1>
         </div>
 
-        <!-- <canvas id="canvas3d" class="col-span-12 row-start-1 row-span-1 md:col-span-4 md:col-start-9 md:row-span-2 "></canvas> -->
         <p class="row-start-3 col-span-12 md:col-span-6 self-end">
             The phenomena of crises are omnipresent in our times - whether climate crisis, financial crisis,
             migration crisis or crisis of democracy among others. We are currently confronted with ever new crisis
