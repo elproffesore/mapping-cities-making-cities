@@ -31,8 +31,9 @@ const crisis = [
         :updateMenuProgress="updateMenuProgress" />
     <GridComponent class="items-center mt-[8vh] h-[90vh]">
         <div class="row-start-1 col-span-12 text-left md:col-span-8">
-            <h1 class="text-3xl md:heading">Trust in the Time of <span class="underline decoration-primary decoration-8"
-                    style="padding: initial;">Crisis</span> - Democracy put to a Test</h1>
+            <h1 class="text-3xl md:heading"><span class="underline decoration-primary decoration-8"
+                    style="padding: initial;">Apocalypse</span> now</h1>
+                    <h2> - Democracy put to a Test</h2>
         </div>
         <div class="row-start-3 col-span-12 md:col-span-6 self-end">
             <p> The phenomena of crises are omnipresent in our times - whether climate crisis, financial crisis,
@@ -43,44 +44,51 @@ const crisis = [
         <img class=" row-span-3 col-span-10 col-start-9 w-[100vw]" src="./assets/images/Welt.png" alt="">
 
     </GridComponent>
-    <GridComponent class="m-0 md:mx-[0px] md:p-0 mb-16">
-        <hr class="row-start-4 col-span-12 col-start-2 text-primary ">
+    <GridComponent style="margin-right:0 !important; padding: 0 !important;">
+        <hr class="col-span-12 col-start-2 text-primary ">
     </GridComponent>
     <ScrollytellingComponent :offset="0" :progress="true" :threshold="4" :once="false" :debug="false"
         @step-progress="updateMenu">
-        <GridComponent>
+        <GridComponent id="multicrisis">
             <div class="col-start-2 col-span-10 grid grid-cols-5 grid-rows-2 items-center justify-center">
-                <div class="flex gap-2 row-start-1 col-span-1">
+                <div class="flex flex-col gap-2 row-start-1 col-span-1">
                     <img src="./assets/images/money.png" class="max-w-[80%] h-[100%]">
                     <CountingNumbers class="" >
                     <template v-slot:number>65</template>
                     <template v-slot:text>Inflation</template>
                 </CountingNumbers>
                 </div>
-                <div class="flex gap-2 row-start-2 col-start-2 col-span-1">
+                <div class="flex flex-col gap-2 row-start-2 col-start-2 col-span-1">
                     <img src="./assets/images/Soldiers.png" class="max-w-[80%] h-[100%]">
                 <CountingNumbers>
                     <template v-slot:number>60</template>
                     <template v-slot:text>War</template>
                 </CountingNumbers>
                 </div>
-                <div class="flex gap-2 row-start-1 col-start-3 col-span-1">
+                <div class="flex flex-col gap-2 row-start-1 col-start-3 col-span-1">
                     <img src="./assets/images/House.png" class="max-w-[80%] h-[100%]">
                 <CountingNumbers >
                     <template v-slot:number>54</template>
                     <template v-slot:text>Housing</template>
                 </CountingNumbers>
                 </div>
-                <div class="flex gap-2 row-start-2 col-start-4 col-span-1">
+                <div class="flex flex-col gap-2 row-start-2 col-start-4 col-span-1">
                     <img src="./assets/images/seperated.png" class="max-w-[80%] h-[100%]">
                 <CountingNumbers >
                     <template v-slot:number>49</template>
                     <template v-slot:text>Social Polarisation</template>
                 </CountingNumbers>
                 </div>
+                <div class="flex flex-col gap-2 row-start-1 col-start-5 col-span-1">
+                    <img src="./assets/images/Eisbaer.png" class="max-w-[80%] h-[100%]">
+                <CountingNumbers >
+                    <template v-slot:number>49</template>
+                    <template v-slot:text>Climate Change</template>
+                </CountingNumbers>
+                </div>
             </div>
             <div class="col-start-8 col-span-4">
-                <h1 class="section-heading" id="multicrisis">Multicrisis</h1>
+                <h1 class="section-heading">Multicrisis</h1>
                 <p>
                     While some focus on the melting of the polar caps, others fear the decline of their culture
                     due to foreign overrun. Groups even contradict each other in their crises perception and deny the
@@ -116,7 +124,7 @@ const crisis = [
         <GridComponent>
             <h1 class="section-heading col-start-7 col-span-5" id="who-is-concerned">Stepping into the fields of felt realities</h1>
             <PointOnLineComparison :data="crisis" :left="false" :progress="updateMenuProgress"
-                :current-index="updateMenuNumber" :component-index="2" class="col-start-1 col-span-10" :scrollable="true">
+                :current-index="updateMenuNumber" :component-index="2" class="col-span-12" :scrollable="true">
                 <p>
                     "If people define situations as real, then their consequences are also real."
                     Thomas-Theorem (1928)

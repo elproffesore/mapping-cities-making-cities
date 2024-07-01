@@ -15,15 +15,17 @@ watch(() => props.updateMenuProgress, (nv) => {
     document.getElementById('menu'+props.updateMenuNumber).style.backgroundImage = `linear-gradient(to right, #f15060 50%, #fff 50%)`;
     document.getElementById('menu'+props.updateMenuNumber).style.backgroundPosition = -100-nv*100+'%';
 })
+function scroll(location){
+    document.getElementById(location).scrollIntoView({behavior: 'smooth'});}
 </script>
 <template>
     <nav class="fixed top-[2vh] w-[100vw] z-10">
         <ul class="flex flex-row justify-center text-center gap-8 m-4">
-            <a to="#multicrisis"><li id="menu0" ><b>Multicrisis</b></li></a>
-            <a to="#who-is-concerned"><li id="menu1" ><b>Who is concerned?</b></li></a>
-            <a to="#just-feelings"><li id="menu2" ><b>Just Feelings?</b></li></a>
-            <a to="#effects-on-democracy"><li id="menu3" ><b>Effects on Democracy</b></li></a>
-            <a to="#strengthen-resilience"><li id="menu4" ><b>Crisis Resilience</b></li></a>
+            <li @click="scroll('multicrisis')" id="menu0" ><b>Multicrisis</b></li>
+            <li @click="scroll('who-is-concerned')" id="menu1" ><b>Who is concerned?</b></li>
+            <li @click="scroll('just-feelings')" id="menu2" ><b>Just Feelings?</b></li>
+            <li @click="scroll('effects-on-democracy')" id="menu3" ><b>Effects on Democracy</b></li>
+            <li @click="scroll('strengthen-resilience')" id="menu4" ><b>Crisis Resilience</b></li>
         </ul>
     </nav>
 </template>
@@ -39,5 +41,6 @@ watch(() => props.updateMenuProgress, (nv) => {
     background-color: #fff;
     background-position: -100%;
     background-size: 200%;
+    cursor: pointer;
 } 
 </style>

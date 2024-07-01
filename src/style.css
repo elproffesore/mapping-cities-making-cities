@@ -12,6 +12,7 @@
     body {
         @apply bg-background text-text;
         overflow-x: hidden;
+        scroll-behavior: smooth;
     }
     h1 {
         @apply text-2xl pb-8;
