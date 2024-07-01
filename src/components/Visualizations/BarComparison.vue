@@ -1,6 +1,6 @@
 <script setup>
 import * as d3 from 'd3'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted,watch } from 'vue'
 import useProgressCalculator from '../../functions/useProgressCalculator.js'
 const props = defineProps({
     data: {
@@ -22,33 +22,29 @@ const props = defineProps({
     componentIndex: {
         type: Number,
         required: true
+    },
+    scrollable: {
+        type: Boolean,
+        required: false,
+        default: () => false
     }
 })
-const padding = ref(0)
-const width = ref(0)
+const selectedGroup = ref('')
+const padding = ref(125)
 const svg = ref(null)
-const height = ref(150);
+const height = ref(100);
 const barHeight = 30;
 const index = ref(0)
 onMounted(() => {
-    width.value = window.innerWidth * 0.4;
     svg.value = d3.select('#barComparison')
-        .attr('width', width.value)
         .attr('height', height.value)
-
-    svg.value.append('line')
-        .attr('class', 'axisLineBarComparison')
-        .attr('stroke', 'black')
-        .attr('x1', 0 + padding.value)
-        .attr('x2', 0 + padding.value)
-        .attr('y1', 0)
-        .attr('y2', 200)
-
+        selectedGroup.value = document.querySelector('#barSelector > select')[0].innerText
+    
     updateBarComparison()
 })
 function updateBarComparison() {
-    console.log([props.data[index.value].crisis, props.data[index.value].noCrisis])
-    const scaleX = d3.scaleLinear().domain([0, 100]).range([0, width.value - padding.value])
+    let width = document.getElementById('barComparison').getBoundingClientRect().width 
+    const scaleX = d3.scaleLinear().domain([0, 100]).range([0, width - padding.value-50])
     let update = svg.value.selectAll('.barComparison')
     .data([props.data[index.value].crisis, props.data[index.value].noCrisis])
 
@@ -59,22 +55,70 @@ function updateBarComparison() {
         .attr('class', 'barComparison')
         .attr('x', 0+padding.value)
         .attr('y', (d, i) => (i*height.value/2)+((height.value/4)-barHeight/2))
+        .attr('rx',5)
+        .attr('ry',5)
         .attr('width', d => scaleX(d))
         .attr('height', barHeight)
         .attr('fill', (d,i) => {
-            if(i == 0) return '#f00'
-            return '#f004'
+            if(i == 0) return 'var(--primary)'
+            return 'none'
         })
+        .attr('stroke', 'var(--primary)')
     
     enter.merge(update)
     .transition()
     .duration(600)
     .attr('width', d => scaleX(d))
     .attr('height', barHeight)
+
+    let text = svg.value.selectAll('.barComparisonText')
+    .data([props.data[index.value].crisis, props.data[index.value].noCrisis])
+
+    text.exit().remove()
+
+    let enterText = text.enter()
+        .append('text')
+        .attr('class', 'barComparisonText')
+        .attr('x', 0)
+        .attr('y', (d, i) => (i*height.value/2)+((height.value/4)+5))
+        .text(d => d)
+        .attr('text-anchor', 'start')
+        .attr('fill', 'var(--text)')
+        .attr('font-size', '12px')
+        
+    enterText.merge(text)
+    .transition()
+    .duration(600)
+    .text((d,i) => {
+        if(i == 0) return selectedGroup.value
+        return "Other"
+    })
+
+    let text1 = svg.value.selectAll('.barComparisonText1')
+    .data([props.data[index.value].crisis, props.data[index.value].noCrisis])
+
+    text.exit().remove()
+
+    let enterText1 = text.enter()
+        .append('text')
+        .attr('class', 'barComparisonText1')
+        .attr('x', d => scaleX(d)+padding.value+10)
+        .attr('y', (d, i) => (i*height.value/2)+((height.value/4)+5))
+        .text(d => d)
+        .attr('text-anchor', 'start')
+        .attr('fill', 'var(--text)')
+        .attr('font-size', '12px')
+        
+    enterText1.merge(text1)
+    .transition()
+    .duration(600)
+    .attr('x', d => scaleX(d)+padding.value+5)
+    .text(d => d+ "%")
+
 }
 watch(() => props.progress, function (nv) {
     //check if the current index  is the same as the component index
-    if(props.currentIndex != props.componentIndex) return
+    if(props.currentIndex != props.componentIndex || !props.scrollable) return
     let indexNew = useProgressCalculator(props.progress,props.data.length-1)
     if(indexNew == index.value) return
     index.value = indexNew
@@ -82,24 +126,25 @@ watch(() => props.progress, function (nv) {
     // if yes update the visualization according to the current scroll state
     updateBarComparison()
 })
-function manuelInspection(i){
-    index.value = i
+function updateSelection(target){
+    index.value = target.explicitOriginalTarget.value
+    selectedGroup.value = target.explicitOriginalTarget[target.explicitOriginalTarget.value].innerText
     updateBarComparison()
 }
 </script>
 <template>
-    <GridComponent>
-        <div class="self-start sticky top-[35vh] h-[30vh] col-span-5"
-            :class="left ? 'col-start-8' : 'col-start-1'">
-            <svg id="barComparison"></svg>
-            <SelectionComponent :options="data.map(d => d.crisis)"></SelectionComponent>
+        <div class="row-start-2 self-start h-[30vh] col-span-5"
+            :class="left ? 'col-start-7' : 'col-start-2', scrollable? 'sticky top-[35vh]':''">
+            <svg id="barComparison" width="100%"></svg>
+            <hr class="h-1 border-t-[0.5px] mt-12">
+            <p class="text-xs">Source</p>
         </div>
-        <div class="col-span-6" :class="left ? '' : 'col-start-7'">
-            <div v-for="(fact,i) in data" :key="i" class="h-[50vh] flex items-center">
-                <p><span class="highlight">{{ fact.crisis }}%</span> <span v-html="fact.who"></span></p>
-            </div>
+
+        <div class="row-start-2 col-span-4 col-start-2" 
+        :class="left ? '' : 'col-start-8'" id="barSelector">
+            <slot v-if="scrollable"></slot>
+            <slot v-if="!scrollable" :updateSelection="updateSelection"></slot>
         </div>
-    </GridComponent>
 </template>
 <style>
 </style>

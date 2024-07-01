@@ -121,8 +121,8 @@ function updateSelection(target) {
 </script>
 <template>
     <GridComponent>
-        <div class="w-[100vw] self-start top-[42.5vh] h-[15vh] md:col-span-5 mb-[42.5vh]"
-            :class="left ? 'col-start-8' : 'col-start-1', scrollable?'sticky':''">
+        <div class="w-[100vw] self-start h-[15vh] md:col-span-5 "
+            :class="left ? 'col-start-8' : 'col-start-1', scrollable?'sticky  top-[42.5vh] mb-[42.5vh]':''">
             <svg :id="'pointOnLineComparison'+componentIndex"></svg>
         </div>
         <div class="col-span-6" :class="left ? '' : 'col-start-7'" >

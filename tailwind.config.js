@@ -11,13 +11,12 @@ module.exports = {
       colors: {
         text: "#000",
         white: "#fff",
-        background: "#f2f2f2",
-        primary: "#f00",
-        secondary: "#a75fff",
+        background: "#f5f5f5",
+        primary: "#f15060",
       },
       fontSize:{
         'xs': '.75rem',
-        'sm': '.875rem',
+        'sm': '.875rem ',
         'tiny': '.875rem',
         'base': '1rem',
         'lg': '1.125rem',
