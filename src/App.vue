@@ -181,7 +181,7 @@ onMounted(async () => {
                     how
                     to
                     handle a crises. Strong</p>
-                <img class="col-start-8 col-span-4 self-start row-span-2 " src="./assets/images/bundestag.png" alt="">
+                <img class="col-start-8 col-span-4 self-start row-span-2 " src="./assets/images/Bundestag.png" alt="">
             </GridComponent>
             <GridComponent>
                 <h1 class="section-heading col-span-12" id="crisis-resilience">Crisis Resilience</h1>
