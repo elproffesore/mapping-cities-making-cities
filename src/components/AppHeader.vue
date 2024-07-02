@@ -19,11 +19,11 @@ function scroll(location){
     document.getElementById(location).scrollIntoView({behavior: 'smooth'});}
 </script>
 <template>
-    <nav class="fixed top-[2vh] w-[100vw] z-10">
-        <ul class="flex flex-row justify-center text-center gap-8 m-4">
+    <nav class="sticky top-[10vh] w-[100vw] z-10">
+        <ul class="flex flex-row justify-center text-center gap-8">
             <li @click="scroll('multicrisis')" id="menu0" ><b>Multicrisis</b></li>
             <li @click="scroll('who-is-concerned')" id="menu1" ><b>Who is concerned?</b></li>
-            <li @click="scroll('just-feelings')" id="menu2" ><b>Just Feelings?</b></li>
+            <li @click="scroll('felt-realities')" id="menu2" ><b>Felt Realities</b></li>
             <li @click="scroll('effects-on-democracy')" id="menu3" ><b>Effects on Democracy</b></li>
             <li @click="scroll('strengthen-resilience')" id="menu4" ><b>Crisis Resilience</b></li>
         </ul>

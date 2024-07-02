@@ -16,7 +16,7 @@
     }
     h1 {
         @apply text-2xl pb-8;
-        font-family: degular, sans-serif;
+        font-family: Degular, sans-serif;
         vertical-align: middle;
         line-height: 1.1;
         font-weight: bold
@@ -34,13 +34,19 @@
         @apply text-2xl p-2;
     }
     .number{
-        font-family: degular-display, sans-serif;
+        font-family: Degular-Display, sans-serif;
     }
     .heading {
         @apply text-8xl;
     }
     .section-heading {
-        @apply text-4xl mt-8;
+        @apply text-4xl;
+    }
+    .leftAligned {
+        @apply col-start-2 col-span-3;
+    }
+    .rightAligned {
+        @apply col-start-9 col-span-3;
     }
     .highlight {
         @apply bg-primary text-white rounded;
@@ -50,5 +56,8 @@
     }
     .source{
         @apply text-sm;
+    }
+    .marginSide{
+        @apply md:mx-[45px]
     }
 }

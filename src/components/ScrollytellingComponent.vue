@@ -36,22 +36,24 @@ const scroller = scrollama()
 
 const emit = defineEmits(['step-progress', 'step-enter', 'step-exit'])
 onMounted(() => {
-    scroller.destroy()
+    setTimeout(() => {
+        scroller.destroy()
 
-    const { offset, progress, threshold, once, debug } = props
+const { offset, progress, threshold, once, debug } = props
 
-    const step = [...parent.value.children]
-    scroller
-        .setup({ step, offset, progress, threshold, once, debug})
-        .onStepEnter(resp => {
-            emit('step-enter', resp);
-        })
-        .onStepProgress(resp => {
-            emit('step-progress', resp)
-        })
-        .onStepExit(resp => {
-            emit('step-exit', resp);
-        })
+const step = [...parent.value.children]
+scroller
+    .setup({ step, offset, progress, threshold, once, debug})
+    .onStepEnter(resp => {
+        emit('step-enter', resp);
+    })
+    .onStepProgress(resp => {
+        emit('step-progress', resp)
+    })
+    .onStepExit(resp => {
+        emit('step-exit', resp);
+    })
+    },100)
 })
 </script>
 <template>
