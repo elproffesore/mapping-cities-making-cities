@@ -24,7 +24,7 @@ function updateMenu(resp) {
     updateMenuProgress.value = resp.progress
 }
 onMounted(async () => {
-    const response = await fetch('/crisis.json', {
+    const response = await fetch('./crisis.json', {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -32,7 +32,7 @@ onMounted(async () => {
     })
     data.statistics = await response.json()
     selectedOptionPerceivedTruth.value = Object.keys(data.statistics.Crisis.FeltRealities)[0]
-    const responseTime = await fetch('/crisis_overtime.json', {
+    const responseTime = await fetch('./crisis_overtime.json', {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
