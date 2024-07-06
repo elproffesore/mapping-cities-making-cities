@@ -114,8 +114,16 @@ watch(() => props.selectedOption, function (nv) {
 })
 </script>
 <template>
+    <div>
         <div>
             <svg :id="'barComparison'" class="h-[33vh]" width="100%" height="100%"></svg>
         </div>
+        <div>
+            <hr>
+            <p class="text-right text-xs">Quelle</p>
+        </div>
+        
+    </div>
+
 </template>
 <style></style>
