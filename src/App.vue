@@ -7,7 +7,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import SelectionComponent from './components/SelectionComponent.vue';
 import CitationComponent from './components/CitationComponent.vue';
-import SourceComponent from './components/SourceComponent.vue';
+import LinePlotComponent from './components/Visualizations/LinePlotComponent.vue';
 import { ref, onMounted, reactive } from 'vue';
 const updateMenuNumber = ref(0)
 const updateMenuProgress = ref(0)
@@ -23,20 +23,39 @@ function updateMenu(resp) {
     updateMenuProgress.value = resp.progress
 }
 onMounted(async () => {
-    const response = await fetch('/data.json')
+    const response = await fetch('/crisis.json', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
     data.statistics = await response.json()
-    console.log(Object.keys(data.statistics.Krise.T1))
+    const responseTime = await fetch('/crisis_overtime.json', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    data.statisticsTime = await responseTime.json()
+    selectedOptionWhoIsConcerned.value = Object.keys(data.statisticsTime)[0]
 })
+const heighestGroup = ref('')
+const heighestGroupPercent = ref(0)
+function setHeighestGroup(group,percent) {
+    heighestGroup.value = group
+    heighestGroupPercent.value = percent
+}
 </script>
 <template>
     <div class="">
         <GridComponent class="items-center h-[90vh] md:mt-[45px] md:m-[45px]">
-            <div class="row-start-1 text-left md:col-span-8">
+            <div class="row-start-1 text-left md:col-span-6">
                 <h1 class="text-3xl md:heading">
-                    <span class=" underline decoration-primary decoration-8" style="padding: initial;">Apocalypse</span>
-                    now
+                    It's the 
+                    <span class=" underline decoration-primary decoration-8" style="padding: initial;">Crisis</span>,<br>
+                    stupid!
                 </h1>
-                <h2> - Democracy put to a Test</h2>
+                <h2>How a feeling keeps us captivated. </h2>
             </div>
             <div class="row-start-3 md:col-span-6 self-end">
                 <p> The phenomena of crises are omnipresent in our times - whether climate crisis, financial crisis,
@@ -46,7 +65,7 @@ onMounted(async () => {
                     And
                     which groups are experiencing which crises?</p>
             </div>
-            <img class="row-span-3 col-span-10 col-start-9" src="./assets/images/Welt.png" alt="">
+            <img class="row-span-3 col-span-10 col-start-8" src="./assets/images/Welt.png" alt="">
         </GridComponent>
         <AppHeader class="invisible md:visible" :updateMenuNumber="updateMenuNumber"
             :updateMenuProgress="updateMenuProgress" />
@@ -72,28 +91,33 @@ onMounted(async () => {
                 <img class="col-start-2 col-span-10" src="./assets/images/multicrisis.png" alt="">
             </GridComponent>
             <GridComponent class="md:mt-[25vh]">
-                <hr class="text-primary col-span-4">
-                <h1 class="section-heading col-start-2 col-span-4 text-left" id="who-is-concerned">Who is concerned?</h1>
-                <p class="col-start-2 col-span-5">
-                    If we look at the differences of perceived crisis througout
-                    <select ref="selection" class="w-min p-[2px] text-white bg-primary rounded"
+                <div class="col-start-7 col-span-5">
+                    <h1 class="section-heading  text-left" id="who-is-concerned">Who is feeling the crisis?</h1>
+                    <p>While some focus on the melting of the polar caps, others fear the decline of their culture due to foreign overrun. Groups even contradict on each other's crises perception and deny the existence of the other's crises. Stereotypes are mixed with factual realities. Still, perception of crises and the extent to which people are affected by them depends heavily on their own <span class="underline decoration-primary">social position</span>. The following section will introduce some of these groups and their feeling for crisis.</p>
+                </div>
+                <GridComponent class="col-start-2 col-span-10 mt-16">
+                    <div class="col-start-1 col-span-6">
+                        <h1>Social status and crisis perception</h1>
+                    <p>
+                        The topic of generational justice became very prominent with a rising awareness on climate justice. How (much) crisis do different generations, genders feel? How crisis preceived in different classes? Are people more concered if their income is less or of they live on the countryside?
+                    </p>
+                    <br>
+                    <p>
+                        If we look at the differences of perceived crisis throughout <select ref="selection" class="w-min p-[2px] text-white bg-primary rounded"
                         v-on:change="updateSelectedOptionWhoIsConcerned">
-                        <option v-for="(option, index) in Object.keys(data.statistics?.Krise.T1 ?? [])" :key="index"
+                        <option v-for="(option, index) in Object.keys(data.statisticsTime ?? {})" :key="index"
                             :value="index">
                             {{ option }}
+                            
                         </option>
-                    </select>, we can see that "selected" shows the highest level of crisis perception.
-                </p>
-                <BarComparison :data="data.statistics?.Krise.T1 ?? {}" :left="true" :progress="updateMenuProgress"
-                    :current-index="updateMenuNumber" :component-index="1"
-                    :selected-option="selectedOptionWhoIsConcerned" :maxValue="7" class="col-start-2 col-span-4">
-                    <h1>Perceived Crisis</h1>
-                </BarComparison>
-                <BarComparison :data="data.statistics?.Anger.T1 ?? {}" :left="true" :progress="updateMenuProgress"
-                    :current-index="updateMenuNumber" :component-index="2"
-                    :selected-option="selectedOptionWhoIsConcerned" :maxValue="7" class="col-start-6 col-span-6">
-                    <h1>Anger</h1>
-                </BarComparison>
+                    </select>. We can see that <span class="underline decoration-primary">{{heighestGroup}}</span> shows the highest level of crisis perception with <span class="underline decoration-primary">{{heighestGroupPercent}}%</span> at the moment.
+                    </p>
+                    </div>
+
+                    <LinePlotComponent class="col-start-7 col-span-6" @group-update="setHeighestGroup" :data="data.statisticsTime ?? {}" :componentIndex="0" :selectedOption="selectedOptionWhoIsConcerned" >
+                    </LinePlotComponent>
+                </GridComponent>
+
             </GridComponent>
             <GridComponent class="md:mt-[25vh]">
                     <hr class="col-span-8 col-start-5 text-primary">
