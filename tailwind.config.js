@@ -13,6 +13,8 @@ module.exports = {
         white: "#fff",
         background: "#f5f5f5",
         primary: "#f15060",
+        secondary: "#BEB6F2",
+
       },
       fontSize:{
         'xs': '.75rem',

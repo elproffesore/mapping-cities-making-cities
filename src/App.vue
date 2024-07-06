@@ -2,11 +2,8 @@
 import GridComponent from './components/GridComponent.vue';
 import ScrollytellingComponent from './components/ScrollytellingComponent.vue';
 import BarComparison from './components/Visualizations/BarComparison.vue';
-import PointOnLineComparison from './components/Visualizations/PointOnLineComparison.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-import SelectionComponent from './components/SelectionComponent.vue';
-import CitationComponent from './components/CitationComponent.vue';
 import LinePlotComponent from './components/Visualizations/LinePlotComponent.vue';
 import { ref, onMounted, reactive } from 'vue';
 const updateMenuNumber = ref(0)
@@ -17,6 +14,10 @@ const data = reactive({})
 const selectedOptionWhoIsConcerned = ref('')
 function updateSelectedOptionWhoIsConcerned(target) {
     selectedOptionWhoIsConcerned.value = target.explicitOriginalTarget[target.explicitOriginalTarget.value].innerText
+}
+const selectedOptionPerceivedTruth = ref('')
+function updateSelectedOptionPerceivedTruth(target) {
+    selectedOptionPerceivedTruth.value = target.explicitOriginalTarget[target.explicitOriginalTarget.value].innerText
 }
 function updateMenu(resp) {
     updateMenuNumber.value = resp.index
@@ -30,6 +31,7 @@ onMounted(async () => {
         }
     })
     data.statistics = await response.json()
+    selectedOptionPerceivedTruth.value = Object.keys(data.statistics.Crisis.FeltRealities)[0]
     const responseTime = await fetch('/crisis_overtime.json', {
         headers: {
             'Content-Type': 'application/json',
@@ -99,11 +101,11 @@ function setHeighestGroup(group,percent) {
                     <div class="col-start-1 col-span-6">
                         <h1>Social status and crisis perception</h1>
                     <p>
-                        The topic of generational justice became very prominent with a rising awareness on climate justice. How (much) crisis do different generations, genders feel? How crisis preceived in different classes? Are people more concered if their income is less or of they live on the countryside?
+                        The topic of generational justice became very prominent with a rising awareness on climate justice. How (much) crisis do different generations, genders or income groups feel?
                     </p>
                     <br>
                     <p>
-                        If we look at the differences of perceived crisis throughout <select ref="selection" class="w-min p-[2px] text-white bg-primary rounded"
+                        If we look at the differences of perceived crisis throughout <select ref="selection" class="w-min p-[4px] text-white bg-primary rounded"
                         v-on:change="updateSelectedOptionWhoIsConcerned">
                         <option v-for="(option, index) in Object.keys(data.statisticsTime ?? {})" :key="index"
                             :value="index">
@@ -120,71 +122,33 @@ function setHeighestGroup(group,percent) {
 
             </GridComponent>
             <GridComponent class="md:mt-[25vh]">
-                    <hr class="col-span-8 col-start-5 text-primary">
-                    <h1 class="section-heading col-span-6 col-start-6 text-left" id="felt-realities">Stepping into the fields of
-                        felt realities</h1>
-                <CitationComponent class="col-start-2 col-span-3">
-                    <template #image><img src="./assets/images/thomastheorem.png"></template>
-                    <template #quote>
-                        <b class=" pt-4 text-2xl"><span class="text-primary">"</span>If people define
-                            situations as real, then their consequences are also real.<span
-                                class="text-primary">"</span></b>
-                        <p class="text-xs pt-4">– Thomas-Theorem (1928)"</p>
-                    </template>
-                </CitationComponent>
+                <div class="col-start-2 col-span-10 justify-center flex" >
+                    <img class="w-[50%]" src="./assets/images/quote.png">
+                </div>
+            </GridComponent>
+            <GridComponent class="md:mt-[25vh]">
 
-                <!-- <PointOnLineComparison 
-                :data="crisis" 
-                :left="false" 
-                :progress="updateMenuProgress"
-                :current-index="updateMenuNumber" 
-                :component-index="2" 
-                :scrollable="true">
+                <BarComparison class="col-start-2 col-span-4 self-center" :data="data.statistics?.Crisis?.FeltRealities ?? {}" :selectedOption="selectedOptionPerceivedTruth">
+                </BarComparison>
+                <div class="col-span-5 col-start-7">
+                    <h1 class="section-heading text-left" id="felt-realities">Between real feelings and perceived truth</h1>
+                    <p>                <select ref="selection" class="w-min p-[4px] text-white bg-primary rounded"
+                        v-on:change="updateSelectedOptionPerceivedTruth">
+                        <option v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})" :key="index"
+                            :value="index">
+                            {{ option }}
+                            
+                        </option>
+                    </select></p>
                     <p>
-                        "If people define situations as real, then their consequences are also real."
-                        Thomas-Theorem (1928)
-                        According to famous Thomas Theorem, formulated by by William and Dorothy Thomas in 1928, we can
-                        point
-                        out, that
-                        the interpretation of a situation (however "objectively" false it may appear) has real
-                        consequences
-                        because the
-                        actions of actors are based on their definition of the situation. In other words, the
-                        interpretation
-                        of
-                        a
-                        situation causes the action. This interpretation is not objective. Actions are affected by
-                        subjective
-                        perceptions of situations. Whether there even is an objectively correct interpretation is not
-                        important
-                        for the
-                        purposes of helping guide individuals' behavior.
-
-                        [ hier Daten zu Angst vor Rechnungen zahlen obwohl real keine finanzielle Schieflage besteht]
+                        According to famous Thomas Theorem, formulated by by William and Dorothy Thomas in 1928, we can point out, that the interpretation of a situation (however "objectively" false it may appear) has real consequences because the actions of actors are based on their definition of the situation. In other words, the interpretation of a situation causes the action. This interpretation is not objective. Actions are affected by subjective perceptions of situations. Whether there even is an objectively correct interpretation is not important for the purposes of helping guide individuals' behavior.
                     </p>
+                    <br>
                     <p>
-                        "If people define situations as real, then their consequences are also real."
-                        Thomas-Theorem (1928)
-                        According to famous Thomas Theorem, formulated by by William and Dorothy Thomas in 1928, we can
-                        point
-                        out, that
-                        the interpretation of a situation (however "objectively" false it may appear) has real
-                        consequences
-                        because the
-                        actions of actors are based on their definition of the situation. In other words, the
-                        interpretation
-                        of
-                        a
-                        situation causes the action. This interpretation is not objective. Actions are affected by
-                        subjective
-                        perceptions of situations. Whether there even is an objectively correct interpretation is not
-                        important
-                        for the
-                        purposes of helping guide individuals' behavior.
-
-                        [ hier Daten zu Angst vor Rechnungen zahlen obwohl real keine finanzielle Schieflage besteht]
+                        People that show the feeling of crisis are especially more extreme in the estimation of their current situation. A hightened sense of anxiety can hinder curiosity and strengthen the tendency to stick to our own beliefs; it can make us prone to extreme positions which provide a clear interpretation of our multi faceted and ever changing reality.
                     </p>
-                </PointOnLineComparison> -->
+                </div>
+
             </GridComponent>
             <GridComponent class="md:mt-[25vh]">
                 <div class="col-span-6 text-primary">
@@ -206,6 +170,7 @@ function setHeighestGroup(group,percent) {
                     to
                     handle a crises. Strong</p>
                 <img class="col-start-8 col-span-4 self-start row-span-2 " src="./assets/images/Bundestag.png" alt="">
+                <img class="col-start-4 col-span-6 self-start row-span-3 " src="./assets/images/afd.png" alt="">
             </GridComponent>
             <GridComponent>
                 <h1 class="section-heading col-span-12" id="crisis-resilience">Crisis Resilience</h1>

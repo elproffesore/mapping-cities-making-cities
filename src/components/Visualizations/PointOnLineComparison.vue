@@ -1,8 +1,6 @@
 <script setup>
 import * as d3 from 'd3'
 import { ref, onMounted,watch } from 'vue'
-import useProgressCalculator from '../../functions/useProgressCalculator.js'
-import SourceComponent from '../SourceComponent.vue'
 const props = defineProps({
     data: {
         type: Array,
