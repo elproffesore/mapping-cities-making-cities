@@ -24,12 +24,12 @@ onMounted(() => {
     svg.value = d3.select('#barComparison')
     .attr('height', height.value)
     .attr('width', width.value)
-    scaleX.value = d3.scaleLinear().domain([0, 100]).range([padding.value, width.value - padding.value])
+    scaleX.value = d3.scaleLinear().domain([0, 100]).range([10, width.value])
     svg.value.append('rect')        
-        .attr('x', 0 + padding.value)
+        .attr('x', 10)
         .attr('rx', 10)
         .attr('ry', 10)
-        .attr('width', d => scaleX.value(100))
+        .attr('width', d => scaleX.value(100)-10)
         .attr('height', barHeight)
         .attr('fill', '#ccc')
 
@@ -68,7 +68,7 @@ function updateBarComparison() {
     let enter = update.enter()
         .append('rect')
         .attr('class', 'barComparison')
-        .attr('x', 0)
+        .attr('x', 10)
         .attr('rx', 10)
         .attr('ry', 10)
         .attr('width', d => scaleX.value(props.data[props.selectedOption][d]))
@@ -91,7 +91,7 @@ function updateBarComparison() {
     let enterText = text.enter()
         .append('text')
         .attr('class', 'barComparisonText text-text')
-        .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-15)
+        .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-5)
         .attr('y', (d, i) => barHeight + 35)
         .text(d => props.data[props.selectedOption][d] + "%")
         .attr('text-anchor', 'middle')
@@ -102,7 +102,7 @@ function updateBarComparison() {
     enterText.merge(text)
         .transition()
         .duration(600)
-        .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-15)
+        .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-5)
         .text(d => props.data[props.selectedOption][d] + "%")
 
     let line= svg.value.selectAll('.barComparisonLine')
@@ -114,7 +114,7 @@ function updateBarComparison() {
     .append('path')
     .attr('class', 'barComparisonLine')
     .attr('d', d => {
-        return `M ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+5} L ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+20}`
+        return `M ${scaleX.value(props.data[props.selectedOption][d])-5},${barHeight+5} L ${scaleX.value(props.data[props.selectedOption][d])-5},${barHeight+20}`
     })
     .attr('stroke', 'black')
     .attr('stroke-width', 1)
@@ -124,7 +124,7 @@ function updateBarComparison() {
     .transition()
     .duration(600)
     .attr('d', d => {
-        return `M ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+5} L ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+20}`
+        return `M ${scaleX.value(props.data[props.selectedOption][d])-5},${barHeight+5} L ${scaleX.value(props.data[props.selectedOption][d])-5},${barHeight+20}`
     })
 
 }
