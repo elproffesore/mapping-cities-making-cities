@@ -149,6 +149,10 @@ function emitGroupUpdate() {
 <template>
         <div>
             <svg :id="'linePlot'" class="h-[33vh]" width="100%" height="100%"></svg>
+            <div class="mt-4">
+                <hr>
+                <p class="text-right text-xs">Quelle</p>
+            </div>
         </div>
 </template>
 <style></style>

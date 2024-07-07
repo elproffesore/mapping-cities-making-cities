@@ -35,7 +35,7 @@ onMounted(() => {
 
     const legend = svg.value.append('g')
                 .attr('class', 'legend')
-                .attr('transform', `translate(${0},${height.value-25})`)
+                .attr('transform', `translate(${0},${height.value-15})`)
                 .selectAll('.legend-item')
                 .data(['No Crisis Feeling','Crisis Feeling'])
                 .enter()
@@ -60,7 +60,6 @@ onMounted(() => {
 })
 function updateBarComparison() {
     if (Object.keys(props.data).length == 0) return
-    console.log(Object.keys(props.data[props.selectedOption]))
     let update = svg.value.selectAll('.barComparison')
         .data(Object.keys(props.data[props.selectedOption]))
 
@@ -130,18 +129,19 @@ function updateBarComparison() {
 
 }
 watch(() => props.data, function (nv) {
-    console.log('data changed')
     updateBarComparison()
 })
 watch(() => props.selectedOption, function (nv) {
-    console.log('selectedOption changed')
     updateBarComparison()
 })
 </script>
 <template>
         <div>
             <svg :id="'barComparison'" class="h-[25vh]" width="100%" height="100%"></svg>
+            <div class="mt-4">
+                <hr>
+                <p class="text-right text-xs">Quelle</p>
+            </div>
         </div>
-
 </template>
 <style></style>

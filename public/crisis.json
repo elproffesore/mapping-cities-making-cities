@@ -51,35 +51,30 @@
                 "NoCrisis": 7.0
             }
         },
-        "Democracy": {
-            "TrustGov": {
+        "Institutions": {
+            "Trust in Government": {
                 "Crisis": 30.0,
                 "NoCrisis": 53.0
             },
-            "TrustPolice": {
-                "Crisis": 72.0,
-                "NoCrisis": 88.0
-            },
-            "TrustLegal": {
-                "Crisis": 55.0,
-                "NoCrisis": 80.0
-            },
-            "Demo": {
-                "Crisis": 61.0,
-                "NoCrisis": 68.0
-            },
-            "Nationalism": {
-                "Crisis": 65.0,
-                "NoCrisis": 55.0
-            },
-            "Dictatorship": {
-                "Crisis": 14.0,
-                "NoCrisis": 6.0
-            },
-            "LikesAFD": {
+            "Favors AFD": {
                 "Crisis": 20.0,
                 "NoCrisis": 8.0
             },
+            "Favors Die Grünen": {
+                "Crisis": 7.0,
+                "NoCrisis": 15.0
+            }
+        },
+        "Democracy":{
+            "Affirmation of Nationalism": {
+                "Crisis": 65.0,
+                "NoCrisis": 55.0
+            },
+            "Affirmation of Dictatorship": {
+                "Crisis": 14.0,
+                "NoCrisis": 6.0
+            },
+
             "LikesAFDAndDictatorship": {
                 "LikesAFD": 28.0,
                 "IndifferentAFD": 5.0
@@ -87,11 +82,8 @@
             "LikesAFDAndNationalism": {
                 "LikesAFD": 90.0,
                 "IndifferentAFD": 53.0
-            },
-            "LikesGruene": {
-                "Crisis": 7.0,
-                "NoCrisis": 15.0
             }
+
         }
     }
 }
