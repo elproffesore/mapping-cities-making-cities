@@ -16,8 +16,10 @@ function updateSelectedOptionWhoIsConcerned(target) {
     selectedOptionWhoIsConcerned.value = target.explicitOriginalTarget[target.explicitOriginalTarget.value].innerText
 }
 const selectedOptionPerceivedTruth = ref('')
-function updateSelectedOptionPerceivedTruth(target) {
-    selectedOptionPerceivedTruth.value = target.explicitOriginalTarget[target.explicitOriginalTarget.value].innerText
+const selectedOptionPerceivedTruthIndex = ref(0)
+function updateSelectedOptionPerceivedTruth(option,index) {
+    selectedOptionPerceivedTruth.value = option;
+    selectedOptionPerceivedTruthIndex.value = index
 }
 function updateMenu(resp) {
     updateMenuNumber.value = resp.index
@@ -90,7 +92,7 @@ function setHeighestGroup(group,percent) {
                         common ground of perception, share mitigation strategy and build collective resilience?
                     </p>
                 </div>
-                <img class="col-start-2 col-span-10" src="./assets/images/multicrisis.png" alt="">
+                <img class="col-start-2 col-span-10" src="./assets/images/polycrisis.png" alt="">
             </GridComponent>
             <GridComponent class="md:mt-[25vh]">
                 <div class="col-start-7 col-span-5">
@@ -105,7 +107,7 @@ function setHeighestGroup(group,percent) {
                     </p>
                     <br>
                     <p>
-                        If we look at the differences of perceived crisis throughout <select ref="selection" class="w-min p-[4px] text-white bg-primary rounded"
+                        If we look at the differences of perceived crisis throughout <select ref="selection" class="w-min p-[2px] text-white bg-primary rounded"
                         v-on:change="updateSelectedOptionWhoIsConcerned">
                         <option v-for="(option, index) in Object.keys(data.statisticsTime ?? {})" :key="index"
                             :value="index">
@@ -127,19 +129,26 @@ function setHeighestGroup(group,percent) {
                 </div>
             </GridComponent>
             <GridComponent class="md:mt-[25vh]">
-
-                <BarComparison class="col-start-2 col-span-4 self-center" :data="data.statistics?.Crisis?.FeltRealities ?? {}" :selectedOption="selectedOptionPerceivedTruth">
-                </BarComparison>
+                <div class="col-start-2 col-span-4 grid items-center">
+                    <div class="flex gap-5 justify-center">
+                        <button class="button" v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})" :key="index"
+                    :value="index" @click="updateSelectedOptionPerceivedTruth(option,index)" >{{option}}</button>
+                    </div>
+                    <h1 class="text-center">{{ [
+                        'I am feeling a sort of doomsday mood.',
+                        'I am suffering more than others in the current situation.',
+                        'Recently, my situation has deteriorated significantly.',
+                        'To what extent are you concerned about no longer being able to pay your bills?'
+                        ][selectedOptionPerceivedTruthIndex] }}</h1>
+                    <BarComparison :data="data.statistics?.Crisis?.FeltRealities ?? {}" :selectedOption="selectedOptionPerceivedTruth">
+                    </BarComparison>
+                    <div>
+                        <hr>
+                        <p class="text-right text-xs">Quelle</p>
+                    </div>
+                </div>
                 <div class="col-span-5 col-start-7">
                     <h1 class="section-heading text-left" id="felt-realities">Between real feelings and perceived truth</h1>
-                    <p>                <select ref="selection" class="w-min p-[4px] text-white bg-primary rounded"
-                        v-on:change="updateSelectedOptionPerceivedTruth">
-                        <option v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})" :key="index"
-                            :value="index">
-                            {{ option }}
-                            
-                        </option>
-                    </select></p>
                     <p>
                         According to famous Thomas Theorem, formulated by by William and Dorothy Thomas in 1928, we can point out, that the interpretation of a situation (however "objectively" false it may appear) has real consequences because the actions of actors are based on their definition of the situation. In other words, the interpretation of a situation causes the action. This interpretation is not objective. Actions are affected by subjective perceptions of situations. Whether there even is an objectively correct interpretation is not important for the purposes of helping guide individuals' behavior.
                     </p>
@@ -151,11 +160,9 @@ function setHeighestGroup(group,percent) {
 
             </GridComponent>
             <GridComponent class="md:mt-[25vh]">
-                <div class="col-span-6 text-primary">
-                    <hr>
-                    <h1 class="section-heading text-text text-right" id="effects-on-democracy">Effects on Democracy</h1>
-                </div>
-                <p class="col-start-2 col-span-4"> Different Interpretation of Realities has strong effects on
+                <div class="col-start-2 col-span-5">
+                    <h1 class="section-heading" id="effects-on-democracy">Effects on Democracy</h1>
+                    <p> Different Interpretation of Realities has strong effects on
                     cooperation in a
                     democratic
                     system. The perception of urgent fields of actions varies strongly- and the higher your crises
@@ -169,7 +176,8 @@ function setHeighestGroup(group,percent) {
                     how
                     to
                     handle a crises. Strong</p>
-                <img class="col-start-8 col-span-4 self-start row-span-2 " src="./assets/images/Bundestag.png" alt="">
+                </div>
+                <img class="col-start-7 col-span-4 self-start mt-[-40%]" src="./assets/images/Bundestag.png" alt="">
                 <img class="col-start-4 col-span-6 self-start row-span-3 " src="./assets/images/afd.png" alt="">
             </GridComponent>
             <GridComponent>

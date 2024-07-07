@@ -46,10 +46,6 @@
                 "Crisis": 27.0,
                 "NoCrisis": 4.0
             },
-            "Situation": {
-                "Crisis": 55.0,
-                "NoCrisis": 13.0
-            },
             "Bills": {
                 "Crisis": 36.0,
                 "NoCrisis": 7.0

@@ -32,6 +32,31 @@ onMounted(() => {
         .attr('width', d => scaleX.value(100))
         .attr('height', barHeight)
         .attr('fill', '#ccc')
+
+    const legend = svg.value.append('g')
+                .attr('class', 'legend')
+                .attr('transform', `translate(${0},${height.value-25})`)
+                .selectAll('.legend-item')
+                .data(['No Crisis Feeling','Crisis Feeling'])
+                .enter()
+                .append('g')
+                .attr('class', 'legend-item')
+                .attr('transform', (d, i) => `translate(${i * 125},0)`)
+            
+            legend.append('rect')
+                .attr('x', 0)
+                .attr('y', 0)
+                .attr('rx',2)
+                .attr('class', 'legend-rect')
+                .attr('width', 10)
+                .attr('height', 10)
+                .attr('fill', (d,i) => d == 'Crisis Feeling' ? 'var(--primary)' : 'var(--secondary)')
+
+            legend.append('text')
+                .attr('x', 15)
+                .attr('y', 10)
+                .attr('class', 'text-xs legend-text')
+                .text(d => d);
 })
 function updateBarComparison() {
     if (Object.keys(props.data).length == 0) return
@@ -68,7 +93,7 @@ function updateBarComparison() {
         .append('text')
         .attr('class', 'barComparisonText text-text')
         .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-15)
-        .attr('y', (d, i) => barHeight + 50)
+        .attr('y', (d, i) => barHeight + 35)
         .text(d => props.data[props.selectedOption][d] + "%")
         .attr('text-anchor', 'middle')
         .attr('alignment-baseline', 'middle')
@@ -90,7 +115,7 @@ function updateBarComparison() {
     .append('path')
     .attr('class', 'barComparisonLine')
     .attr('d', d => {
-        return `M ${scaleX.value(props.data[props.selectedOption][d])-15},0 L ${scaleX.value(props.data[props.selectedOption][d])-15},15`
+        return `M ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+5} L ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+20}`
     })
     .attr('stroke', 'black')
     .attr('stroke-width', 1)
@@ -100,7 +125,7 @@ function updateBarComparison() {
     .transition()
     .duration(600)
     .attr('d', d => {
-        return `M ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+10} L ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+30}`
+        return `M ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+5} L ${scaleX.value(props.data[props.selectedOption][d])-15},${barHeight+20}`
     })
 
 }
@@ -114,16 +139,9 @@ watch(() => props.selectedOption, function (nv) {
 })
 </script>
 <template>
-    <div>
         <div>
-            <svg :id="'barComparison'" class="h-[33vh]" width="100%" height="100%"></svg>
+            <svg :id="'barComparison'" class="h-[25vh]" width="100%" height="100%"></svg>
         </div>
-        <div>
-            <hr>
-            <p class="text-right text-xs">Quelle</p>
-        </div>
-        
-    </div>
 
 </template>
 <style></style>

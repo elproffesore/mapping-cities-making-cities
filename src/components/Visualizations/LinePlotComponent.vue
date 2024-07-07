@@ -83,6 +83,7 @@ function updateLinePlot() {
             legend.append('rect')
                 .attr('x', 0)
                 .attr('y', 0)
+                .attr('rx',2)
                 .attr('class', 'legend-rect')
                 .attr('width', 10)
                 .attr('height', 10)
