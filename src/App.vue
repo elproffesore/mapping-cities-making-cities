@@ -92,7 +92,7 @@ function setHeighestGroup(group, percent) {
                         move. What do you experience?
                     </p>
                 </div>
-                <img class="col-start-2 col-span-10" src="./assets/images/polycrisis.png" alt="">
+                <img class="col-start-2 col-span-10" src="./assets/images/polycrisis_new.png" alt="">
             </GridComponent>
             <GridComponent id="who-is-concerned" class="md:mt-[25vh]">
                 <div class="col-start-2 col-span-10 grid grid-cols-12 items-center">
