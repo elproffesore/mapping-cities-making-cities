@@ -239,7 +239,7 @@ function setHeighestGroup(group, percent) {
 
 
                 </div>
-                <img class="col-start-4 col-span-6" src="./assets/images/afd.png" alt="">
+                <img class="col-start-4 col-span-6" src="./assets/images/democracy.png" alt="">
 
             </GridComponent>
             <GridComponent id="crisis-resilience" class="md:mt-[50vh]">
