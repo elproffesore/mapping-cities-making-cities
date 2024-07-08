@@ -224,7 +224,7 @@ function setHeighestGroup(group, percent) {
                     <img class="" src="./assets/images/Bundestag.png" alt="">
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col items-center justify-center gap-8">
-                    <h1 class="text-center">Trust in Democratic Institutions and Political Parties</h1>
+                    <h1 class="text-center">Crisis Impacts Trust in Democratic Institutions and Favorisation of Political Parties</h1>
                     <div class="flex gap-5">
                         <button class="button"
                             v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
