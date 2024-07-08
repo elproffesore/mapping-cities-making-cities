@@ -17,21 +17,21 @@ const svg = ref(null)
 const height = ref(0);
 const width = ref(0);
 onMounted(() => {
-    width.value = document.getElementById('relativePlot').getBoundingClientRect().width
-    height.value = document.getElementById('relativePlot').getBoundingClientRect().height
+    width.value = 10 * 40
+    height.value = 10 * 40 +50
     svg.value = d3.select('#relativePlot')
         .attr('height', height.value)
-        .attr('width', 10 * 40)
+        .attr('width', width.value)
 
     const legend = svg.value.append('g')
         .attr('class', 'legend')
         .attr('transform', `translate(${0},${height.value - 15})`)
         .selectAll('.legend-item')
-        .data(['No Crisis Feeling', 'Crisis Feeling'])
+        .data(['With no Crisis Feeling', 'With Crisis Feeling'])
         .enter()
         .append('g')
         .attr('class', 'legend-item')
-        .attr('transform', (d, i) => `translate(${i * 125},0)`)
+        .attr('transform', (d, i) => `translate(${i * 155},0)`)
 
     legend.append('rect')
         .attr('x', 0)
@@ -40,7 +40,7 @@ onMounted(() => {
         .attr('class', 'legend-rect')
         .attr('width', 10)
         .attr('height', 10)
-        .attr('fill', (d, i) => d == 'Crisis Feeling' ? 'var(--primary)' : 'var(--secondary)')
+        .attr('fill', (d, i) => d == 'With Crisis Feeling' ? 'var(--primary)' : 'var(--secondary)')
 
     legend.append('text')
         .attr('x', 15)
@@ -120,12 +120,12 @@ watch(() => props.selectedOption, function (nv) {
             <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Crisis</span>
         </label>
         <div class="relative grid grid-cols-4 gap-8">
-            <svg :id="'relativePlot'" class="h-[60vh] col-span-4" height="100%"></svg>
+            <svg :id="'relativePlot'" class="col-span-4"></svg>
             <div class="mt-4 col-span-4">
                 <hr>
                 <p class="text-right text-xs">Quelle</p>
             </div>
-            <h2 class="absolute right-[-75px] " v-if="!(Object.keys(props.data).length == 0 || props.selectedOption == '')" >{{ switchCrisis?Object.values(props.data[props.selectedOption])[0]:Object.values(props.data[props.selectedOption])[1] }}% <br> of <br> 100%</h2>
+            <h2 class="absolute right-[-75px]" v-if="!(Object.keys(props.data).length == 0 || props.selectedOption == '')" >{{ switchCrisis?Object.values(props.data[props.selectedOption])[0]:Object.values(props.data[props.selectedOption])[1] }}% <br> out of <br> 100%</h2>
         </div>
 
     </div>

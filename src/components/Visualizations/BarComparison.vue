@@ -20,13 +20,15 @@ const barHeight = 100;
 const scaleX = ref(null)
 onMounted(() => {
     width.value = document.getElementById('barComparison').getBoundingClientRect().width 
-    height.value = document.getElementById('barComparison').getBoundingClientRect().height
+    height.value = barHeight + 100
+
     svg.value = d3.select('#barComparison')
     .attr('height', height.value)
     .attr('width', width.value)
-    scaleX.value = d3.scaleLinear().domain([0, 100]).range([10, width.value])
+
+    scaleX.value = d3.scaleLinear().domain([0, 100]).range([0, width.value])
     svg.value.append('rect')        
-        .attr('x', 10)
+        .attr('x', 0)
         .attr('rx', 10)
         .attr('ry', 10)
         .attr('width', d => scaleX.value(100)-10)
@@ -68,7 +70,7 @@ function updateBarComparison() {
     let enter = update.enter()
         .append('rect')
         .attr('class', 'barComparison')
-        .attr('x', 10)
+        .attr('x', 0)
         .attr('rx', 10)
         .attr('ry', 10)
         .attr('width', d => scaleX.value(props.data[props.selectedOption][d]))
@@ -137,11 +139,7 @@ watch(() => props.selectedOption, function (nv) {
 </script>
 <template>
         <div>
-            <svg :id="'barComparison'" class="h-[25vh]" width="100%" height="100%"></svg>
-            <div class="mt-4">
-                <hr>
-                <p class="text-right text-xs">Quelle</p>
-            </div>
+            <svg :id="'barComparison'" width="100%"></svg>
         </div>
 </template>
 <style></style>

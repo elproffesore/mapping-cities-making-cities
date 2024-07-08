@@ -56,13 +56,13 @@
                 "Crisis": 30.0,
                 "NoCrisis": 53.0
             },
+            "Trust in Legal": {
+                "Crisis": 55.0,
+                "NoCrisis": 80.0
+            },
             "Favors AFD": {
                 "Crisis": 20.0,
                 "NoCrisis": 8.0
-            },
-            "Favors Die Grünen": {
-                "Crisis": 7.0,
-                "NoCrisis": 15.0
             }
         },
         "Democracy":{
@@ -74,7 +74,6 @@
                 "Crisis": 14.0,
                 "NoCrisis": 6.0
             },
-
             "LikesAFDAndDictatorship": {
                 "LikesAFD": 28.0,
                 "IndifferentAFD": 5.0

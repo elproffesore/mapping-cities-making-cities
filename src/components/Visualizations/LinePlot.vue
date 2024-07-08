@@ -64,7 +64,7 @@ onMounted(() => {
         .call(d3.axisBottom(scaleX.value).ticks(4).tickFormat(d3.timeFormat('%b %Y')))
 })
 function updateLinePlot() {
-    const legendColors = ['var(--primary)','var(--secondary)', 'black', 'gray']
+    const legendColors = ['var(--primary)','var(--secondary)' ,'gray', '#f6f7eb']
     svg.value.selectAll('.legend').remove()
     svg.value.selectAll('.line').remove()
     svg.value.selectAll('polygon').remove()
@@ -149,10 +149,6 @@ function emitGroupUpdate() {
 <template>
         <div>
             <svg :id="'linePlot'" class="h-[33vh]" width="100%" height="100%"></svg>
-            <div class="mt-4">
-                <hr>
-                <p class="text-right text-xs">Quelle</p>
-            </div>
         </div>
 </template>
 <style></style>
