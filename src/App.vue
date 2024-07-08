@@ -223,7 +223,8 @@ function setHeighestGroup(group, percent) {
                 <div class="col-start-2 col-span-4 row-start-1">
                     <img class="" src="./assets/images/Bundestag.png" alt="">
                 </div>
-                <div class="col-start-2 col-span-10 flex flex-col items-center justify-center gap-14">
+                <div class="col-start-2 col-span-10 flex flex-col items-center justify-center gap-8">
+                    <h1 class="text-center">Trust in Democratic Institutions and Political Parties</h1>
                     <div class="flex gap-5">
                         <button class="button"
                             v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
@@ -239,9 +240,7 @@ function setHeighestGroup(group, percent) {
                     <h1>Populist Narratives and the Idea(l) of a strong Leader</h1>
                     <p>In Germany, not only is there a clear polarization between
                         people favoring the Green party and the AFD. The datasets show, that as a dangerous reflex
-                        to crisis people who sympathise with the AfD, do also have a hire desire for a strong leader
-                        [Statement: is the agreement that under certain circumstances, a dictatorship is the better
-                        form of government in the national interest] as well as a higher opinion towards
+                        to crisis people who sympathise with the AfD, do also have a significant higher desire for a strong leader as well as a higher opinion towards
                         nationalism.
                     </p>
                 </div>
@@ -258,12 +257,10 @@ function setHeighestGroup(group, percent) {
                         wing ideals or simply defending the political and societal status quo. Because it is not only
                         the angry and sad who loose trust, we also observe a general tendency of eroding trust and
                         rising anger as well as polarization and favoring right wing parties amongst all examined
-                        groups.
+                        groups. In other words:
                     </p>
                     <br>
-                    <p>In other words: </p>
-                    <br>
-                    <p class="pl-4"><i> <b>»The traditional, hierarchical government model simply does not
+                    <p class="pl-4"><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
                                 worked age requires governments to change the way they think and operate. [...]
                                 we need to update our thinking.«</b></i> <br>(Eggers: »The changing nature of government«,

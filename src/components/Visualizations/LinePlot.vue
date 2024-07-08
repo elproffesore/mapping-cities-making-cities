@@ -23,7 +23,7 @@ onMounted(() => {
     width.value = document.getElementById('linePlot').getBoundingClientRect().width 
     height.value = document.getElementById('linePlot').getBoundingClientRect().height
     scaleX.value = d3.scaleLinear().domain([new Date('2023-06-01'), new Date('2024-02-01')]).range([padding.value, width.value ])
-    scaleY.value = d3.scaleLinear().domain([100, 0]).range([padding.value, height.value - padding.value])
+    scaleY.value = d3.scaleLinear().domain([50, 0]).range([padding.value, height.value - padding.value])
     
     svg.value = d3.select('#linePlot')
         .attr('width', width.value)

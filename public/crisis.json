@@ -63,6 +63,10 @@
             "Favors AFD": {
                 "Crisis": 20.0,
                 "NoCrisis": 8.0
+            },
+            "Favors Die Grünen": {
+                "Crisis": 7.0,
+                "NoCrisis": 15.0
             }
         },
         "Democracy":{
