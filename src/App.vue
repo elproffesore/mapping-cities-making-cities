@@ -13,9 +13,7 @@ const data = reactive({})
 
 
 const selectedOptionWhoIsConcerned = ref('')
-function updateSelectedOptionWhoIsConcerned(target) {
-    selectedOptionWhoIsConcerned.value = target.explicitOriginalTarget[target.explicitOriginalTarget.value].innerText
-}
+
 const selectedOptionPerceivedTruth = ref('')
 const selectedOptionPerceivedTruthIndex = ref(0)
 function updateSelectedOptionPerceivedTruth(option, index) {
@@ -124,9 +122,9 @@ function setHeighestGroup(group, percent) {
                         <p>
                             If we look at the differences of perceived crisis throughout <select ref="selection"
                                 class="w-min p-[2px] text-white bg-primary rounded"
-                                v-on:change="updateSelectedOptionWhoIsConcerned">
+                                v-model="selectedOptionWhoIsConcerned">
                                 <option v-for="(option, index) in Object.keys(data.statisticsTime ?? {})" :key="index"
-                                    :value="index">
+                                    :value="option">
                                     {{ option }}
 
                                 </option>
