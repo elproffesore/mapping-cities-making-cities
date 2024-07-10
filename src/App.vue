@@ -185,9 +185,9 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
 
                     <p><b>See for yourself how people the people that had the feeling of crisis perceived their situation differently than those who didn't feel the crisis</b></p>
                 </div>
-                <div class="col-start-2 col-span-10 flex flex-col gap-4 justify-center md:col-start-2 md:col-span-4 md:row-start-2">
+                <div class="col-start-2 col-span-10 flex flex-col gap-4 justify-center md:col-start-2 md:col-span-5 md:row-start-2">
                     <div class="flex flex-col gap-5">
-                        <h1>Perceived Crisis Boosts Strong Pessimistic Stance</h1>
+                        <h1>Perceived Crisis boosts strong Pessimistic Stance</h1>
                         <div class="flex gap-5 justify-between">
                             <button class="button"
                                 v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})"
@@ -233,7 +233,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             handle a crises. </p>
                             <br>
                 </div>
-                <div class="col-start-2 col-span-10 flex flex-col justify-center gap-8 md:col-start-7 md:col-span-5">
+                <div class="col-start-2 col-span-10 flex flex-col justify-center gap-4 md:col-start-7 md:col-span-5">
                     <h1 class="text-left">Feeling of Crisis damages Trust in Democratic Institutions                                
                         <!-- <select
                                     class="w-min select text-white bg-primary rounded"
@@ -251,7 +251,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                 :class="selectedOptionTrustInInstitutionsIndex == index ? 'bg-primary text-white' : ''"
                                 @click="updateSelectedOptionTrustInInstitutions(option, index, this)">{{ option }}</button>
                         </div>
-                    <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full my-16" :data="data.statistics?.Crisis.Institutions ?? {}"
+                    <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full my-8" :data="data.statistics?.Crisis.Institutions ?? {}"
                         :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
                     </DotonlineComparison>
                     <p>
