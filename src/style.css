@@ -45,7 +45,7 @@
         @apply text-8xl;
     }
     .section-heading {
-        @apply text-4xl;
+        @apply text-4xl text-left;
     }
     .leftAligned {
         @apply col-start-2 col-span-3;
@@ -54,7 +54,11 @@
         @apply col-start-9 col-span-3;
     }
     .highlight {
-        @apply bg-primary text-white rounded;
+        @apply bg-primary text-white rounded; 
+        padding: 1px 2px 2px 2px;  
+    }
+    .select{
+        padding: 0px 2px 2px 6px
     }
     select{
         transition: visibility 0.5s;

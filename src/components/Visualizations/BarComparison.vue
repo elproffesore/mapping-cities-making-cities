@@ -61,7 +61,7 @@ onMounted(() => {
                 .text(d => d);
 })
 function updateBarComparison() {
-    if (Object.keys(props.data).length == 0) return
+    if (Object.keys(props.data).length == 0 || props.selectedOption == "") return
     let update = svg.value.selectAll('.barComparison')
         .data(Object.keys(props.data[props.selectedOption]))
 

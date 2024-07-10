@@ -12,7 +12,7 @@ const props = defineProps({
         default: () => ""
     }
 })
-const padding = ref(50)
+const padding = ref(15)
 const width = ref(0)
 const height = ref(0)
 const svg = ref(null)
@@ -23,13 +23,13 @@ onMounted(() => {
     width.value = document.getElementById('linePlot').getBoundingClientRect().width 
     height.value = document.getElementById('linePlot').getBoundingClientRect().height
     scaleX.value = d3.scaleLinear().domain([new Date('2023-06-01'), new Date('2024-02-01')]).range([padding.value, width.value ])
-    scaleY.value = d3.scaleLinear().domain([50, 0]).range([padding.value, height.value - padding.value])
+    scaleY.value = d3.scaleLinear().domain([70, 0]).range([padding.value, height.value - padding.value])
     
     svg.value = d3.select('#linePlot')
         .attr('width', width.value)
         .attr('height', height.value)
     
-    let ticks = [0, 20, 40, 60, 80, 100]
+    let ticks = [0, 20, 40, 60]
     svg.value.append('g')
         .attr('class', 'y-axis')
         .attr('transform', `translate(${padding.value},0)`)
@@ -78,57 +78,59 @@ function updateLinePlot() {
                 .enter()
                 .append('g')
                 .attr('class', 'legend-item')
-                .attr('transform', (d, i) => `translate(${i * 75},0)`)
+                .attr('transform', (d, i) => `translate(${i * 100},0)`)
             
-            legend.append('rect')
-                .attr('x', 0)
-                .attr('y', 0)
-                .attr('rx',2)
-                .attr('class', 'legend-rect')
-                .attr('width', 10)
-                .attr('height', 10)
-                .attr('fill', (d,i) => legendColors[i])
+                legend.append('path')
+                .attr('d', 'M0,7 L25,7')
+                .attr('stroke', 'black')
+                .attr('stroke-width', 1.5)
+                .attr('fill', 'none')
+                .attr('stroke-dasharray',(d,i) => {
+                    switch(i){
+                        case 0:
+                            return '0'
+                        case 1:
+                            return '2 2'
+                        case 2:
+                            return '5 5'
+                        case 3:
+                            return '15 15'
+                    }
+                })
 
-            legend.append('text')
-                .attr('x', 15)
-                .attr('y', 10)
-                .attr('class', 'text-xs legend-text')
-                .text(d => d);
+                legend.append('text')
+                    .attr('x', 50)
+                    .attr('y', 10)
+                    .attr('class', 'text-xs legend-text')
+                    .text(d => d);
 
     Object.keys(props.data[props.selectedOption]).map((option,optioni) => {
             const line = d3.line()
             .x(d => scaleX.value(new Date(d)))
             .y(d => scaleY.value(props.data[props.selectedOption][option][d]))
-        
 
-            
-            svg.value.append('polygon')
-            .attr('points', [
-                [scaleX.value(new Date('2023-06-01')), scaleY.value(0)],
-                Object.keys(props.data[props.selectedOption][option]).map(k => [scaleX.value(new Date(k)), scaleY.value(0)]),
-                [scaleX.value(new Date('2024-02-01')), scaleY.value(0)]
-            ])
-            .attr('fill', () => legendColors[optioni])
-            .attr('opacity',() => 0.5)
-            .transition()
-            .duration(2000)
-            .attr('points', [
-                [scaleX.value(new Date('2023-06-01')), scaleY.value(0)],
-                Object.keys(props.data[props.selectedOption][option]).map(k => [scaleX.value(new Date(k)), scaleY.value(props.data[props.selectedOption][option][k])]),
-                [scaleX.value(new Date('2024-02-01')), scaleY.value(0)]
-            ])
-
-            let ele = svg.value
-            .append('path')
-            .attr('d', line(Object.keys(props.data[props.selectedOption][option])))
+            svg.value.append('path')
+            .attr('d', `M${scaleX.value(new Date("2023-06-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-08-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-11-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2024-02-01"))},${scaleY.value(0)}` )
             .attr('class', 'line')
-            .attr('stroke', legendColors[optioni])
+            .attr('stroke', 'black')
             .attr('stroke-width', 1.5)
             .attr('fill', 'none')
-            .attr('opacity',() => 0)
+            .attr('stroke-dasharray',(d,i) => {
+                switch(optioni){
+                        case 0:
+                            return '0'
+                        case 1:
+                            return '2 2'
+                        case 2:
+                            return '5 5'
+                        case 3:
+                            return '15 15'
+                    }
+                })
             .transition()
-            .delay(2000)
-            .attr('opacity',() => 1)
+            .duration(1000)
+            .attr('d', line(Object.keys(props.data[props.selectedOption][option])))
+
 
 
         })
@@ -147,8 +149,8 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div>
-            <svg :id="'linePlot'" class="h-[33vh]" width="100%" height="100%"></svg>
+        <div class="h-[33vh] md:h-full">
+            <svg :id="'linePlot'" width="100%" height="100%"></svg>
         </div>
 </template>
 <style></style>

@@ -53,20 +53,20 @@
         },
         "Institutions": {
             "Trust in Government": {
-                "Crisis": 30.0,
-                "NoCrisis": 53.0
+                "crisis": 30.0,
+                "no crisis": 53.0
             },
             "Trust in Legal": {
-                "Crisis": 55.0,
-                "NoCrisis": 80.0
+                "crisis": 55.0,
+                "no crisis": 80.0
             },
             "Favors AFD": {
-                "Crisis": 20.0,
-                "NoCrisis": 8.0
+                "crisis": 20.0,
+                "no crisis": 8.0
             },
             "Favors Die Grünen": {
-                "Crisis": 7.0,
-                "NoCrisis": 15.0
+                "crisis": 7.0,
+                "no crisis": 15.0
             }
         },
         "Democracy":{
