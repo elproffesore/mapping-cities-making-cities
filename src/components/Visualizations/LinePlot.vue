@@ -18,6 +18,7 @@ const height = ref(0)
 const svg = ref(null)
 const scaleX = ref(null)
 const scaleY = ref(null)
+const highestGroup = ref('')
 const emit = defineEmits(['groupUpdate'])
 onMounted(() => {
     width.value = document.getElementById('linePlot').getBoundingClientRect().width 
@@ -112,7 +113,13 @@ function updateLinePlot() {
             svg.value.append('path')
             .attr('d', `M${scaleX.value(new Date("2023-06-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-08-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-11-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2024-02-01"))},${scaleY.value(0)}` )
             .attr('class', 'line')
-            .attr('stroke', 'black')
+            .attr('stroke', ()=> {
+                if(option == highestGroup.value){
+                    return 'var(--primary)'
+                }else{
+                    return 'black'
+                }
+            })
             .attr('stroke-width', 1.5)
             .attr('fill', 'none')
             .attr('stroke-dasharray',(d,i) => {
@@ -130,9 +137,6 @@ function updateLinePlot() {
             .transition()
             .duration(1000)
             .attr('d', line(Object.keys(props.data[props.selectedOption][option])))
-
-
-
         })
 }
 watch(() => props.data,function(nv) {
@@ -144,8 +148,8 @@ watch(() => props.selectedOption,function(nv) {
     updateLinePlot()
 })
 function emitGroupUpdate() {
-    let highestGroup  = Object.keys(props.data[props.selectedOption]).sort((a,b) => props.data[props.selectedOption][b]['2024-02-01'] - props.data[props.selectedOption][a]['2024-02-01'])[0]
-    emit('groupUpdate', highestGroup, props.data[props.selectedOption][highestGroup]['2024-02-01'] ) 
+    highestGroup.value = Object.keys(props.data[props.selectedOption]).sort((a,b) => props.data[props.selectedOption][b]['2024-02-01'] - props.data[props.selectedOption][a]['2024-02-01'])[0]
+    emit('groupUpdate', highestGroup.value, props.data[props.selectedOption][highestGroup.value]['2024-02-01'] ) 
 }
 </script>
 <template>

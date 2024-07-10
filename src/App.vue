@@ -180,10 +180,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                         and the feeling of self-efficacy.
                     </p>
                     <br>
-                    <p>
-                        In this analysis we observed that <span class="highlight">people who felt the crisis perceived their situation often 5-8x times worse</span> than people who didn't feel the crisis.
-                    </p>
-                    <br>
+
                     <p><b>See for yourself how people the people that had the feeling of crisis perceived their situation differently than those who didn't feel the crisis</b></p>
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col gap-4 justify-center md:col-start-2 md:col-span-4 md:row-start-2">
@@ -204,6 +201,9 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <BarComparison :data="data.statistics?.Crisis?.FeltRealities ?? {}"
                         :selectedOption="selectedOptionPerceivedTruth">
                     </BarComparison>
+                    <p>
+                        In this analysis we observed that <span class="underline decoration-primary">people who felt the crisis perceived their situation often 5-8x times worse</span> than people who didn't feel the crisis.
+                    </p>
                 </div>
 
 
@@ -229,11 +229,8 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             to
                             handle a crises. </p>
                             <br>
-                            <p>
-                                People that showed a <span class="highlight">high level of crisis perception</span> also showed a <span class="highlight">high level of distrust in democratic institutions.</span> 
-                            </p>
                 </div>
-                <div class="col-start-2 col-span-10 flex flex-col items-center justify-center gap-8 md:col-start-7 md:col-span-5">
+                <div class="col-start-2 col-span-10 flex flex-col justify-center gap-8 md:col-start-7 md:col-span-5">
                     <h1 class="text-left">Feeling of Crisis damages                                 <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-model="selectedOptionTrustInInstitutions">
@@ -245,6 +242,9 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full" :data="data.statistics?.Crisis.Institutions ?? {}"
                         :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
                     </DotonlineComparison>
+                    <p>
+                                People that showed a <span class="underline decoration-primary">high level of crisis perception</span> also showed a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> 
+                            </p>
 
                 </div>
                 <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-5">
