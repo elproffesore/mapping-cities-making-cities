@@ -11,7 +11,8 @@
         --secondary: #BEB6F2;
     }
     html{
-        background-color: var(--primary)
+        background-color: var(--primary);
+        overflow-x: hidden;
     }
     body {
         @apply bg-background text-text text-justify;
@@ -23,7 +24,7 @@
         @apply text-2xl pb-8;
         font-family: Degular, sans-serif;
         vertical-align: middle;
-        line-height: 1.1;
+        line-height: 1.3;
         font-weight: bold
     }
     h2 {
