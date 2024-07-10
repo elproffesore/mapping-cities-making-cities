@@ -23,11 +23,11 @@ function updateSelectedOptionPerceivedTruth(option, index) {
     selectedOptionPerceivedTruthIndex.value = index
 }
 const selectedOptionTrustInInstitutions = ref('')
-// const selectedOptionTrustInInstitutionsIndex = ref(0)
-// function updateSelectedOptionTrustInInstitutions(option, index) {
-//     selectedOptionTrustInInstitutions.value = option
-//     selectedOptionTrustInInstitutionsIndex.value = index
-// }
+const selectedOptionTrustInInstitutionsIndex = ref(0)
+function updateSelectedOptionTrustInInstitutions(option, index) {
+    selectedOptionTrustInInstitutions.value = option
+    selectedOptionTrustInInstitutionsIndex.value = index
+}
 function updateMenu(resp) {
     updateMenuNumber.value = resp.index
     updateMenuProgress.value = resp.progress
@@ -127,7 +127,8 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     </div>
                     <div class="col-start-1 col-span-12 self-end flex flex-col gap-2 md:h-full md:col-start-7 md:col-span-6">
                         <div class="flex flex-col gap-2">
-                            <h1 class="pb-1">Feeling of Crisis in % among <select
+                            <h1 class="pb-1">Feeling of Crisis in % among 
+                                <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-model="selectedOptionWhoIsConcerned">
                                     <option v-for="(option, index) in Object.keys(data.statisticsTime ?? {})"
@@ -135,7 +136,8 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                         {{ option }}
 
                                     </option>
-                                </select></h1>
+                                </select>
+                            </h1>
                                 <p>we can see that <span class="highlight">{{ highestGroup
                                     }}</span> shows the highest level of
                                 crisis perception with <span class="highlight">{{
@@ -185,6 +187,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col gap-4 justify-center md:col-start-2 md:col-span-4 md:row-start-2">
                     <div class="flex flex-col gap-5">
+                        <h1>Perceived Crisis Boosts Strong Pessimistic Stance</h1>
                         <div class="flex gap-5 justify-between">
                             <button class="button"
                                 v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})"
@@ -231,15 +234,24 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             <br>
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col justify-center gap-8 md:col-start-7 md:col-span-5">
-                    <h1 class="text-left">Feeling of Crisis damages                                 <select
+                    <h1 class="text-left">Feeling of Crisis damages Trust in Democratic Institutions                                
+                        <!-- <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-model="selectedOptionTrustInInstitutions">
                                     <option v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
                                         :key="index" :value="option">
                                         {{ option }}
                                     </option>
-                        </select>:</h1>
-                    <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full" :data="data.statistics?.Crisis.Institutions ?? {}"
+                        </select> -->
+                    </h1>
+                    <div class="grid grid-cols-2 gap-5 justify-between">
+                            <button class="button"
+                                v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
+                                :key="index" :value="index"
+                                :class="selectedOptionTrustInInstitutionsIndex == index ? 'bg-primary text-white' : ''"
+                                @click="updateSelectedOptionTrustInInstitutions(option, index, this)">{{ option }}</button>
+                        </div>
+                    <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full my-16" :data="data.statistics?.Crisis.Institutions ?? {}"
                         :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
                     </DotonlineComparison>
                     <p>
