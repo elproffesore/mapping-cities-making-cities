@@ -13,7 +13,7 @@ const props = defineProps({
     }
 })
 const emit = defineEmits(['groupUpdate'])
-const padding = ref(15)
+const padding = ref(25)
 const svg = ref(null)
 const height = ref(0);
 const width = ref(0);
@@ -117,7 +117,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="h-[100px]">
+        <div class="h-[100px] w-full">
             <svg :id="'dotonlinecomparison'" width="100%"></svg>
         </div>
 </template>

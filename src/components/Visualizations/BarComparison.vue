@@ -138,7 +138,7 @@ watch(() => props.selectedOption, function (nv) {
 })
 </script>
 <template>
-        <div>
+        <div class="w-full">
             <svg :id="'barComparison'" width="100%"></svg>
         </div>
 </template>

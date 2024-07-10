@@ -12,7 +12,7 @@ const props = defineProps({
         default: () => ""
     }
 })
-const padding = ref(15)
+const padding = ref(50)
 const width = ref(0)
 const height = ref(0)
 const svg = ref(null)
@@ -149,7 +149,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="h-[33vh] md:h-full">
+        <div class="w-full h-[33vh] md:h-full">
             <svg :id="'linePlot'" width="100%" height="100%"></svg>
         </div>
 </template>
