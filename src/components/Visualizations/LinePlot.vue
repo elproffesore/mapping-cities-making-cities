@@ -23,12 +23,11 @@ const emit = defineEmits(['groupUpdate'])
 onMounted(() => {
     width.value = document.getElementById('linePlot').getBoundingClientRect().width 
     height.value = document.getElementById('linePlot').getBoundingClientRect().height
+
     scaleX.value = d3.scaleLinear().domain([new Date('2023-06-01'), new Date('2024-02-01')]).range([padding.value, width.value ])
     scaleY.value = d3.scaleLinear().domain([70, 0]).range([padding.value, height.value - padding.value])
     
     svg.value = d3.select('#linePlot')
-        .attr('width', width.value)
-        .attr('height', height.value)
     
     let ticks = [0, 20, 40, 60]
     svg.value.append('g')
@@ -153,7 +152,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="w-full h-[33vh] md:h-full">
+        <div class="w-full h-[50vh] md:h-full md:min-h-[300px]">
             <svg :id="'linePlot'" width="100%" height="100%"></svg>
         </div>
 </template>

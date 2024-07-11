@@ -57,9 +57,7 @@ scroller
 })
 </script>
 <template>
-    <div>
-        <div ref="parent">
+    <div ref="parent">
             <slot></slot>
-        </div>
     </div>
 </template>

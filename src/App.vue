@@ -107,7 +107,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 <img class="col-start-2 col-span-10" src="./assets/images/polycrisis_new.png" alt="">
             </GridComponent>
             <GridComponent id="who-is-concerned">
-                <div class="col-start-2 col-span-10 grid grid-cols-12 items-center gap-4">
+                <div class="col-start-2 col-span-10 grid grid-cols-12 gap-4">
                     <div class="col-start-1 col-span-12 md:col-span-5">
                         <div>
                             <h1 class="section-heading  text-left">Who is feeling the crisis?</h1>
@@ -118,16 +118,17 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                 democracy, we ask about the feeling of crisis: depressed, anxious, angry, left behind.
                                 Who is concerned? Is it the old? The poor? The people on the countryside? </p>
 
-                        </div>
-                        <br>
-                        <div>
-                            <h1>Social status and crisis perception</h1>
-                            <p>We observed that especially the <span class="underline decoration-primary">young generations</span> are prone to the crisis feeling as well as the <span class="underline decoration-primary">low-income classes</span>. Meanwhile the differences between city and rural or east and west were not that significant.</p>
+                                <br>
+                                <p>Especially the <span class="underline decoration-primary">young generations</span> and the <span class="underline decoration-primary">low-income classes</span> are prone to the crisis feeling while differences between city and rural or east and west were not significant.</p>
+
+
                         </div>
                     </div>
-                    <div class="col-start-1 col-span-12 self-end flex flex-col gap-2 md:h-full md:col-start-7 md:col-span-6">
-                        <div class="flex flex-col gap-2">
-                            <h1 class="pb-1">Feeling of Crisis in % among 
+                    <div class="col-start-1 col-span-12 self-end md:h-full md:col-start-7 md:col-span-6">
+                        <div class="flex flex-col h-full">
+                            <div>
+                                <h1>Young and Poor have increased Feeling of Crisis</h1>
+                            <p class="pb-1">Feeling of Crisis in % among 
                                 <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-model="selectedOptionWhoIsConcerned">
@@ -136,14 +137,14 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                         {{ option }}
 
                                     </option>
-                                </select>
-                            </h1>
-                                <p>we can see that <span class="highlight">{{ highestGroup
+                                </select>. <span class="highlight">{{ highestGroup
                                     }}</span> shows the highest level of
                                 crisis perception with <span class="highlight">{{
             highestGroupPercent
-        }}%</span> at the moment.</p>
-                        </div>
+        }}%</span> at the moment.
+                            </p>
+                            </div>
+                            <div>
 
                         <LinePlot @group-update="sethighestGroup" :data="data.statisticsTime ?? {}" :componentIndex="0"
                             :selectedOption="selectedOptionWhoIsConcerned">
@@ -156,6 +157,9 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             'Class': 'Poor (group with the lowest 25% of income), Rich (group with the highest 25% of income) ',
                             'East - West': 'Former East Germany, Former West Germany'
                             }[selectedOptionWhoIsConcerned] }}</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
@@ -185,10 +189,13 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
 
                     <p><b>See for yourself how people the people that had the feeling of crisis perceived their situation differently than those who didn't feel the crisis</b></p>
                 </div>
-                <div class="col-start-2 col-span-10 flex flex-col gap-4 justify-center md:col-start-2 md:col-span-5 md:row-start-2">
-                    <div class="flex flex-col gap-5">
-                        <h1>Perceived Crisis boosts strong Pessimistic Stance</h1>
-                        <div class="flex gap-5 justify-between">
+                <div class="col-start-2 col-span-10 flex flex-col gap-8 justify-center md:col-start-2 md:col-span-5 md:row-start-2">
+                        <div class="flex flex-col gap-4">
+                            <h1>Perceived Crisis boosts strong Pessimistic Stance</h1>
+                            <p>In this analysis we observed that <span class="underline decoration-primary">people who felt the crisis perceived their situation often 5-8x times worse</span> than people who didn't feel the crisis.</p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex justify-between">
                             <button class="button"
                                 v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})"
                                 :key="index" :value="index"
@@ -200,16 +207,12 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             `"I am suffering more than others in the current situation."`,
             `"To what extent are you concerned about no longer being able to pay your bills?"`
         ][selectedOptionPerceivedTruthIndex]'></h1>
-                    </div>
-                    <BarComparison :data="data.statistics?.Crisis?.FeltRealities ?? {}"
+                            <BarComparison :data="data.statistics?.Crisis?.FeltRealities ?? {}"
                         :selectedOption="selectedOptionPerceivedTruth">
                     </BarComparison>
-                    <p>
-                        In this analysis we observed that <span class="underline decoration-primary">people who felt the crisis perceived their situation often 5-8x times worse</span> than people who didn't feel the crisis.
-                    </p>
+                        </div>
+
                 </div>
-
-
             </GridComponent>
             <GridComponent id="effects-on-democracy" class="gap-4">
                 <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-5">
@@ -234,16 +237,14 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             <br>
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col justify-center gap-4 md:col-start-7 md:col-span-5">
-                    <h1 class="text-left">Feeling of Crisis damages Trust in Democratic Institutions                                
-                        <!-- <select
-                                    class="w-min select text-white bg-primary rounded"
-                                    v-model="selectedOptionTrustInInstitutions">
-                                    <option v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
-                                        :key="index" :value="option">
-                                        {{ option }}
-                                    </option>
-                        </select> -->
+                    <div>
+                        <h1 class="text-left">Feeling of Crisis damages Trust in Democratic Institutions                                
                     </h1>
+                    <p>
+                                People that showed a <span class="underline decoration-primary">high level of crisis perception</span> also showed a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> 
+                            </p>
+                    </div>
+
                     <div class="grid grid-cols-2 gap-5 justify-between">
                             <button class="button"
                                 v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
@@ -254,9 +255,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full my-8" :data="data.statistics?.Crisis.Institutions ?? {}"
                         :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
                     </DotonlineComparison>
-                    <p>
-                                People that showed a <span class="underline decoration-primary">high level of crisis perception</span> also showed a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> 
-                            </p>
+
 
                 </div>
                 <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-5">
