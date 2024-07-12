@@ -20,17 +20,19 @@
         background-image: linear-gradient(180deg, #f15060 0%, #f5f5f5 4%)
     }
     h1 {
-        @apply text-2xl pb-4 text-left;
+        @apply text-[50px] pb-4 text-left;
         font-family: Degular, sans-serif;
         vertical-align: middle;
-        line-height: 1.3;
+        line-height: 1;
         font-weight: bold
     }
     h2 {
-        @apply text-2xl;
+        @apply text-[22.5px] text-left;
+        font-weight: bold;
     }
     h3 {
-        @apply text-base;
+        @apply text-xl;
+        font-weight: bold;
     }
     p {
         @apply text-lg;
@@ -43,15 +45,6 @@
     }
     .heading {
         @apply text-8xl;
-    }
-    .section-heading {
-        @apply text-4xl text-left;
-    }
-    .leftAligned {
-        @apply col-start-2 col-span-3;
-    }
-    .rightAligned {
-        @apply col-start-9 col-span-3;
     }
     .highlight {
         @apply bg-primary text-white rounded; 

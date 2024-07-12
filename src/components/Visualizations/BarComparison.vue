@@ -16,7 +16,7 @@ const padding = ref(50)
 const svg = ref(null)
 const height = ref(0);
 const width = ref(0);
-const barHeight = 100;
+const barHeight = 80;
 const scaleX = ref(null)
 onMounted(() => {
     width.value = document.getElementById('barComparison').getBoundingClientRect().width 
@@ -63,7 +63,9 @@ onMounted(() => {
 function updateBarComparison() {
     if (Object.keys(props.data).length == 0 || props.selectedOption == "") return
     let update = svg.value.selectAll('.barComparison')
-        .data(Object.keys(props.data[props.selectedOption]))
+        .data(Object.keys(props.data[props.selectedOption]).sort((a, b) => {
+            return props.data[props.selectedOption][b] - props.data[props.selectedOption][a]
+        }))
 
     update.exit().remove()
 
@@ -76,7 +78,7 @@ function updateBarComparison() {
         .attr('width', d => scaleX.value(props.data[props.selectedOption][d]))
         .attr('height', barHeight)
         .attr('fill', (d, i) => {
-            if (i == 0) return 'var(--primary)'
+            if(d == 'Crisis') return 'var(--primary)'
             return 'var(--secondary)'
         })
 
@@ -84,6 +86,10 @@ function updateBarComparison() {
         .transition()
         .duration(600)
         .attr('width', d => scaleX.value(props.data[props.selectedOption][d]))
+        .attr('fill', (d, i) => {
+            if(d == 'Crisis') return 'var(--primary)'
+            return 'var(--secondary)'
+        })
 
     let text = svg.value.selectAll('.barComparisonText')
         .data(Object.keys(props.data[props.selectedOption]))
@@ -92,7 +98,7 @@ function updateBarComparison() {
 
     let enterText = text.enter()
         .append('text')
-        .attr('class', 'barComparisonText text-text')
+        .attr('class', 'barComparisonText')
         .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-5)
         .attr('y', (d, i) => barHeight + 35)
         .text(d => props.data[props.selectedOption][d] + "%")

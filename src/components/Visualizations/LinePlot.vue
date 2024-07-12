@@ -25,7 +25,7 @@ onMounted(() => {
     height.value = document.getElementById('linePlot').getBoundingClientRect().height
 
     scaleX.value = d3.scaleLinear().domain([new Date('2023-06-01'), new Date('2024-02-01')]).range([padding.value, width.value ])
-    scaleY.value = d3.scaleLinear().domain([70, 0]).range([padding.value, height.value - padding.value])
+    scaleY.value = d3.scaleLinear().domain([70, 0]).range([0, height.value - padding.value])
     
     svg.value = d3.select('#linePlot')
     
@@ -64,7 +64,6 @@ onMounted(() => {
         .call(d3.axisBottom(scaleX.value).ticks(4).tickFormat(d3.timeFormat('%b %Y')))
 })
 function updateLinePlot() {
-    const legendColors = ['var(--primary)','var(--secondary)' ,'gray', '#f6f7eb']
     svg.value.selectAll('.legend').remove()
     svg.value.selectAll('.line').remove()
     svg.value.selectAll('polygon').remove()
@@ -113,11 +112,7 @@ function updateLinePlot() {
             .attr('d', `M${scaleX.value(new Date("2023-06-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-08-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-11-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2024-02-01"))},${scaleY.value(0)}` )
             .attr('class', 'line')
             .attr('stroke', ()=> {
-                if(option == highestGroup.value){
-                    return 'var(--primary)'
-                }else{
-                    return 'black'
-                }
+                return 'black'
             })
             .attr('stroke-width', 1.5)
             .attr('fill', 'none')
@@ -152,8 +147,8 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="w-full h-[50vh] md:h-full md:min-h-[300px]">
-            <svg :id="'linePlot'" width="100%" height="100%"></svg>
+        <div class="w-full h-[300px] md:h-full md:min-h-[250px]">
+            <svg :id="'linePlot'" class="h-full" width="100%" height="100%"></svg>
         </div>
 </template>
 <style></style>

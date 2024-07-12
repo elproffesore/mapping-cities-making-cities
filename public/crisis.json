@@ -1,92 +1,95 @@
 {
     "Crisis": {
-        "Overall": 37.0,
+        "Overall": 30.0,
         "Generation": {
-            "GenZ": 54.0,
-            "Young": 39.0,
-            "Boomer": 26.0,
+            "GenZ": 42.0,
+            "Young": 33.0,
+            "Boomer": 24.0,
             "Old": 16.0
         },
         "Geography": {
-            "East": 40.0,
-            "West": 37.0,
-            "City": 38.0,
-            "EastCity": 36.0,
-            "WestCity": 38.0,
-            "Rural": 37.0,
-            "EastRural": 42.0,
-            "WestRural": 36.0
+            "East": 34.0,
+            "West": 30.0,
+            "City": 30.0,
+            "EastCity": 33.0,
+            "WestCity": 29.0,
+            "Rural": 31.0,
+            "EastRural": 34.0,
+            "WestRural": 30.0
         },
         "Gender": {
-            "Men": 32.0,
-            "Women": 43.0
+            "Men": 26.0,
+            "Women": 35.0
         },
         "Class": {
             "Poor": {
-                "Overall": 50.0,
-                "Women": 52.0,
-                "Men": 46.0,
-                "City": 52.0,
-                "Rural": 49.0
+                "Overall": 40.0,
+                "Women": 41.0,
+                "Men": 39.0,
+                "City": 42.0,
+                "Rural": 39.0
             },
             "Rich": {
-                "Overall": 28.0,
-                "Women": 31.0,
-                "Men": 26.0,
-                "City": 29.0,
-                "Rural": 28.0
+                "Overall": 23.0,
+                "Women": 30.0,
+                "Men": 20.0,
+                "City": 20.0,
+                "Rural": 25.0
             }
         },
         "FeltRealities": {
             "Doomsday": {
-                "Crisis": 51.0,
-                "NoCrisis": 7.0
+                "Crisis": 52.0,
+                "NoCrisis": 4.0
             },
             "Suffering": {
-                "Crisis": 27.0,
+                "Crisis": 24.0,
                 "NoCrisis": 4.0
             },
             "Bills": {
-                "Crisis": 36.0,
-                "NoCrisis": 7.0
+                "Crisis": 33.0,
+                "NoCrisis": 5.0
+            },
+            "Destiny": {
+                "Crisis": 35.0,
+                "NoCrisis": 74.0
             }
         },
         "Institutions": {
-            "Trust in Government": {
-                "crisis": 30.0,
-                "no crisis": 53.0
+            "Government": {
+                "Crisis": 32.0,
+                "NoCrisis": 60.0,
+                "LikesAFDCrisis": 6.0,
+                "LikesAFDNoCrisis": 20.0,
+                "DoesntLikeAFDCrisis": 46.0,
+                "DoesntLikeAFDNoCrisis": 70.0
             },
-            "Trust in Legal": {
-                "crisis": 55.0,
-                "no crisis": 80.0
-            },
-            "Favors AFD": {
-                "crisis": 20.0,
-                "no crisis": 8.0
-            },
-            "Favors Die Grünen": {
-                "crisis": 7.0,
-                "no crisis": 15.0
+            "Legal System": {
+                "Crisis": 57.0,
+                "NoCrisis": 79.0,
+                "LikesAFDCrisis": 30.0,
+                "LikesAFDNoCrisis": 51.0,
+                "DoesntLikeAFDCrisis": 69.0,
+                "DoesntLikeAFDNoCrisis": 85.0
             }
         },
-        "Democracy":{
-            "Affirmation of Nationalism": {
-                "Crisis": 65.0,
-                "NoCrisis": 55.0
+        "Democracy": {
+            "LikesAFD": {
+                "Crisis": 19.0,
+                "NoCrisis": 9.0
             },
-            "Affirmation of Dictatorship": {
-                "Crisis": 14.0,
-                "NoCrisis": 6.0
+            "Nationalism": {
+                "Crisis": 9.0,
+                "NoCrisis": 5.0,
+                "LikesAFDCrisis": 15.0,
+                "DoesntLikeAFDNoCrisis": 4.0
             },
-            "LikesAFDAndDictatorship": {
-                "LikesAFD": 28.0,
-                "IndifferentAFD": 5.0
-            },
-            "LikesAFDAndNationalism": {
-                "LikesAFD": 90.0,
-                "IndifferentAFD": 53.0
+            "Dictatorship": {
+                "Crisis": 2.0,
+                "NoCrisis": 1.0,
+                "LikesAFDCrisis": 6.0,
+                "DoesntLikeAFDNoCrisis": 0.0
             }
-
         }
     }
 }
