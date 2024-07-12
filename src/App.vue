@@ -289,22 +289,15 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 <img class="col-start-2 col-span-10 md:col-start-2 md:col-span-5" src="./assets/images/resilience.png" alt="">
                 <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-5">
                     <h1 class="section-heading">Crisis Resilience</h1>
-                    <p>We see how feeling crisis - angry, uncertain, left behind -  goes hand in hand with people's financial status and generational outlook more than their gender or living area. <br><br>
-                        
-                        What now?<br>
-How to strengthen our crises resilience?<br>
-How can we build a community resilience?<br>
-Can we rebuild trust in our institution and share a common sense of mitigation strategies?<br><br>
+                    <p>We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's financial status and generational outlook 
+                        more than their gender or living area. It is connected to the feeling that one suffers more than others, that one is financially not secured. 
+                        Feeling crisis also translates into politics. It is connected to low trust in the current government and higher liking of right-wing parties.
+                        Especially if people both feel crisis and sympathize with right-wing parties, trust is low and anti-democratic tendencies are high. 
+                        They even agree with dictatorship under certain circumstances.<br><br>
 
-Je regionaler die Politik ist, desto mehr Vertrauen haben Menschen in lokale Politik und Gefühl von Self-Efficacy<br><br>
+But - <span class="underline decoration-primary">those who agree with dictatorship are the minority.</span> Although, trust in the government may be low, the general trust in the legal system is still prominent.<br><br>
 
-
-Places and Strategies of Reconciliation<br>
-Places of collective Self-Efficacy - Werkstattnetzwerk<br>
-Neighborhood Community Places<br>
-Get in contact with people outside of your bubble - Join a sport's Association's, start a new Hobbies, learn a new skill (choir, gardens, workshops) or go to Discussion Panels?<br>
-Join Citizen Assemblies and Citizen Science!<br>
-Self efficacy, Places of Democracy,
+Politics will have to adress the need for local participation. [Bezug zu Deutschland Monitor herstellen - Stadt/Land oder Ost/West ist nicht so wichtig wie das Gefühl, abgehängt zu sein. Und die lokale Pollitik. Vertrauen in Politik ist größer, je näher sie am Menschen, statt "die da Oben" ist.]
                     </p>
                   
 
