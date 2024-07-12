@@ -89,7 +89,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 <p>The phenomena of crisis is omnipresent and global – whether it's climate crisis, financial crisis,
                     migration crisis or crisis of democracy, to name few. We are constantly confronted with ever new
                     crisis analyses, putting us into a permanent state of emergency. But what exactly does that mean for
-                    us? And how do feelings of crisis, anger and concern affect the democracy we live in?</p>
+                    us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br><br> Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates societal polarisation and political attitudes in Germany in the period from December 2021 - February 2024.</p>
 
             </div>
             <img class="row-start-2 col-start-2 col-span-10 md:row-span-3 md:col-span-10 md:col-start-8" src="./assets/images/Welt.png" alt="">
@@ -101,10 +101,10 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             <GridComponent id="multicrisis" class="md:mt-[15vh]">
                 <hr class="col-span-10 col-start-2 text-primary">
                 <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-7">
-                    <h1 class="section-heading">Which feel the Polycrisis yet?</h1>
+                    <h1 class="section-heading">Can you feel Polycrisis yet?</h1>
                     <p>
                         Reality check: we are living in instable times. Climate change, the former number one topic of
-                        concern, is falling behind more pressing and feasible ones, such as inflation or political
+                        concern, is falling behind more pressing and feasible topics, such as inflation or political
                         conflicts. All topics are intertwined and already changing the ways we are able to live and
                         move. What do you experience?
                     </p>
@@ -117,10 +117,11 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <div class="col-start-1 col-span-12 md:col-span-5">
                         <div>
                             <h1 class="section-heading  text-left">Who is feeling the crisis?</h1>
-                            <p>Each crisis has a multitude of narratives to explain its origin and solutions.
+                            <p>Each crisis has a multitude of narratives to explain its origin and solutions. 
                                 Perceptions of crises and the extent to which people are affected by them depends
                                 heavily on their own social position. They all result in different demands towards
-                                politicians and our political system. But before we delve into what crisis means for
+                                politicians and our political system. <br>
+                                But before we delve into what crisis means for
                                 democracy, we ask about the feeling of crisis: depressed, anxious, angry, left behind.
                                 Who is concerned? Is it the old? The poor? The people on the countryside? </p>
                                 <br>
@@ -129,9 +130,9 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <div class="col-start-1 col-span-12 self-end md:h-full md:col-start-7 md:col-span-6">
                         <div class="flex flex-col h-full">
                             <div>
-                                <h2>Young and Poor have increased Feeling of Crisis</h2>
+                                <h2>The Young and the Poor have increased 'Feeling of Crisis'</h2>
                                 <br>
-                                <p class="pb-1">Especially the <span class="underline decoration-primary">young generations</span> and the <span class="underline decoration-primary">low-income classes</span> are prone to the crisis feeling while differences between city and rural or east and west were not significant. See for yourself the perceived crisis amongst:</p>
+                                <p class="pb-1">Especially the <span class="underline decoration-primary">young generations</span> and the <span class="underline decoration-primary">low-income classes</span> are prone to the crisis feeling while differences between city and rural or east and west germany were not significant. Explore yourself the perceived crisis amongst:</p>
                                 <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-if="!mobileAndTabletCheck()"
@@ -178,30 +179,21 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
 
                 </div>
                 <div class="col-start-2 col-span-10 md:col-span-5 md:col-start-7 md:row-start-2">
-                    <h1 class="section-heading text-left">Felt Realities and Perceived Truths
+                    <h1 class="section-heading text-left">About felt Realities and Perceived Truths
                     </h1>
                     <p>
-                        A heightened sense of anxiety can hinder trust in the surrounding and strengthen the tendency to
-                        stick to our own beliefs; it can make us prone to extreme positions of our multi faceted and
-                        ever changing reality. Humans rarely base their decisions on mere rational input-output
-                        calculations, and we observe a clear drift towards populist opinions. This is why understanding
-                        the feelings in the crises is just as important as the concrete discussions on how to solve
-                        them.
+                        Now that we have a grasp on who is feeling the crisis overall, we look at more concrete feelings of the crisis: 
+                        People in Crisis Mode are prone to feel a sort of Doomsday Mood the most, compared to feeling like they suffer 
+                        more than others or like they will not be able to pay their bills in the next month. 
+                        Especially depression and anxiety are defining factors for crisis mode in our analysis. 
                     </p>
-                    <br>
-                    <p>
-                        Now that we have a feeling for who is, well, feeling the crisis overall, we look at more
-                        concrete psychological effects: social comparison, financial fears directed towards the future
-                        and the feeling of self-efficacy.
-                    </p>
-                    <br>
 
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col gap-16 justify-center md:col-start-2 md:col-span-5 md:row-start-2">
                         <div>
-                            <h2>Crisis Feeling boosts Pessimistic Stance</h2>
+                            <h2>Being in Crisis Mode boosts pessimistic stance</h2>
                             <br>
-                            <p>In this analysis we observed that <span class="underline decoration-primary">people who felt the crisis perceived their situation often 5-8x times worse</span> than people who didn't feel the crisis. <b>See for yourself how people perceived their situation differently in comparison:</b>
+                            <p>We can observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis.<b>See for yourself how people perceived their situation differently in comparison:</b>
                         </p>
                         </div>
                         <div class="flex flex-col gap-8">
@@ -243,10 +235,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             sense making of the world.
 
                             Recent studies also found out that factors as loneliness and individualisation have strong
-                            impact on
-                            how
-                            to
-                            handle a crises. </p>
+                            impact on how to handle a crises. </p>
                             <br>
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col justify-center gap-16 md:col-start-7 md:col-span-5">
