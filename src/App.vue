@@ -222,20 +222,11 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             <GridComponent id="effects-on-democracy" class="gap-4">
                 <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-5">
                         <h1 class="section-heading">Effects on Democracy</h1>
-                        <p> Different Interpretation of Realities has strong effects on
-                            cooperation in a
-                            democratic
-                            system. The perception of urgent fields of actions varies strongly- and the higher your
-                            crises
-                            perception is,
-                            the you feel prevalent stress, the more you are moving towards the spiral of unrational
-                            decision
-                            making
-                            and
-                            sense making of the world.
-
-                            Recent studies also found out that factors as loneliness and individualisation have strong
-                            impact on how to handle a crises. </p>
+                        <p> Different political groups and people confronted with crises 
+                            may feel similarly overloaded and left alone by politics. 
+                            Their Perceived urgent fields of actions and preferred solutions 
+                            are possibly not aligned with political decisions. Explore how 
+                            the felt crisis connects to trust in state system. </p>
                             <br>
                 </div>
                 <div class="col-start-2 col-span-10 flex flex-col justify-center gap-16 md:col-start-7 md:col-span-5">
