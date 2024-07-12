@@ -269,8 +269,8 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 <img class="col-start-2 col-span-10 md:col-start-2 md:col-span-5" src="./assets/images/resilience.png" alt="">
                 <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-5">
                     <h1 class="section-heading">Crisis as a chance for Transformation</h1>
-                    <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a rise of protest activity, no matter thein different political spectrums. <br><br>
-                        What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br>
+                    <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a rise of protest activity, no matter thein different political spectrums. <br>
+                        What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br><br>
                     </p>
                     <p class="pl-4"><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
