@@ -265,18 +265,15 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
 
             
             </GridComponent>
-            <GridComponent id="crisis-resilience">
+            <GridComponent id="Crisis as a Chance for Transformation">
                 <img class="col-start-2 col-span-10 md:col-start-2 md:col-span-5" src="./assets/images/resilience.png" alt="">
                 <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-5">
-                    <h1 class="section-heading">Crisis Resilience</h1>
-                    <p> We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with peoples
-                        financial status and generational outlook more than their gender or living area. Feeling crisis
-                        then relates to political polarization, governmental distrust and favoring populist narratives.
-                        Those felt and factual realities need to be addressed in other ways than either overtaking right
-                        wing ideals or simply defending the political and societal status quo. Because it is not only
-                        the angry and sad who loose trust, we also observe a general tendency of eroding trust and
-                        rising anger as well as polarization and favoring right wing parties amongst all examined
-                        groups. In other words:
+                    <h1 class="section-heading">Crisis as a chance for Transformation</h1>
+                    <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a rise of protest activity, no matter thein different political spectrums. <br><br>
+                        What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br><br>
+
+
+
                     </p>
                     <br>
                     <p class="pl-4"><i><b>»The traditional, hierarchical government model simply does not
@@ -285,9 +282,38 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                 we need to update our thinking.«</b></i> <br>(Eggers: »The changing nature of government«,
                         S. 28)</p>
                     <br>
-                    <p>What now?</p>
+                    <p>Especially in context of the polycrisis, is the approach to involve citizens into processes policy making, the go-to strategy that policy-makers as well as citizens favor the most. Models of Citizen participation through citizen's assemblies are already tested allover Europe.
+
+</p>
 
                 </div>
+
+  </GridComponent>
+            <GridComponent id="crisis-resilience">
+                <img class="col-start-2 col-span-10 md:col-start-2 md:col-span-5" src="./assets/images/resilience.png" alt="">
+                <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-5">
+                    <h1 class="section-heading">Crisis Resilience</h1>
+                    <p>We see how feeling crisis - angry, uncertain, left behind -  goes hand in hand with people's financial status and generational outlook more than their gender or living area. <br><br>
+                        
+                        What now?<br>
+How to strengthen our crises resilience?<br>
+How can we build a community resilience?<br>
+Can we rebuild trust in our institution and share a common sense of mitigation strategies?<br><br>
+
+Je regionaler die Politik ist, desto mehr Vertrauen haben Menschen in lokale Politik und Gefühl von Self-Efficacy<br><br>
+
+
+Places and Strategies of Reconciliation<br>
+Places of collective Self-Efficacy - Werkstattnetzwerk<br>
+Neighborhood Community Places<br>
+Get in contact with people outside of your bubble - Join a sport's Association's, start a new Hobbies, learn a new skill (choir, gardens, workshops) or go to Discussion Panels?<br>
+Join Citizen Assemblies and Citizen Science!<br>
+Self efficacy, Places of Democracy,
+                    </p>
+                  
+
+                </div>
+                
             </GridComponent>
         </ScrollytellingComponent>
         <GridComponent>
