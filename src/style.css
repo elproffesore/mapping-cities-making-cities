@@ -50,6 +50,9 @@
     .select{
         padding: 0px 2px 2px 6px
     }
+    .headline {
+        @apply text-[85px];
+    }
     /* Buttons */
     .button {
         @apply border border-primary rounded-lg px-4 py-2;

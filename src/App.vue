@@ -77,7 +77,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
     <div class="">
         <div class="grid grid-cols-12 items-center gap-[25px] md:h-[90vh] mt-[45px] md:m-[45px]">
             <div class="row-start-1 text-center md:text-left col-start-2 col-span-10 md:col-span-6">
-                <h1 class="text-6xl md:heading">
+                <h1 class="headline">
                     It's the
                     <span class="underline decoration-primary decoration-8"
                         style="padding: initial;">Crisis</span>,<br>
@@ -98,19 +98,22 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             :updateMenuProgress="updateMenuProgress" />
         <ScrollytellingComponent :offset="0" :progress="true" :threshold="4" :once="false" :debug="false"
             @step-progress="updateMenu">
-            <GridComponent id="multicrisis" class="md:mt-[15vh]">
+            <GridComponent id="multicrisis" class="md:mt-[5vh]">
                 <hr class="col-span-10 col-start-2 text-primary">
-                <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-7">
-                    <h1 class="section-heading">Can you feel Polycrisis yet?</h1>
-                    <p>
-                        Reality check: we are living in instable times. Climate change, the former number one topic of
-                        concern, is falling behind more pressing and feasible topics, such as inflation or political
-                        conflicts. All topics are intertwined and already changing the ways we are able to live and
-                        move. What do you experience?
-                    </p>
+                <div class="content-container">
+                    <div>
+                        <h1>Can you feel Polycrisis yet?</h1>
+                        <p>
+                            Reality check: we are living in instable times. Climate change, the former number one topic of
+                            concern, is falling behind more pressing and feasible topics, such as inflation or political
+                            conflicts. All topics are intertwined and already changing the ways we are able to live and
+                            move. What do you experience?
+                        </p>
+                    </div>
                 </div>
                 <img class="col-start-2 col-span-10" v-if="!mobileAndTabletCheck()" src="./assets/images/polycrisis_new.png" alt="">
                 <img class="col-start-2 col-span-10" v-if="mobileAndTabletCheck()" src="./assets/images/polycrisis_new_mobile.png" alt="">
+
             </GridComponent>
             <GridComponent id="who-is-concerned">
                 <div class="content-container">
