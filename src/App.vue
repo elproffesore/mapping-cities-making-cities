@@ -131,7 +131,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <div class="flex flex-col h-full">
                         <div>
                             <h2>The Young and the Poor have increased 'Feeling of Crisis'</h2>
-                            <p>Especially the <span class="underline decoration-primary">young generations</span> and the <span class="underline decoration-primary">low-income classes</span> are prone to the crisis feeling while differences between city and rural or east and west germany were not significant. <b>Explore yourself the perceived crisis amongst</b>
+                            <p>Especially the <span class="underline decoration-primary">generations</span>, <span class="underline decoration-primary">the different genders</span> and the <span class="underline decoration-primary">classes</span> showed high differences of their crisis feeling while differences between city and rural or east and west germany were not so significant. <b>Explore yourself the perceived crisis amongst</b>
                                  <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-if="!mobileAndTabletCheck()"
