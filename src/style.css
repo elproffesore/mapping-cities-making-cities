@@ -17,35 +17,32 @@
         @apply bg-background text-text text-justify;
         overflow-x: hidden;
         scroll-behavior: smooth;
-        background-image: linear-gradient(180deg, #f15060 0%, #f5f5f5 4%)
+        background-image: linear-gradient(180deg, #f15060 0%, #f5f5f5 4%);
+    }
+    h1, h2, h3{
+        @apply font-bold leading-[1] py-8 text-center;
+        vertical-align: middle;
     }
     h1 {
-        @apply text-[50px] pb-4 text-left;
-        font-family: Degular, sans-serif;
-        vertical-align: middle;
-        line-height: 1;
-        font-weight: bold
+        @apply text-[45px];
     }
     h2 {
-        @apply text-[22.5px] text-left;
-        font-weight: bold;
+        @apply text-[25px];
     }
-    h3 {
-        @apply text-xl;
-        font-weight: bold;
+    h3, li {
+        @apply text-[20px];
     }
     p {
-        @apply text-lg;
+        @apply text-[16px];
     }
-    li {
-        @apply text-2xl p-2;
+    a{
+        @apply underline
     }
-    .number{
-        font-family: Degular-Display, sans-serif;
+    /* Content Blocks */
+    .content-container{
+        @apply col-start-2 col-span-10 grid justify-items-center md:col-start-4 md:col-span-6
     }
-    .heading {
-        @apply text-8xl;
-    }
+    /* Special Formatting */
     .highlight {
         @apply bg-primary text-white rounded; 
         padding: 1px 2px 2px 2px;  
@@ -53,15 +50,7 @@
     .select{
         padding: 0px 2px 2px 6px
     }
-    select{
-        transition: visibility 0.5s;
-    }
-    .source{
-        @apply text-sm;
-    }
-    .marginSide{
-        @apply md:mx-[45px]
-    }
+    /* Buttons */
     .button {
         @apply border border-primary rounded-lg px-4 py-2;
     }

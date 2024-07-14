@@ -16,7 +16,7 @@ const padding = ref(50)
 const svg = ref(null)
 const height = ref(0);
 const width = ref(0);
-const barHeight = 80;
+const barHeight = 100;
 const scaleX = ref(null)
 onMounted(() => {
     width.value = document.getElementById('barComparison').getBoundingClientRect().width 
@@ -27,11 +27,12 @@ onMounted(() => {
     .attr('width', width.value)
 
     scaleX.value = d3.scaleLinear().domain([0, 100]).range([0, width.value])
+
     svg.value.append('rect')        
         .attr('x', 0)
         .attr('rx', 10)
         .attr('ry', 10)
-        .attr('width', d => scaleX.value(100)-10)
+        .attr('width', d => scaleX.value(100))
         .attr('height', barHeight)
         .attr('fill', '#ccc')
 
@@ -145,7 +146,7 @@ watch(() => props.selectedOption, function (nv) {
 </script>
 <template>
         <div class="w-full">
-            <svg :id="'barComparison'" width="100%"></svg>
+            <svg :id="'barComparison'" class="w-full" width="100%"></svg>
         </div>
 </template>
 <style></style>

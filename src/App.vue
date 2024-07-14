@@ -113,27 +113,26 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 <img class="col-start-2 col-span-10" v-if="mobileAndTabletCheck()" src="./assets/images/polycrisis_new_mobile.png" alt="">
             </GridComponent>
             <GridComponent id="who-is-concerned">
-                <div class="col-start-2 col-span-10 grid grid-cols-12 gap-4">
-                    <div class="col-start-1 col-span-12 md:col-span-5">
-                        <div>
-                            <h1 class="section-heading  text-left">Who is feeling the crisis?</h1>
-                            <p>Each crisis has a multitude of narratives to explain its origin and solutions. 
+                <div class="content-container">
+                    <div>
+                        <h1>Who is feeling the crisis?</h1>
+                        <p>Each crisis has a multitude of narratives to explain its origin and solutions. 
                                 Perceptions of crises and the extent to which people are affected by them depends
                                 heavily on their own social position. They all result in different demands towards
-                                politicians and our political system. <br>
+                                politicians and our political system.
+                        </p>
+                        <br>
+                        <p>
                                 But before we delve into what crisis means for
                                 democracy, we ask about the feeling of crisis: depressed, anxious, angry, left behind.
-                                Who is concerned? Is it the old? The poor? The people on the countryside? </p>
-                                <br>
-                        </div>
+                                Who is concerned? Is it the old? The poor? The people on the countryside? 
+                        </p>
                     </div>
-                    <div class="col-start-1 col-span-12 self-end md:h-full md:col-start-7 md:col-span-6">
-                        <div class="flex flex-col h-full">
-                            <div>
-                                <h2>The Young and the Poor have increased 'Feeling of Crisis'</h2>
-                                <br>
-                                <p class="pb-1">Especially the <span class="underline decoration-primary">young generations</span> and the <span class="underline decoration-primary">low-income classes</span> are prone to the crisis feeling while differences between city and rural or east and west germany were not significant. Explore yourself the perceived crisis amongst:</p>
-                                <select
+                    <div class="flex flex-col h-full">
+                        <div>
+                            <h2>The Young and the Poor have increased 'Feeling of Crisis'</h2>
+                            <p>Especially the <span class="underline decoration-primary">young generations</span> and the <span class="underline decoration-primary">low-income classes</span> are prone to the crisis feeling while differences between city and rural or east and west germany were not significant. <b>Explore yourself the perceived crisis amongst</b>
+                                 <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-if="!mobileAndTabletCheck()"
                                     v-model="selectedOptionWhoIsConcerned">
@@ -141,7 +140,8 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                         :key="index" :value="option">
                                         {{ option }}
                                     </option>
-                                </select>
+                                </select>:
+                                </p>
                                 <br v-if="mobileAndTabletCheck()">
                                 <select
                                     class="w-full select p-2 text-xl text-white bg-primary rounded"
@@ -152,59 +152,56 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                         {{ option }}
                                     </option>
                                 </select>
-                            </div>
+                        </div>
                         <div>
 
-                        <LinePlot @group-update="sethighestGroup" :data="data.statisticsTime ?? {}" :componentIndex="0"
-                            :selectedOption="selectedOptionWhoIsConcerned">
-                        </LinePlot>
-                        <hr class="mt-4">
-                        <p class="text-left text-xs">{{ {
+                            <LinePlot @group-update="sethighestGroup" :data="data.statisticsTime ?? {}" :componentIndex="0"
+                                :selectedOption="selectedOptionWhoIsConcerned">
+                            </LinePlot>
+                            <hr class="mt-4">
+                            <p class="text-left text-xs">{{ {
                             'Generations': 'GenZ (born after 1995), Young (1965 to 1994), Boomer (1945 - 1964) and Old (born before 1945)',
                             'Gender': 'Gender is only divided into Men and Women due to small sample sizes for other Genders.',
                             'City - Rural': 'City (population density of ZIP > 150/km2), Rural(population density of ZIP < 150/km2)',
                             'Class': 'Poor (group with the lowest 25% of income), Rich (group with the highest 25% of income) ',
                             'East - West': 'Former East Germany, Former West Germany'
                             }[selectedOptionWhoIsConcerned] }}</p>
-                            </div>
                         </div>
                     </div>
                 </div>
 
             </GridComponent>
-            <GridComponent id="felt-realities" class="gap-4">
-                <div class="col-start-2 col-span-10 justify-center flex mb-[10vh] md:row-start-1">
-                    <img class="w-[50%]" v-if="!mobileAndTabletCheck()" src="./assets/images/quote.png">
-                    <img class="w-[100%]" v-if="mobileAndTabletCheck()" src="./assets/images/quote_mobile.png">
-
-                </div>
-                <div class="col-start-2 col-span-10 md:col-span-5 md:col-start-7 md:row-start-2">
-                    <h1 class="section-heading text-left">About felt Realities and Perceived Truths
-                    </h1>
-                    <p>
-                        Now that we have a grasp on who is feeling the crisis overall, we look at more concrete feelings of the crisis: 
-                        People in Crisis Mode are prone to feel a sort of Doomsday Mood the most, compared to feeling like they suffer 
-                        more than others or like they will not be able to pay their bills in the next month. 
-                        Especially depression and anxiety are defining factors for crisis mode in our analysis. 
-                    </p>
-
-                </div>
-                <div class="col-start-2 col-span-10 flex flex-col gap-16 justify-center md:col-start-2 md:col-span-5 md:row-start-2">
+            <GridComponent id="felt-realities">
+                <!-- <div class="content-container">
+                    <img class="w-3/4" v-if="!mobileAndTabletCheck()" src="./assets/images/quote.png">
+                    <img class="w-full" v-if="mobileAndTabletCheck()" src="./assets/images/quote_mobile.png">
+                </div> -->
+                <div class="content-container relative">
+                    <!-- <img class="w-1/3 absolute left-[-45%] top-[-0%]" src="./assets/images/quote_mobile.png"> -->
+                    <div>
+                        <h1>About felt Realities and Perceived Truths</h1>
+                        <p>
+                            Now that we have a grasp on who is feeling the crisis overall, we look at more concrete feelings of the crisis: 
+                            People in Crisis Mode are prone to feel a sort of Doomsday Mood the most, compared to feeling like they suffer 
+                            more than others or like they will not be able to pay their bills in the next month. 
+                            Especially depression and anxiety are defining factors for crisis mode in our analysis. 
+                        </p>
+                    </div>
+                    <img class="w-3/4" v-if="!mobileAndTabletCheck()" src="./assets/images/quote.png">
+                    <img class="w-3/4" v-if="mobileAndTabletCheck()" src="./assets/images/quote_mobile.png">
+                    <div>
                         <div>
                             <h2>Being in Crisis Mode boosts pessimistic stance</h2>
-                            <br>
-                            <p>We can observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis.<b>See for yourself how people perceived their situation differently in comparison:</b>
-                        </p>
+                            <p>We can observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis. <b>See for yourself how people perceived their situation differently in comparison:</b></p>
                         </div>
-                        <div class="flex flex-col gap-8">
-                            <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
+                        <div class="grid grid-cols-2 gap-2 md:grid-cols-4 mt-16">
                                 <button class="button"
                                     v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})"
                                     :key="index" :value="index"
                                     :class="selectedOptionPerceivedTruthIndex == index ? 'bg-primary text-white' : ''"
                                     @click="updateSelectedOptionPerceivedTruth(option, index, this)">{{ option }}
                                 </button>
-                            </div>
+                        </div>
                         <div>
                             <h3 class="text-center" v-html='[
             `"I am feeling a sort of doomsday mood. <br> <br>`,
@@ -215,80 +212,72 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             <BarComparison :data="data.statistics?.Crisis?.FeltRealities ?? {}"
                         :selectedOption="selectedOptionPerceivedTruth">
                     </BarComparison>
-                        </div>
                     </div>
                 </div>
+            </div>
             </GridComponent>
-            <GridComponent id="effects-on-democracy" class="gap-4">
-                <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-5">
-                        <h1 class="section-heading">Effects on Democracy</h1>
+            <GridComponent id="effects-on-democracy">
+                <div class="content-container">
+                    <div class="relative">
+                        <img :class="mobileAndTabletCheck()?'w-3/4 rotate-[-30deg] absolute top-[-35%]':'w-2/4 absolute top-[-50%] right-[-30%]'" src="./assets/images/burn.png" alt="">
+                        <h1>Effects on Democracy</h1>
                         <p> Different political groups and people confronted with crises 
                             may feel similarly overloaded and left alone by politics. 
                             Their Perceived urgent fields of actions and preferred solutions 
                             are possibly not aligned with political decisions. Explore how 
                             the felt crisis connects to trust in state system. </p>
-                            <br>
-                </div>
-                <div class="col-start-2 col-span-10 flex flex-col justify-center gap-16 md:col-start-7 md:col-span-5">
-                    <div>
-                        <h2 class="text-left">Crisis Feeling damages Trust in Democratic Institutions</h2>
-                        <br>
-                        <p>People that showed a <span class="underline decoration-primary">high level of crisis perception</span> also showed a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> </p>
                     </div>
                     <div>
-                        <h3 class="text-center">Trust in ...</h3>
-                        <br>
-                        <div class="grid grid-cols-2 gap-5 justify-between">
-                                <button class="button"
-                                    v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
-                                    :key="index" :value="index"
-                                    :class="selectedOptionTrustInInstitutionsIndex == index ? 'bg-primary text-white' : ''"
-                                    @click="updateSelectedOptionTrustInInstitutions(option, index, this)">{{ option }}</button>
+                        <div>
+                            <h2>Crisis Feeling damages Trust in Democratic Institutions</h2>
+                            <p>People that showed a <span class="underline decoration-primary">high level of crisis perception</span> also showed a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> </p>
                         </div>
+                        <div class="grid grid-cols-2 gap-2 mt-16">
+                                    <button class="button"
+                                        v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
+                                        :key="index" :value="index"
+                                        :class="selectedOptionTrustInInstitutionsIndex == index ? 'bg-primary text-white' : ''"
+                                        @click="updateSelectedOptionTrustInInstitutions(option, index, this)">Trust in {{ option }}</button>
+                        </div>
+                        <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full my-8" :data="data.statistics?.Crisis.Institutions ?? {}"
+                            :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
+                        </DotonlineComparison>
                     </div>
-                    <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full my-8" :data="data.statistics?.Crisis.Institutions ?? {}"
-                        :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
-                    </DotonlineComparison>
-
-
+                    <div>
+                        <div>
+                            <p>The situation was <span class="underline decoration-primary">even worse for people who had the crisis feeling and also favored the "Alternative für Deutschland" (AfD) party.</span></p>
+                        </div>
+                        <DotonlineComparison class="w-full my-8" :data="data.statistics?.Crisis.InstitutionsAFD ?? {}"
+                            :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="1">
+                        </DotonlineComparison>
+                    </div>
+                    <div>
+                        <h2>Populist Narratives longing for a strong Leader</h2>
+                        <p>In Germany, not only is there a clear polarization between
+                            people favoring the Green party and the AFD. The datasets show, that as a dangerous reflex
+                            to crisis people who sympathise with the AfD, do also have a significant higher desire for a strong leader as well as a higher opinion towards
+                            nationalism.
+                        </p>
+                        <img class="mt-[50px]" v-if="mobileAndTabletCheck()" src="./assets/images/democracy_new_mobile.png" alt="">
+                        <img v-if="!mobileAndTabletCheck()" src="./assets/images/democracy_new.png" alt="">
+                    </div>
                 </div>
-                <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-5">
-                    <h1 class="section-heading">Populist Narratives longing for a strong Leader</h1>
-                    <p>In Germany, not only is there a clear polarization between
-                        people favoring the Green party and the AFD. The datasets show, that as a dangerous reflex
-                        to crisis people who sympathise with the AfD, do also have a significant higher desire for a strong leader as well as a higher opinion towards
-                        nationalism.
-                    </p>
-                </div>
-                <img class="col-start-2 col-span-10 mt-[50px]" v-if="mobileAndTabletCheck()" src="./assets/images/democracy_new_mobile.png" alt="">
-                <img class="col-start-3 col-span-8 mt-[-150px]" v-if="!mobileAndTabletCheck()" src="./assets/images/democracy_new.png" alt="">
-
-            
             </GridComponent>
             <GridComponent id="Crisis as a Chance for Transformation">
-                <img class="col-start-2 col-span-10 md:col-start-2 md:col-span-5" src="./assets/images/resilience.png" alt="">
-                <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-5">
-                    <h1 class="section-heading">Crisis as a chance for Transformation</h1>
+                <div class="content-container relative">
+                    <img :class="mobileAndTabletCheck()?'absolute top-[-10%] left-[-10%]':'absolute top-[-20%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
+                    <img :class="mobileAndTabletCheck()?'absolute top-[-10%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
+                    <h1>Crisis: A Chance for Transformation</h1>
                     <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a rise of protest activity, no matter thein different political spectrums. <br>
                         What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br><br>
                     </p>
-                    <p class="pl-4"><i><b>»The traditional, hierarchical government model simply does not
+                    <p><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
                                 worked age requires governments to change the way they think and operate. [...]
                                 we need to update our thinking.«</b></i> <br>(Eggers: »The changing nature of government«,
                         S. 28)</p>
                     <br>
-                    <p>Especially in context of the polycrisis, is the approach to involve citizens into processes policy making, the go-to strategy that policy-makers as well as citizens favor the most. Models of Citizen participation through citizen's assemblies are already tested allover Europe.
-
-</p>
-
-                </div>
-
-  </GridComponent>
-            <GridComponent id="crisis-resilience">
-                <img class="col-start-2 col-span-10 md:col-start-2 md:col-span-5" src="./assets/images/resilience.png" alt="">
-                <div class="col-start-2 col-span-10 md:col-start-7 md:col-span-5">
-                    <h1 class="section-heading">Crisis Resilience</h1>
+                    <p>Especially in context of the polycrisis, is the approach to involve citizens into processes policy making, the go-to strategy that policy-makers as well as citizens favor the most. Models of Citizen participation through citizen's assemblies are already tested allover Europe.</p>
                     <p>We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's financial status and generational outlook 
                         more than their gender or living area. It is connected to the feeling that one suffers more than others, that one is financially not secured. 
                         Feeling crisis also translates into politics. It is connected to low trust in the current government and higher liking of right-wing parties.
@@ -299,28 +288,25 @@ But - <span class="underline decoration-primary">those who agree with dictatorsh
 
 Politics will have to adress the need for local participation. [Bezug zu Deutschland Monitor herstellen - Stadt/Land oder Ost/West ist nicht so wichtig wie das Gefühl, abgehängt zu sein. Und die lokale Pollitik. Vertrauen in Politik ist größer, je näher sie am Menschen, statt "die da Oben" ist.]
                     </p>
-                  
-
                 </div>
-                
             </GridComponent>
         </ScrollytellingComponent>
         <GridComponent>
-            <div class="col-start-2 col-span-10 grid grid-cols-1 gap-4">
-                <div class="col-start-1 border rounded border-1 p-1">
-                    <div class="grid grid-cols-2 items-center">
-                        <h1 class="section-heading pb-0" id="sources">References</h1>
+            <div class="content-container gap-4" id="sources">
+                <div class="border rounded border-1 w-full px-4">
+                    <div class="grid grid-cols-2 items-center ">
+                        <h2 class="text-left">References</h2>
                         <img @click="showReferences = !showReferences" src="./assets/images/right-arrow.svg" :class="!showReferences?'rotate-90':'rotate-[-90deg]'" class=" w-8 justify-self-end" alt="">
                     </div>
-                    <p v-if="showReferences">Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates
+                    <p class="pb-4" v-if="showReferences">Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates
                         feelings and political attitudes in Germany in the period from 2022 - 2024.
                     </p>                </div>
-                <div class="col-start-1 border rounded border-1 p-1">
-                    <div class="grid grid-cols-2 items-center">
-                        <h1 class="section-heading pb-0" id="sources">Dataset</h1>
+                <div class="border rounded border-1 w-full px-4">
+                    <div class="grid grid-cols-2 items-center ">
+                        <h2 class="text-left">Dataset</h2>
                         <img @click="showDatasetDescription = !showDatasetDescription" src="./assets/images/right-arrow.svg" :class="!showDatasetDescription?'rotate-90':'rotate-[-90deg]'" class=" w-8 justify-self-end" alt="">
                     </div>
-                    <p v-if="showDatasetDescription">Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates
+                    <p class="pb-4" v-if="showDatasetDescription">Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates
                         feelings and political attitudes in Germany in the period from 2022 - 2024.
                     </p>
                 </div>

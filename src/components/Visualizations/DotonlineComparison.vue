@@ -10,10 +10,14 @@ const props = defineProps({
         type: String,
         required: false,
         default: () => ''
+    },
+    componentIndex: {
+        type: Number,
+        required: true
     }
 })
 const emit = defineEmits(['groupUpdate'])
-const padding = ref(25)
+const padding = ref(20)
 const svg = ref(null)
 const height = ref(0);
 const width = ref(0);
@@ -21,15 +25,17 @@ const scaleX = ref(null)
 const gap = ref(50)
 onMounted(() => {
     gap.value = window.innerHeight * 0.05
-    width.value = document.getElementById('dotonlinecomparison').getBoundingClientRect().width 
-    height.value = document.getElementById('dotonlinecomparison').getBoundingClientRect().height
+    width.value = document.getElementById('dotonlinecomparison'+props.componentIndex).getBoundingClientRect().width 
+    height.value = document.getElementById('dotonlinecomparison'+props.componentIndex).getBoundingClientRect().height
 
-    svg.value = d3.select('#dotonlinecomparison')
+    svg.value = d3.select('#dotonlinecomparison'+props.componentIndex)
     .attr('height', height.value)
     .attr('width', width.value)
 
-    scaleX.value = d3.scaleLinear().domain([0, 100]).range([0+padding.value*2.5, width.value-padding.value])
-    const legend = svg.value.append('g')
+    scaleX.value = d3.scaleLinear().domain([0, 100]).range([0+padding.value, width.value-padding.value])
+
+    if(props.componentIndex != 0 ){
+        const legend = svg.value.append('g')
                 .attr('class', 'legend')
                 .attr('transform', `translate(${0},${height.value-30})`)
                 .selectAll('.legend-item')
@@ -53,17 +59,12 @@ onMounted(() => {
                 .attr('y', 10)
                 .attr('class', 'text-xs legend-text')
                 .text(d => d);
+    }
 
 
 
     svg.value.append('path')
         .attr('d', `M${scaleX.value(0)},${(padding.value/2)+ (gap.value * 0)} L${scaleX.value(100)},${(padding.value/2)+ (gap.value * 0)}`)
-        .attr('stroke', 'black')
-        .attr('stroke-width', 0.5)
-        .attr('fill', 'none')
-        
-    svg.value.append('path')
-        .attr('d', `M${scaleX.value(0)},${(padding.value/2)+ (gap.value * 1)} L${scaleX.value(100)},${(padding.value/2)+ (gap.value * 1)}`)
         .attr('stroke', 'black')
         .attr('stroke-width', 0.5)
         .attr('fill', 'none')
@@ -75,7 +76,7 @@ onMounted(() => {
         .enter()
         .append('path')
         .attr('class', 'ticks')
-        .attr('d', d => `M${scaleX.value(d)},${(padding.value/2)-(padding.value/3)} L${scaleX.value(d)},${((padding.value/2)+ (gap.value * 1))+(padding.value/3)}`)
+        .attr('d', d => `M${scaleX.value(d)},${(padding.value/2)-(padding.value/3)} L${scaleX.value(d)},${((padding.value/2)+ (gap.value * 0))+(padding.value/3)}`)
         .attr('stroke', 'black')
         .attr('stroke-width', 0.5)
         .attr('fill', 'none')
@@ -88,23 +89,9 @@ onMounted(() => {
         .append('text')
         .attr('class', 'tick-labels text-xs')
         .attr('x', d => scaleX.value(d))
-        .attr('y', (padding.value/2)+ (gap.value * 1) + 30)
+        .attr('y', (padding.value) + 30)
         .attr('text-anchor', 'middle')
         .text(d => d + '%')
-
-        svg.value.append('text')
-        .attr('class', 'text-[7pt] md:text-[10pt]')
-        .attr('x', 0)
-        .attr('y', (padding.value/2)+ (gap.value * 0))
-        .attr('dominant-baseline', 'middle')
-        .text('Like AfD')
-
-        svg.value.append('text')
-        .attr('class', 'text-[7pt] md:text-[10pt]')
-        .attr('x', 0)
-        .attr('y', (padding.value/2)+ (gap.value * 1))
-        .attr('dominant-baseline', 'middle')
-        .text('Hate AfD')
 })
 function updateDots(array,group,index){
     let line = svg.value.selectAll('.line'+group)
@@ -152,8 +139,8 @@ function updateDots(array,group,index){
 }
 function updateDotonlineComparison() {
     if (Object.keys(props.data).length == 0 || props.selectedOption == "") return
-    updateDots([props.data[props.selectedOption]["LikesAFDCrisis"], props.data[props.selectedOption]["LikesAFDNoCrisis"]],0,0)
-    updateDots([props.data[props.selectedOption]["DoesntLikeAFDCrisis"], props.data[props.selectedOption]["DoesntLikeAFDNoCrisis"]],1,1)
+    updateDots([props.data[props.selectedOption]["Crisis"], props.data[props.selectedOption]["NoCrisis"]],0,0)
+    //updateDots([props.data[props.selectedOption]["DoesntLikeAFDCrisis"], props.data[props.selectedOption]["DoesntLikeAFDNoCrisis"]],1,1)
 
 }
 watch(() => props.data, function (nv) {
@@ -171,8 +158,8 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="h-[150px] w-full">
-            <svg :id="'dotonlinecomparison'" height="100%" width="100%"></svg>
+        <div :class="componentIndex == 0? 'h-[50px]':'h-[100px]', 'w-full'">
+            <svg :id="'dotonlinecomparison'+componentIndex" height="100%" width="100%"></svg>
         </div>
 </template>
 <style></style>

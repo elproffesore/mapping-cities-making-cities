@@ -77,7 +77,7 @@ function updateLinePlot() {
                 .enter()
                 .append('g')
                 .attr('class', 'legend-item')
-                .attr('transform', (d, i) => `translate(${i * 100},0)`)
+                .attr('transform', (d, i) => `translate(${i * 80},0)`)
             
                 legend.append('path')
                 .attr('d', 'M0,7 L25,7')
@@ -98,7 +98,7 @@ function updateLinePlot() {
                 })
 
                 legend.append('text')
-                    .attr('x', 50)
+                    .attr('x', 30)
                     .attr('y', 10)
                     .attr('class', 'text-xs legend-text')
                     .text(d => d);

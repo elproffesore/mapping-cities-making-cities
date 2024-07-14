@@ -58,19 +58,21 @@
         "Institutions": {
             "Government": {
                 "Crisis": 32.0,
-                "NoCrisis": 60.0,
-                "LikesAFDCrisis": 6.0,
-                "LikesAFDNoCrisis": 20.0,
-                "DoesntLikeAFDCrisis": 46.0,
-                "DoesntLikeAFDNoCrisis": 70.0
+                "NoCrisis": 60.0
             },
             "Legal System": {
                 "Crisis": 57.0,
-                "NoCrisis": 79.0,
-                "LikesAFDCrisis": 30.0,
-                "LikesAFDNoCrisis": 51.0,
-                "DoesntLikeAFDCrisis": 69.0,
-                "DoesntLikeAFDNoCrisis": 85.0
+                "NoCrisis": 79.0
+            }
+        },
+        "InstitutionsAFD": {
+            "Government": {
+                "Crisis": 6.0,
+                "NoCrisis": 20.0
+            },
+            "Legal": {
+                "Crisis": 30.0,
+                "NoCrisis": 51.0
             }
         },
         "Democracy": {

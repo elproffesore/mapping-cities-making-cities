@@ -4,11 +4,11 @@
     <div id="credits" class="flex flex-col gap-8 md:grid md:grid-cols-2 px-16 py-4 bg-[#222] text-white pb-[5vh]">
         <h1 class="section-heading text-left col-span-2"><b>Credits</b></h1>
         <div class="flex flex-col gap-2 self-start">
-            <h3 ><b>Concept: </b>Juliane Müller, Louisa Fortwengel, Giuliana Mei, Philipp Proff</h3>
-            <h3 ><b>Text & Content: </b>Juliane Müller, Louisa Fortwengel</h3>
-            <h3 ><b>Design & UI: </b>Giuliana Mei</h3>
-            <h3 ><b>Data Wrangling: </b>Louisa Fortwengel, Philipp Proff</h3>
-            <h3 ><b>Development: </b>Philipp Proff</h3>
+            <h4 ><b>Concept: </b><a href="">Juliane Müller</a>, <a href="">Louisa Fortwengel</a>, <a href="https://philippproff.eu">Giuliana Mei</a>, <a href="https://philippproff.eu">Philipp Proff</a></h4>
+            <h4 ><b>Text & Content: </b>Juliane Müller, Louisa Fortwengel</h4>
+            <h4 ><b>Design & UI: </b>Giuliana Mei</h4>
+            <h4 ><b>Data Wrangling: </b>Louisa Fortwengel, Philipp Proff</h4>
+            <h4 ><b>Development: </b>Philipp Proff</h4>
         </div>
         <div class="flex flex-col gap-8 md:gap-2 self-start">
             <img src="../assets/images/FHP_logo.svg" alt="" class="w-full md:w-2/4 pb-4">
