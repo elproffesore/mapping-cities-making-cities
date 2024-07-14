@@ -131,7 +131,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <div class="flex flex-col h-full">
                         <div>
                             <h2>The Young and the Poor have the heighest 'Feeling of Crisis'</h2>
-                            <p>Especially the <span class="underline decoration-primary">generations</span>, <span class="underline decoration-primary">different genders</span> and <span class="underline decoration-primary">classes</span> showed high differences of their crisis feeling while differences between city and rural or east and west germany were not so significant. <b>Explore yourself the perceived crisis amongst</b>
+                            <p>Especially the <span class="underline decoration-primary">generations</span>, <span class="underline decoration-primary">different genders</span> and <span class="underline decoration-primary">classes</span> showed high differences of their crisis feeling while differences between city and rural or east and west germany were not so significant. <b>Explore yourself the perceived crisis amongst </b>
                                  <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-if="!mobileAndTabletCheck()"
@@ -217,9 +217,10 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             </div>
             </GridComponent>
             <GridComponent id="effects-on-democracy">
-                <div class="content-container">
-                    <div class="relative">
-                        <img class="w-3/4 rotate-[-30deg] absolute top-[-150%]" src="./assets/images/burn.png" alt="">
+                <div class="content-container relative">
+                    <img class="rotate-[-45deg] absolute " :class="mobileAndTabletCheck()?'w-[250px] top-[-150px] left-[0px]':'w-[500px] top-[-350px] left-[0px]'" src="./assets/images/burn.png" alt="">
+
+                    <div>
                         <h1>Effects on Democracy</h1>
                         <p> Different political groups and people confronted with crises 
                             may feel similarly overloaded and left alone by politics. 
