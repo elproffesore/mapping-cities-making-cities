@@ -219,7 +219,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             <GridComponent id="effects-on-democracy">
                 <div class="content-container">
                     <div class="relative">
-                        <img :class="mobileAndTabletCheck()?'w-3/4 rotate-[-30deg] absolute top-[-35%]':'w-2/4 absolute top-[-50%] right-[-30%]'" src="./assets/images/burn.png" alt="">
+                        <img class="w-3/4 rotate-[-30deg] absolute top-[-150%]" src="./assets/images/burn.png" alt="">
                         <h1>Effects on Democracy</h1>
                         <p> Different political groups and people confronted with crises 
                             may feel similarly overloaded and left alone by politics. 
