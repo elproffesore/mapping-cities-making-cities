@@ -115,7 +115,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             <GridComponent id="who-is-concerned">
                 <div class="content-container">
                     <div>
-                        <h1>Who is feeling the crisis?</h1>
+                        <h1>Who is feeling the Crisis?</h1>
                         <p>Each crisis has a multitude of narratives to explain its origin and solutions. 
                                 Perceptions of crises and the extent to which people are affected by them depends
                                 heavily on their own social position. They all result in different demands towards
@@ -130,7 +130,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     </div>
                     <div class="flex flex-col h-full">
                         <div>
-                            <h2>The Young and the Poor have increased 'Feeling of Crisis'</h2>
+                            <h2>The Young and the Poor have the heighest 'Feeling of Crisis'</h2>
                             <p>Especially the <span class="underline decoration-primary">generations</span>, <span class="underline decoration-primary">different genders</span> and <span class="underline decoration-primary">classes</span> showed high differences of their crisis feeling while differences between city and rural or east and west germany were not so significant. <b>Explore yourself the perceived crisis amongst</b>
                                  <select
                                     class="w-min select text-white bg-primary rounded"
