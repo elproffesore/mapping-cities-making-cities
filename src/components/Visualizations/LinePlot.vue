@@ -76,8 +76,8 @@ function updateLinePlot() {
                 .data(Object.keys(props.data[props.selectedOption]))
                 .enter()
                 .append('g')
-                .attr('class', 'legend-item')
-                .attr('transform', (d, i) => `translate(${i * 80},0)`)
+                .attr('class', 'legend-item vis-fontsize')
+                .attr('transform', (d, i) => `translate(${i * 100},0)`)
             
                 legend.append('path')
                 .attr('d', 'M0,7 L25,7')
@@ -98,9 +98,11 @@ function updateLinePlot() {
                 })
 
                 legend.append('text')
-                    .attr('x', 30)
+                    .attr('x', 35)
                     .attr('y', 10)
-                    .attr('class', 'text-xs legend-text')
+                    .attr('text-anchor', 'start')
+                    .attr('alignment-baseline', 'central')
+                    .attr('class', 'legend-text')
                     .text(d => d);
 
     Object.keys(props.data[props.selectedOption]).map((option,optioni) => {
@@ -112,7 +114,7 @@ function updateLinePlot() {
             .attr('d', `M${scaleX.value(new Date("2023-06-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-08-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2023-11-01"))},${scaleY.value(0)} L${scaleX.value(new Date("2024-02-01"))},${scaleY.value(0)}` )
             .attr('class', 'line')
             .attr('stroke', ()=> {
-                return 'black'
+                return 'var(--primary)'
             })
             .attr('stroke-width', 1.5)
             .attr('fill', 'none')

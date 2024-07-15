@@ -42,7 +42,7 @@ onMounted(() => {
                 .data(['No Crisis Feeling','Crisis Feeling'])
                 .enter()
                 .append('g')
-                .attr('class', 'legend-item')
+                .attr('class', 'legend-item vis-fontsize')
                 .attr('transform', (d, i) => `translate(${i * 125},0)`)
             
             legend.append('rect')
@@ -57,7 +57,7 @@ onMounted(() => {
             legend.append('text')
                 .attr('x', 15)
                 .attr('y', 10)
-                .attr('class', 'text-xs legend-text')
+                .attr('class', 'legend-text')
                 .text(d => d);
     }
 
@@ -87,7 +87,7 @@ onMounted(() => {
         .data(ticks)
         .enter()
         .append('text')
-        .attr('class', 'tick-labels text-xs')
+        .attr('class', 'tick-labels')
         .attr('x', d => scaleX.value(d))
         .attr('y', (padding.value) + 30)
         .attr('text-anchor', 'middle')

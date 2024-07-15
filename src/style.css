@@ -11,13 +11,14 @@
         --secondary: #BEB6F2;
     }
     html{
-        background-color: var(--primary);
+        background-color: #f15060
     }
     body {
         @apply bg-background text-text text-justify;
-        overflow-x: hidden;
         scroll-behavior: smooth;
-        background-image: linear-gradient(180deg, #f15060 0%, #f5f5f5 4%);
+        overflow-x: hidden;
+        background-image: linear-gradient(180deg, #f15060 10%, #f5f5f5 15%, #f5f5f5 75% ,#BEB6F2 79%);
+
     }
     h1, h2, h3{
         @apply font-bold leading-[1] py-8 text-center;
@@ -33,10 +34,13 @@
         @apply text-[20px];
     }
     p {
-        @apply text-[16px];
+        @apply text-[16px] leading-[1.6];
     }
     a{
         @apply underline
+    }
+    .vis-fontsize{
+        @apply text-[12px];
     }
     /* Content Blocks */
     .content-container{
@@ -51,7 +55,7 @@
         padding: 0px 2px 2px 6px
     }
     .headline {
-        @apply text-[85px];
+        @apply text-[75px] text-left;
     }
     /* Buttons */
     .button {
@@ -63,4 +67,5 @@
     .button:active {
         @apply bg-primary text-white;
     }
+    
 }

@@ -11,7 +11,11 @@
             <h4 ><b>Development: </b>Philipp Proff</h4>
         </div>
         <div class="flex flex-col gap-8 md:gap-2 self-start">
-            <img src="../assets/images/FHP_logo.svg" alt="" class="w-full md:w-2/4 pb-4">
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <img src="../assets/images/FHP_logo.svg" alt="" class="w-full pb-4">
+                <img src="../assets/images/sosec_logo.png" alt="" class="w-full pb-4">
+                <img src="../assets/images/kit_logo.png" alt="" class="w-full pb-4">
+            </div>
             <p>This project was done during the class <a href="https://uclab.fh-potsdam.de/mapping/" _blank class="underline">"Mapping Cities - Making Cities"</a> at FH Potsdam in the summer semester 2024. We kindly thank Marian Dörk and Hendrik Lehman for the well taught input and the support during the development of the project.</p>
         </div>
     </div>
