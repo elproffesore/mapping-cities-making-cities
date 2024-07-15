@@ -85,7 +85,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     crisis analyses, putting us into a permanent state of emergency. But what exactly does that mean for
                     us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br> Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates societal polarisation and political attitudes in Germany in the period from December 2021 - February 2024.</p>
             </div>
-            <img src="./assets/images/right-arrow-header.svg" class=" w-[30px] absolute bottom-0 left-[50%] translate-y-[-50%] animate-bounce" alt="">
+            <img v-if="!mobileAndTabletCheck()" src="./assets/images/right-arrow-header.svg" class="w-[30px] absolute bottom-0 left-[50%] translate-y-[-50%] animate-bounce" alt="">
             <!-- <img class="row-start-2 col-start-2 col-span-10 md:row-span-3 md:col-start-9 scale-[1.2]" src="./assets/images/Welt.png" alt=""> -->
         </div>
         <AppHeader class="invisible md:visible" :updateMenuNumber="updateMenuNumber"
