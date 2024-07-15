@@ -40,7 +40,7 @@ onMounted(() => {
                 .attr('class', 'legend')
                 .attr('transform', `translate(${0},${height.value-15})`)
                 .selectAll('.legend-item')
-                .data(['No Crisis Feeling','Crisis Feeling'])
+                .data(["Doesn't feel Crisis",'Feels Crisis'])
                 .enter()
                 .append('g')
                 .attr('class', 'legend-item vis-fontsize')
@@ -53,7 +53,7 @@ onMounted(() => {
                 .attr('class', 'legend-rect')
                 .attr('width', 10)
                 .attr('height', 10)
-                .attr('fill', (d,i) => d == 'Crisis Feeling' ? 'var(--primary)' : 'var(--secondary)')
+                .attr('fill', (d,i) => d == 'Feels Crisis' ? 'var(--primary)' : 'var(--secondary)')
 
             legend.append('text')
                 .attr('x', 15)

@@ -75,20 +75,18 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
 </script>
 <template>
     <div class="">
-        <div class="grid grid-cols-12 items-center gap-[25px] md:h-[90vh] pt-[45px] md:p-[45px] text-white text-left">
-            <div class="row-start-1 text-center md:text-left col-start-2 col-span-10 md:col-span-8">
-                <h1 class="headline">
-                    Are Crisis even <span class="underline decoration-white decoration-8" style="padding: initial;">real</span>?
-                </h1>
-            </div>
-            <div class="row-start-3 col-start-2 col-span-10 md:col-span-6 self-end">
+        <div class="grid grid-cols-12 items-center h-[100vh] gap-[25px] md:p-[45px] text-primary text-left relative">
+            <img class="row-start-1 row-span-4 col-start-9 col-span-3 headline text-right scale-[2] self end" src="./assets/images/Welt.png" alt=""> 
+            <h1 class="row-start-1 col-start-1 col-span-5 headline self-start pb-0">Crisis <br> Everywhere</h1>
+            <h2 class="text-left text-text col-start-1 col-span-6 pt-0" >Concerned, Hopeless, Angry. How feelings of crisis translate to political reality.</h2>
+            <div class="row-start-4 text-text col-start-1 col-span-6 self-end">
                 <p>The phenomena of crisis is omnipresent and global – whether it's climate crisis, financial crisis,
                     migration crisis or crisis of democracy, to name few. We are constantly confronted with ever new
                     crisis analyses, putting us into a permanent state of emergency. But what exactly does that mean for
-                    us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br><br> Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates societal polarisation and political attitudes in Germany in the period from December 2021 - February 2024.</p>
-
+                    us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br> Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates societal polarisation and political attitudes in Germany in the period from December 2021 - February 2024.</p>
             </div>
-            <img class="row-start-2 col-start-2 col-span-10 md:row-span-3 md:col-start-9" src="./assets/images/Welt.png" alt="">
+            <img src="./assets/images/right-arrow.svg" class="w-[30px] absolute bottom-0 left-[50%] translate-y-[-50%] animate-bounce" alt="">
+            <!-- <img class="row-start-2 col-start-2 col-span-10 md:row-span-3 md:col-start-9 scale-[1.2]" src="./assets/images/Welt.png" alt=""> -->
         </div>
         <AppHeader class="invisible md:visible" :updateMenuNumber="updateMenuNumber"
             :updateMenuProgress="updateMenuProgress" />
@@ -106,8 +104,8 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                         </p>
                     </div>
                 </div>
-                <img class="col-start-2 col-span-10" v-if="!mobileAndTabletCheck()" src="./assets/images/polycrisis_new.png" alt="">
-                <img class="col-start-2 col-span-10" v-if="mobileAndTabletCheck()" src="./assets/images/polycrisis_new_mobile.png" alt="">
+                <img class="col-start-3 col-span-8" v-if="!mobileAndTabletCheck()" src="./assets/images/polycrisis.png" alt="">
+                <img class="col-start-2 col-span-10 mt-16" v-if="mobileAndTabletCheck()" src="./assets/images/polycrisis_mobile.png" alt="">
 
             </GridComponent>
             <GridComponent id="who-is-concerned">
@@ -177,7 +175,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 <div class="content-container relative">
                     <!-- <img class="w-1/3 absolute left-[-45%] top-[-0%]" src="./assets/images/quote_mobile.png"> -->
                     <div>
-                        <h1>About felt Realities and Perceived Truths</h1>
+                        <h1>About felt Realities <br> and Perceived Truths</h1>
                         <p>
                             Now that we have a grasp on who is feeling the crisis overall, we look at more concrete feelings of the crisis: 
                             People in Crisis Mode are prone to feel a sort of Doomsday Mood the most, compared to feeling like they suffer 
@@ -193,7 +191,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <div>
                         <div>
                             <h2>Being in Crisis Mode Boosts Pessimistic Stance</h2>
-                            <p>We can observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis. <b>See for yourself how people perceived their situation differently in comparison:</b></p>
+                            <p>We observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis. <b>See for yourself how people perceived their situation differently in comparison:</b></p>
                         </div>
                         <div class="grid grid-cols-2 gap-2 md:grid-cols-4 mt-16">
                                 <button class="button"
@@ -217,7 +215,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                 </div>
             </div>
             </GridComponent>
-            <GridComponent id="effects-on-democracy" class="md:mt-[20vh]">
+            <GridComponent id="effects-on-democracy" class="md:mt-[10vh]">
                 <div class="content-container">
                     <img class="rotate-[-45deg]" :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/burn.png" alt="">
                     <div>
@@ -231,7 +229,8 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <div>
                         <div>
                             <h2>Crisis Feeling Damages Trust in Democratic Institutions</h2>
-                            <p>People that showed a <span class="underline decoration-primary">high level of crisis perception</span> also showed a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> </p>
+                            <p>People that show a <span class="underline decoration-primary">high level of crisis perception</span> also show a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> The situation is <span class="underline decoration-primary">even worse</span> for people who have the <span class="underline decoration-primary">crisis feeling</span> and also <span class="underline decoration-primary">favor the "Alternative für Deutschland" (AfD) party.</span>
+                            </p>
                         </div>
                         <div class="grid grid-cols-2 gap-2 mt-16">
                                     <button class="button"
@@ -240,15 +239,12 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                         :class="selectedOptionTrustInInstitutionsIndex == index ? 'bg-primary text-white' : ''"
                                         @click="updateSelectedOptionTrustInInstitutions(option, index, this)">Trust in {{ option }}</button>
                         </div>
-                        <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full my-8" :data="data.statistics?.Crisis.Institutions ?? {}"
+                        <h3 class="pb-0 pt-8">% of General Population</h3>
+                        <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full mt-8" :data="data.statistics?.Crisis.Institutions ?? {}"
                             :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
                         </DotonlineComparison>
-                    </div>
-                    <div>
-                        <div>
-                            <p>The situation was <span class="underline decoration-primary">even worse</span> for people who had the <span class="underline decoration-primary">crisis feeling</span> and also <span class="underline decoration-primary">favored the "Alternative für Deutschland" (AfD) party.</span></p>
-                        </div>
-                        <DotonlineComparison class="w-full my-8" :data="data.statistics?.Crisis.InstitutionsAFD ?? {}"
+                        <h3 class="pb-0 pt-8">% of People who Favor the AfD</h3>
+                        <DotonlineComparison class="w-full mt-8" :data="data.statistics?.Crisis.InstitutionsAFD ?? {}"
                             :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="1">
                         </DotonlineComparison>
                     </div>
@@ -259,15 +255,15 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             to crisis people who sympathise with the AfD, do also have a significant higher desire for a strong leader as well as a higher opinion towards
                             nationalism.
                         </p>
-                        <img class="mt-[50px]" v-if="mobileAndTabletCheck()" src="./assets/images/democracy_new_mobile.png" alt="">
-                        <img v-if="!mobileAndTabletCheck()" src="./assets/images/democracy_new.png" alt="">
+                        <img class="mt-[50px]" v-if="mobileAndTabletCheck()" src="./assets/images/democracy_mobile.png" alt="">
+                        <img v-if="!mobileAndTabletCheck()" src="./assets/images/democracy.png" alt="">
                     </div>
                 </div>
             </GridComponent>
             <GridComponent id="crisis-resilience" class="mt-[35vh]">
                 <div class="content-container relative">
-                    <img :class="mobileAndTabletCheck()?'absolute top-[-12.5%] left-[-10%]':'absolute top-[-20%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
-                    <img :class="mobileAndTabletCheck()?'absolute top-[-12.5%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
+                    <img :class="mobileAndTabletCheck()?'absolute top-[-30%] left-[-10%]':'absolute top-[-50%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
+                    <img :class="mobileAndTabletCheck()?'absolute top-[-20%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
                     <h1>Crisis: A Chance for Transformation</h1>
                     <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a rise of protest activity, no matter thein different political spectrums. <br>
                         What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br><br>
@@ -279,6 +275,9 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                         S. 28)</p>
                     <br>
                     <p>Especially in context of the polycrisis, is the approach to involve citizens into processes policy making, the go-to strategy that policy-makers as well as citizens favor the most. Models of Citizen participation through citizen's assemblies are already tested allover Europe.</p>
+                </div>
+                <div class="content-container">
+                    <h1>Crisis Resilience</h1>
                     <p>We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's financial status and generational outlook 
                         more than their gender or living area. It is connected to the feeling that one suffers more than others, that one is financially not secured. 
                         Feeling crisis also translates into politics. It is connected to low trust in the current government and higher liking of right-wing parties.
@@ -289,6 +288,7 @@ But - <span class="underline decoration-primary">those who agree with dictatorsh
 
 Politics will have to adress the need for local participation. [Bezug zu Deutschland Monitor herstellen - Stadt/Land oder Ost/West ist nicht so wichtig wie das Gefühl, abgehängt zu sein. Und die lokale Pollitik. Vertrauen in Politik ist größer, je näher sie am Menschen, statt "die da Oben" ist.]
                     </p>
+
                 </div>
             </GridComponent>
         </ScrollytellingComponent>

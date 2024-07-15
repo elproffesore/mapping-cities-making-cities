@@ -34,16 +34,15 @@ onMounted(() => {
 
     scaleX.value = d3.scaleLinear().domain([0, 100]).range([0+padding.value, width.value-padding.value])
 
-    if(props.componentIndex != 0 ){
         const legend = svg.value.append('g')
                 .attr('class', 'legend')
                 .attr('transform', `translate(${0},${height.value-30})`)
                 .selectAll('.legend-item')
-                .data(['No Crisis Feeling','Crisis Feeling'])
+                .data(["Doesn't feel Crisis",'Feels Crisis'])
                 .enter()
                 .append('g')
                 .attr('class', 'legend-item vis-fontsize')
-                .attr('transform', (d, i) => `translate(${i * 125},0)`)
+                .attr('transform', (d, i) => `translate(${i * 135},0)`)
             
             legend.append('rect')
                 .attr('x', 0)
@@ -52,16 +51,13 @@ onMounted(() => {
                 .attr('class', 'legend-rect')
                 .attr('width', 10)
                 .attr('height', 10)
-                .attr('fill', (d,i) => d == 'Crisis Feeling' ? 'var(--primary)' : 'var(--secondary)')
+                .attr('fill', (d,i) => d == 'Feels Crisis' ? 'var(--primary)' : 'var(--secondary)')
 
             legend.append('text')
                 .attr('x', 15)
                 .attr('y', 10)
                 .attr('class', 'legend-text')
                 .text(d => d);
-    }
-
-
 
     svg.value.append('path')
         .attr('d', `M${scaleX.value(0)},${(padding.value/2)+ (gap.value * 0)} L${scaleX.value(100)},${(padding.value/2)+ (gap.value * 0)}`)
@@ -158,7 +154,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div :class="componentIndex == 0? 'h-[50px]':'h-[100px]', 'w-full'">
+        <div class="w-full h-[100px]">
             <svg :id="'dotonlinecomparison'+componentIndex" height="100%" width="100%"></svg>
         </div>
 </template>
