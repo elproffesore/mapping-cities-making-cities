@@ -75,11 +75,11 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
 </script>
 <template>
     <div class="">
-        <div class="grid grid-cols-12 items-center h-[100vh] gap-[25px] pt-[45px]  md:p-[45px] text-primary text-left relative">
+        <div class="grid grid-cols-12 items-center gap-[25px] pt-[45px]  md:p-[45px] text-primary text-left relative">
             <img class="row-start-1 col-start-2 col-span-10 md:row-start-1 md:row-span-4 md:col-start-9 md:col-span-3 headline text-right md:scale-[2]" src="./assets/images/Welt.png" alt=""> 
             <h1 class="text-[60px] col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-5 md:headline self-start pb-0">Crisis <br> Everywhere</h1>
             <h2 class="row-start-3 text-center md:text-left text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 pt-0" >Concerned, Hopeless, Angry. How feelings of crisis translate to political reality.</h2>
-            <div class="row-start-4 text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
+            <div class="row-start-4 text-text text-justify md:text-left col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
                 <p>The phenomena of crisis is omnipresent and global – whether it's climate crisis, financial crisis,
                     migration crisis or crisis of democracy, to name few. We are constantly confronted with ever new
                     crisis analyses, putting us into a permanent state of emergency. But what exactly does that mean for
@@ -260,7 +260,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     </div>
                 </div>
             </GridComponent>
-            <GridComponent id="crisis-resilience" class="mt-[35vh]">
+            <GridComponent id="crisis-resilience" class="mt-[45vh]">
                 <div class="content-container relative">
                     <img :class="mobileAndTabletCheck()?'absolute top-[-30%] left-[-10%]':'absolute top-[-50%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
                     <img :class="mobileAndTabletCheck()?'absolute top-[-20%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
