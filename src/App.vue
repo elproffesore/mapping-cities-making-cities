@@ -75,17 +75,17 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
 </script>
 <template>
     <div class="">
-        <div class="grid grid-cols-12 items-center h-[100vh] gap-[25px] md:p-[45px] text-primary text-left relative">
-            <img class="row-start-1 row-span-4 col-start-9 col-span-3 headline text-right scale-[2] self end" src="./assets/images/Welt.png" alt=""> 
-            <h1 class="row-start-1 col-start-1 col-span-5 headline self-start pb-0">Crisis <br> Everywhere</h1>
-            <h2 class="text-left text-text col-start-1 col-span-6 pt-0" >Concerned, Hopeless, Angry. How feelings of crisis translate to political reality.</h2>
-            <div class="row-start-4 text-text col-start-1 col-span-6 self-end">
+        <div class="grid grid-cols-12 items-center h-[100vh] gap-[25px] pt-[45px]  md:p-[45px] text-primary text-left relative">
+            <img class="row-start-1 col-start-2 col-span-10 md:row-start-1 md:row-span-4 md:col-start-9 md:col-span-3 headline text-right md:scale-[2]" src="./assets/images/Welt.png" alt=""> 
+            <h1 class="text-[60px] col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-5 md:headline self-start pb-0">Crisis <br> Everywhere</h1>
+            <h2 class="row-start-3 text-center md:text-left text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 pt-0" >Concerned, Hopeless, Angry. How feelings of crisis translate to political reality.</h2>
+            <div class="row-start-4 text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
                 <p>The phenomena of crisis is omnipresent and global – whether it's climate crisis, financial crisis,
                     migration crisis or crisis of democracy, to name few. We are constantly confronted with ever new
                     crisis analyses, putting us into a permanent state of emergency. But what exactly does that mean for
                     us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br> Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates societal polarisation and political attitudes in Germany in the period from December 2021 - February 2024.</p>
             </div>
-            <img src="./assets/images/right-arrow.svg" class="w-[30px] absolute bottom-0 left-[50%] translate-y-[-50%] animate-bounce" alt="">
+            <img src="./assets/images/right-arrow-header.svg" class=" w-[30px] absolute bottom-0 left-[50%] translate-y-[-50%] animate-bounce" alt="">
             <!-- <img class="row-start-2 col-start-2 col-span-10 md:row-span-3 md:col-start-9 scale-[1.2]" src="./assets/images/Welt.png" alt=""> -->
         </div>
         <AppHeader class="invisible md:visible" :updateMenuNumber="updateMenuNumber"
@@ -294,23 +294,40 @@ Politics will have to adress the need for local participation. [Bezug zu Deutsch
         </ScrollytellingComponent>
         <GridComponent>
             <div class="content-container gap-4" id="sources">
-                <div class="border rounded border-1 w-full px-4">
-                    <div class="grid grid-cols-2 items-center ">
-                        <h2 class="text-left">References</h2>
-                        <img @click="showReferences = !showReferences" src="./assets/images/right-arrow.svg" :class="!showReferences?'rotate-90':'rotate-[-90deg]'" class=" w-8 justify-self-end" alt="">
-                    </div>
-                    <p class="pb-4" v-if="showReferences">Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates
-                        feelings and political attitudes in Germany in the period from 2022 - 2024.
+                <div class=" w-full px-4">
+                    <h2 class="text-left">References</h2>
+                    <p class="pb-4"><b>Dataset:</b>
+                        <br>
+                        <br>
+FZI Research Center for Information Technology. (2023). Social Sentiment in Times of Crises (SOSEC). Available online: https://www.socialsentiment.org/sosec-projekt/
+<br>
+<br>
+<b>Further References:</b>
+<br>
+<br>
+Arendt, H. (2017). Elemente und Ursprünge totaler Herrschaft (10th ed.). Munich: Piper Verlag.
+<br>
+<br>
+Bandura, A (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. In: Psychological Review. Vol.84 (2): 191–215. doi:10.1037/0033-295x.84.2.191. PMID 847061. S2CID 7742072.
+<br>
+<br>
+Eggers, W. (2008). The changing Nature of Government: Network Governance. London:Deloitte.
+<br>
+<br>
+Hans-Böckler-Stiftung. (2024). Aufstieg des Rechtspopulismus: Erklärungsansätze und Analysen. URL:https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.htm [01.07.2024]
+<br>
+<br>
+Langenkamp, A/ Bienstman, S. (2022). Populism and Layers of Social Belonging: Support of Populist Parties in Europe. In: Political Psychology. Vol.43(5): 931-949. https://doi.org/10.1111/pops.12827
+<br>
+<br>
+Lietzmann, H. J., Renn, O., Freier, N., Kirby, N. E., & Oppold, D.(2021). Bürgerräte als eine zeitgemässe Ergänzung der repräsentativen Demokratie: Handreichung für eine Implementation deliberativer Bürgerräte. Potsdam/Wuppertal: Institute for Advanced Sustainability Studies e.V. (IASS), Institut für Demokratie- und Partizipationsforschung (IDPF).
+<br>
+<br>
+Neu, C., Küpper, B., & Luhmann, M. (2023). Extrem einsam? Die demokratische Relevanz von Einsamkeitserfahrungen und Jugendlichen in Deutschland. Das Progressive Zentrum. URL: https://www.demokratie-leben.de/magazin/magazin-details/studie-extrem-einsam-166 [01.07.2024]
+<br>
+<br>
+Thomas, W.I. & Thomas, D.S. (1928). The Child in America: Behavior problems and programs. New York: Knopf.
                     </p>                </div>
-                <div class="border rounded border-1 w-full px-4">
-                    <div class="grid grid-cols-2 items-center ">
-                        <h2 class="text-left">Dataset</h2>
-                        <img @click="showDatasetDescription = !showDatasetDescription" src="./assets/images/right-arrow.svg" :class="!showDatasetDescription?'rotate-90':'rotate-[-90deg]'" class=" w-8 justify-self-end" alt="">
-                    </div>
-                    <p class="pb-4" v-if="showDatasetDescription">Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates
-                        feelings and political attitudes in Germany in the period from 2022 - 2024.
-                    </p>
-                </div>
             </div>
         </GridComponent>
     </div>
