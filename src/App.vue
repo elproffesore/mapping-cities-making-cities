@@ -62,10 +62,10 @@ onMounted(async () => {
             <h1 class="text-[55px] mb-8 col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-8 md:headline self-start pb-0">F0REVER<br>L0ST<br>DEUTSCH<br>LAND?</h1>
             <h2 class="row-start-3 text-center md:text-left text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 pt-0" >Concerned, Hopeless, Angry. <br> How feelings of crisis translate to political reality.</h2>
             <div class="row-start-4 text-text text-justify md:text-left col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
-                <p>The phenomena of crisis is omnipresent and global – whether it's climate crisis, financial crisis,
-                    migration crisis or crisis of democracy, to name few. We are constantly confronted with ever new
+                <p>The phenomena of multiple crises are omnipresent and global – whether it's climate crisis, financial crisis,
+                    migration crisis or crisis of democracy, to name only few. We are constantly confronted with ever new
                     crisis analyses, putting us into a permanent state of emergency. But what exactly does that mean for
-                    us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br> Our Datastory is based on the Survey 'Social Sentiments in Times of Crises' that investigates societal polarisation and political attitudes in Germany in the period from December 2021 - February 2024.</p>
+                    us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br> Our Data story is based on the Survey 'Social Sentiments in Times of Crises' that investigates societal polarization and political attitudes in Germany in the period from December 2021 - February 2024.</p>
             </div>
             <img v-if="!mobileAndTabletCheck()" src="./assets/images/right-arrow-header.svg" class="w-[30px] absolute bottom-0 left-[50%] translate-y-[-50%] animate-bounce" alt="">
             <!-- <img class="row-start-2 col-start-2 col-span-10 md:row-span-3 md:col-start-9 scale-[1.2]" src="./assets/images/Welt.png" alt=""> -->
@@ -80,9 +80,9 @@ onMounted(async () => {
                         <h1>Can you feel Polycrisis yet?</h1>
                         <p>
                             Reality check: we are living in instable times. Climate change, the former number one topic of
-                            concern, is falling behind more pressing and feasible topics, such as inflation or political
+                            concern, is falling behind more pressing and feasible ones, such as inflation or political
                             conflicts. All topics are intertwined and already changing the ways we are able to live and
-                            move. What do you experience? <b>In the following you can see how much each of the contemporary crisis were pressuring for people in Germany:</b>
+                            move. What do you experience? <b>In the following, you can see how much each of the contemporary crisis were pressing for people in Germany:</b>
                         </p>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ onMounted(async () => {
                 <div class="content-container">
                     <div>
                         <h1>Who is feeling the Crisis?</h1>
-                        <p>Each crisis has a multitude of narratives to explain its origin and solutions. 
+                        <p>Each crisis has a multitude of narratives to explain its origins and solutions. 
                                 Perceptions of crises and the extent to which people are affected by them depends
                                 heavily on their own social position. They all result in different demands towards
                                 politicians and our political system.
@@ -107,14 +107,14 @@ onMounted(async () => {
                         <br>
                         <p>
                                 But before we delve into what crisis means for
-                                democracy, we ask about the feeling of crisis: depressed, anxious, angry, left behind.
-                                Who is concerned? Is it the old? The poor? The people on the countryside? 
+                                democracy, we ask about the <i>feeling of crisis</i>: depressed, anxious, angry.
+                                Who is concerned? Is it the elderly? The impoverished? People in the countryside?  
                         </p>
                     </div>
                     <div class="flex flex-col h-full">
                         <div>
                             <h2>The Young and the Poor have the Heighest 'Feeling of Crisis'</h2>
-                            <p>Especially the <span class="underline decoration-primary">generations</span>, <span class="underline decoration-primary">different genders</span> and <span class="underline decoration-primary">classes</span> showed high differences of their crisis feeling while differences between city and rural or east and west germany were not so significant. <b>Explore yourself the perceived crisis amongst </b>
+                            <p>Especially the <span class="underline decoration-primary">young generations</span>, <span class="underline decoration-primary">women</span> and the <span class="underline decoration-primary">low-income classes</span> are prone to <i>feel crisis</i>, while differences between city and rural or east and west germany were not so significant. <b>Explore yourself the perceived crisis amongst </b>
                                  <select
                                     class="w-min select text-white bg-primary rounded"
                                     v-if="!mobileAndTabletCheck()"
@@ -165,10 +165,9 @@ onMounted(async () => {
                     <div>
                         <h1>About felt Realities <br> and Perceived Truths</h1>
                         <p>
-                            Now that we have a grasp on who is feeling the crisis overall, we look at more concrete feelings of the crisis: 
-                            People in Crisis Mode are prone to feel a sort of Doomsday Mood the most, compared to feeling like they suffer 
-                            more than others or like they will not be able to pay their bills in the next month. 
-                            Especially depression and anxiety are defining factors for crisis mode in our analysis. 
+                            Now that we have a grasp on who is feeling the crisis overall, we look at more concrete correlates of crisis: 
+                            People who <i>feel crisis</i> agree to feel a sort of Doomsday Mood the most, but also have high levels of feeling like they suffer 
+                            more than others and like they will not be able to pay their bills in the next month.
                         </p>
                     </div>
                     <div class="my-[5vh] grid justify-items-center md:my-[10vh] ">
@@ -179,7 +178,7 @@ onMounted(async () => {
                     <div>
                         <div>
                             <h2>Being in Crisis Mode Boosts Pessimistic Stance</h2>
-                            <p>We observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis. <b>See for yourself how people perceive their situation differently in comparison:</b></p>
+                            <p>We observe that <span class="underline decoration-primary">people who <i>feel crisis</i> are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel crisis. <b>See for yourself how people perceive their situation differently in comparison:</b></p>
                         </div>
 
                         <div class="my-[100px]">
@@ -216,9 +215,17 @@ onMounted(async () => {
                     </div>
                     <div>
                         <div>
-                            <h2>Crisis Feeling Damages Trust in Democratic Institutions</h2>
-                            <p>How many participants agree to have trust in the government or the legal system? Again, we differentiate between who feel crisis and those who do not. Amongst those who do feel crisis, a lower percentage agrees to have trust. This percentage is even lower for those who feel crisis and also favor the right wing party "Alternative für Deutschland"</p>
-                            <p>People that show a <span class="underline decoration-primary">high level of crisis perception</span> also show a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> The situation is <span class="underline decoration-primary">even worse</span> for people who have the <span class="underline decoration-primary">crisis feeling</span> and also <span class="underline decoration-primary">favor the "Alternative für Deutschland" (AfD) party.</span>
+                            <h2>Feeling Crisis Damages Trust in Democratic Institutions</h2>
+                            <p>How many participants agree to have trust in the government or the legal system? 
+                                Again, we differentiate between who <i>feel crisis</i> and those who do not. 
+                                Amongst those who do <i>feel crisis</i>, <span class="underline decoration-primary">less people agree to trust democratic institutions</span>. 
+                                This percentage is  <span class="underline decoration-primary">even lower for those who <i>feel crisis</i> and 
+                                <i>also</i> favor the right wing party "Alternative für Deutschland" (AFD)</span></p>
+                            <!--<p>People that show a <span class="underline decoration-primary">high level of crisis perception</span> 
+                            also show a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> 
+                            The situation is <span class="underline decoration-primary">even worse</span> 
+                            for people who have the <span class="underline decoration-primary">crisis feeling</span> and 
+                            also <span class="underline decoration-primary">favor the "Alternative für Deutschland" (AfD) party.</span>-->
                             </p>
                         </div>
                         <div class="my-[100px]">
@@ -244,8 +251,10 @@ onMounted(async () => {
                     </div>
                     <div>
                         <h2>Longing for a Strong Leader in uncertain Times</h2>
-                        <p>In Germany, not only is there a clear polarization between people favoring the AFD versus the Green and Social party. The call for a strong leader is a dangerous reflex in uncertain times. This is what we observe: those who feel crisis and also symathize with the AFD have especially high agreement to dictatorship and desire a stronger sense of national identity.
-                        <b>See how people who favor the AfD and have the crisis feeling are more extreme then people who have the crisis feeling but do not favor the AfD:</b>
+                        <p>In Germany, not only is there a clear polarization between people favoring the AFD versus the Green and Social party. 
+                            The call for a strong leader is a dangerous reflex in uncertain times. 
+                            This is what we observe: those who <span class="underline decoration-primary"><i>feel crisis</i> and <i>also</i> sympathize with the AFD</span> have especially high <span class="underline decoration-primary">agreement to dictatorship and desire a stronger sense of national identity</span>.
+                        See how people who <i>feel crisis</i> and <i>also</i> favor the AfD are more extreme than people who <i>feel crisis</i> but do not favor the AfD:
                         </p>
                         <img class="my-[50px]" v-if="mobileAndTabletCheck()" src="./assets/images/democracy_new_mobile.png" alt="">
                         <img class="my-[50px]" v-if="!mobileAndTabletCheck()" src="./assets/images/democracy_new.png" alt="">
@@ -265,7 +274,7 @@ onMounted(async () => {
                         Feeling crisis also translates into politics. Into lower trust in the current government and higher liking of right-wing parties. 
                         If people both feel crisis and also sympathize with right-wing parties, trust is especially low and anti-democratic tendencies are high. <br>
                         But those who agree with dictatorship are the minority. Trust in the government may be low, but the general trust in the legal system is still prominent. People increasingly express their opinion in demonstrations, no matter their political background. 
-                        Similarily, the demand for transforming the democratic system towards more <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">means of direct democracy</a> is rising. <br>
+                        Similarly, the demand for transforming the democratic system towards more <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">means of direct democracy</a> is rising. <br>
                         Instead of blaming one or the other, we want to counter feeling crisis, paralysis and polarization by asking: what do we need to change?
                     </p>
                 </div>
@@ -276,22 +285,17 @@ onMounted(async () => {
                                 worked age requires governments to change the way they think and operate. [...]
                                 we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of government«, S. 28
                     </p>
-                    <p>The less people feel seen and represented in their direct living environment, the more they turn away from politics. 
-                        This means that local political institutions create the highest impact on a person's trust in political decisions 
-                        (https://www.gesis.org/fileadmin/admin/Dateikatalog/pdf/Deutschland-Monitor23_Web.pdf). <br>
-                        Especially in context of the polycrisis, involving citizens into processes of policy making is the suggested go-to strategy for future orientated models of democracy 
-                        (QUELLE: https://www.rifs-potsdam.de/de/ergebnisse/dossiers/buergerraete). 
-                        Allover Europe models are tested, for example establishing citizen's assemblies 
-                        (https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf) 
-                        or implementing methods of liquid democracy (https://liqd.net/de/). Strengthening workers democratic self-image at 
-                        workplaces through workers unions
-                        (https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.html). 
+                    <p>The less people feel <a href="https://www.gesis.org/fileadmin/admin/Dateikatalog/pdf/Deutschland-Monitor23_Web.pdf" target="_blank">seen and represented in their direct living environment</a>, 
+                        the more they turn away from politics. 
+                        This means that local political institutions create the highest impact on a person's trust in political decisions. <br>
+                        Especially in context of the polycrisis, <a href="https://www.rifs-potsdam.de/de/ergebnisse/dossiers/buergerraete" target="_blank">involving citizens into processes of policy making</a> is the suggested go-to strategy for future orientated models of democracy. 
+                        Allover Europe models are tested, for example establishing <a href="https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf" target="_blank">citizen's assemblies</a> or implementing methods of <a href="https://liqd.net/de/" target="_blank">liquid democracy</a>. 
+                        Strengthening workers democratic self-image <a href="https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.html" target="_blank">at 
+                        workplaces and through workers unions</a>. 
                         Enabling children to experience their political impact in schools and foster their sense of belonging in non-commercial activities. <br><br>
 
-                        More informal activities that still strengthen community live are projects to connect with one's neighbourhood. 
-                        Places like open workshops (LINK: https://offene-werkstaetten.org/de) or community gardening 
-                        (https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick)
-                        are hubs for cultivating the seeds of community resilience. <br><br>
+                        More informal activities that still strengthen community live are projects to connect with one's neighborhood. 
+                        Places like <a href="https://offene-werkstaetten.org/de" target="_blank">open workshops</a> or <a href="(https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick" target="_blank">community gardening</a> are hubs for cultivating the seeds of community resilience. <br><br>
                         Because only together we can strengthen us to go brave through the crises.
                     </p>
                     <img :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/lostbahnhof risored.png" alt="">
