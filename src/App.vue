@@ -59,7 +59,7 @@ onMounted(async () => {
     <div class="">
         <div class="grid grid-cols-12 items-center gap-[0px] pt-[45px] md:h-[95vh]  md:p-[45px] text-primary text-left relative">
             <img class="headline text-right row-start-1 col-start-1 col-span-12 md:row-start-1 md:row-span-4 md:col-start-9 md:col-span-3 md:scale-[2.0]" src="./assets/images/Welt.png" alt=""> 
-            <h1 class="text-[55px] mb-8 col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-8 md:headline self-start pb-0">Crisis:<br>A Democracy Beater?</h1>
+            <h1 class="text-[55px] mb-8 col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-8 md:headline self-start pb-0">F0REVER<br>L0ST<br>DEUTSCH<br>LAND?</h1>
             <h2 class="row-start-3 text-center md:text-left text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 pt-0" >Concerned, Hopeless, Angry. <br> How feelings of crisis translate to political reality.</h2>
             <div class="row-start-4 text-text text-justify md:text-left col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
                 <p>The phenomena of crisis is omnipresent and global – whether it's climate crisis, financial crisis,
