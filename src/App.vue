@@ -260,36 +260,39 @@ onMounted(async () => {
                     <img :class="mobileAndTabletCheck()?'absolute top-[-30%] left-[-10%]':'absolute top-[-50%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
                     <img :class="mobileAndTabletCheck()?'absolute top-[-20%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
                     <h2>Crisis: A Chance for Transformation</h2>
-                    <p> We see how feeling crisis -- angry, uncertain, left behind -- goes hand in hand with people's financial status and generational outlook 
+                    <p> We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's financial status and generational outlook 
                         more than their gender or living area. It connects to feeling in a Doomsday Mood, left behind and financially unstable. 
                         Feeling crisis also translates into politics. Into lower trust in the current government and higher liking of right-wing parties. 
                         If people both feel crisis and also sympathize with right-wing parties, trust is especially low and anti-democratic tendencies are high. <br>
                         But those who agree with dictatorship are the minority. Trust in the government may be low, but the general trust in the legal system is still prominent. People increasingly express their opinion in demonstrations, no matter their political background. 
                         Similarily, the demand for transforming the democratic system towards more <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">means of direct democracy</a> is rising. <br>
-                        Instead of blaming one or the other, we want to counter feeling crisis, paralysis and polarization by asking: what do we need to change? <b>transformation of the democratic system</b> through <br><br>
+                        Instead of blaming one or the other, we want to counter feeling crisis, paralysis and polarization by asking: what do we need to change?
                     </p>
-                    <p><i><b>»The traditional, hierarchical government model simply does not
-                                meet the demands of this complex, rapidly changing age. [...] thriving in the net
-                                worked age requires governments to change the way they think and operate. [...]
-                                we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of government«,
-                        S. 28</p>
-                    <br>
-                    <p>              </p>
-                    <br>
-                    <br>
-                    <p>Especially in context of the polycrisis, the approach to involve citizens into processes of policy making, is the go-to strategy that recent studies suggest for future orientated models of democracy. Models of Citizen participation through citizen's assemblies are already tested allover Europe.</p>
                 </div>
                 <div class="content-container">
                     <h1>Crisis Resilience</h1>
-                    <p>We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's financial status and generational outlook 
-                        more than their gender or living area. It is connected to the feeling that one suffers more than others, that one is financially not secured. 
-                        Feeling crisis also translates into politics. It is connected to low trust in the current government and higher liking of right-wing parties.
-                        Especially if people both feel crisis and sympathize with right-wing parties, trust is low and anti-democratic tendencies are high. 
-                        They even agree with dictatorship under certain circumstances.<br><br>
+                    <p><i><b>»The traditional, hierarchical government model simply does not
+                                meet the demands of this complex, rapidly changing age. [...] thriving in the net
+                                worked age requires governments to change the way they think and operate. [...]
+                                we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of government«, S. 28
+                    </p>
+                    <p>The less people feel seen and represented in their direct living environment, the more they turn away from politics. 
+                        This means that local political institutions create the highest impact on a person's trust in political decisions 
+                        (https://www.gesis.org/fileadmin/admin/Dateikatalog/pdf/Deutschland-Monitor23_Web.pdf). <br>
+                        Especially in context of the polycrisis, involving citizens into processes of policy making is the suggested go-to strategy for future orientated models of democracy 
+                        (QUELLE: https://www.rifs-potsdam.de/de/ergebnisse/dossiers/buergerraete). 
+                        Allover Europe models are tested, for example establishing citizen's assemblies 
+                        (https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf) 
+                        or implementing methods of liquid democracy (https://liqd.net/de/). Strengthening workers democratic self-image at 
+                        workplaces through workers unions
+                        (https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.html). 
+                        Enabling children to experience their political impact in schools and foster their sense of belonging in non-commercial activities. <br><br>
 
-But - <span class="underline decoration-primary">those who agree with dictatorship are the minority.</span> Although, trust in the government may be low, the general trust in the legal system is still prominent.<br><br>
-
-Politics will have to adress the need for local participation. [Bezug zu Deutschland Monitor herstellen - Stadt/Land oder Ost/West ist nicht so wichtig wie das Gefühl, abgehängt zu sein. Und die lokale Pollitik. Vertrauen in Politik ist größer, je näher sie am Menschen, statt "die da Oben" ist.]
+                        More informal activities that still strengthen community live are projects to connect with one's neighbourhood. 
+                        Places like open workshops (LINK: https://offene-werkstaetten.org/de) or community gardening 
+                        (https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick)
+                        are hubs for cultivating the seeds of community resilience. <br><br>
+                        Because only together we can strengthen us to go brave through the crises.
                     </p>
 
                 </div>
