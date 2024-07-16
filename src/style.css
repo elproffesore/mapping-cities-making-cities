@@ -19,6 +19,7 @@
     }
     h1, h2, h3{
         @apply font-bold leading-[1] py-8 text-center;
+        font-family: 'Degular', sans-serif;
         vertical-align: middle;
     }
     h1 {
@@ -36,9 +37,7 @@
     a{
         @apply underline
     }
-    .vis-fontsize{
-        @apply text-[12px];
-    }
+
     /* Content Blocks */
     .content-container{
         @apply col-start-2 col-span-10 grid justify-items-center md:col-start-4 md:col-span-6
@@ -52,7 +51,13 @@
         padding: 0px 2px 2px 6px
     }
     .headline {
-        @apply text-[150px] text-left leading-[0.9] pb-2;
+        @apply text-[130px] text-left leading-[0.9] pb-2;
+    }
+    .vis-fontsize{
+        @apply text-[12px];
+    }
+    .source{
+        @apply text-[12px] text-text text-right pt-px;
     }
     /* Buttons */
     .button {

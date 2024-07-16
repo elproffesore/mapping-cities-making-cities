@@ -10,9 +10,7 @@ import { ref, onMounted, reactive } from 'vue';
 const updateMenuNumber = ref(0)
 const updateMenuProgress = ref(0)
 const data = reactive({})
-const showDatasetDescription = ref(false)
 const showReferences = ref(false)
-
 
 const selectedOptionWhoIsConcerned = ref('')
 
@@ -56,29 +54,13 @@ onMounted(async () => {
     selectedOptionWhoIsConcerned.value = Object.keys(data.statisticsTime)[0]
     selectedOptionTrustInInstitutions.value = Object.keys(data.statistics.Crisis.Institutions)[0]
 })
-const highestGroup = ref('')
-const highestGroupPercent = ref(0)
-function sethighestGroup(group, percent) {
-    highestGroup.value = group
-    highestGroupPercent.value = percent
-}
-const highestGroupDotonline = ref('')
-const lowestGroupDotonline = ref('')
-const highestGroupDotonlinePercent = ref(0)
-const lowestGroupDotonlinePercent = ref(0)
-function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowestPercent) {
-    highestGroupDotonline.value = highestGroup
-    highestGroupDotonlinePercent.value = highestPercent
-    lowestGroupDotonline.value = lowestGroup
-    lowestGroupDotonlinePercent.value = lowestPercent
-}
 </script>
 <template>
     <div class="">
-        <div class="grid grid-cols-12 items-center gap-[25px] pt-[45px]  md:p-[45px] text-primary text-left relative">
-            <img class="row-start-1 col-start-2 col-span-10 md:row-start-1 md:row-span-4 md:col-start-9 md:col-span-3 headline text-right md:scale-[2]" src="./assets/images/Welt.png" alt=""> 
-            <h1 class="text-[60px] col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-5 md:headline self-start pb-0">Crisis <br> Everywhere</h1>
-            <h2 class="row-start-3 text-center md:text-left text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 pt-0" >Concerned, Hopeless, Angry. How feelings of crisis translate to political reality.</h2>
+        <div class="grid grid-cols-12 items-center gap-[0px] pt-[45px] md:h-[95vh]  md:p-[45px] text-primary text-left relative">
+            <img class="headline text-right row-start-1 col-start-1 col-span-12 md:row-start-1 md:row-span-4 md:col-start-9 md:col-span-3 md:scale-[2.0]" src="./assets/images/Welt.png" alt=""> 
+            <h1 class="text-[55px] mb-8 col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-8 md:headline self-start pb-0">Crisis:<br>A Democracy Beater?</h1>
+            <h2 class="row-start-3 text-center md:text-left text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 pt-0" >Concerned, Hopeless, Angry. <br> How feelings of crisis translate to political reality.</h2>
             <div class="row-start-4 text-text text-justify md:text-left col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
                 <p>The phenomena of crisis is omnipresent and global – whether it's climate crisis, financial crisis,
                     migration crisis or crisis of democracy, to name few. We are constantly confronted with ever new
@@ -92,7 +74,7 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             :updateMenuProgress="updateMenuProgress" />
         <ScrollytellingComponent :offset="0" :progress="true" :threshold="4" :once="false" :debug="false"
             @step-progress="updateMenu">
-            <GridComponent id="multicrisis">
+            <GridComponent id="multicrisis" class="md:mt-[15vh]">
                 <div class="content-container">
                     <div>
                         <h1>Can you feel Polycrisis yet?</h1>
@@ -100,13 +82,18 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                             Reality check: we are living in instable times. Climate change, the former number one topic of
                             concern, is falling behind more pressing and feasible topics, such as inflation or political
                             conflicts. All topics are intertwined and already changing the ways we are able to live and
-                            move. What do you experience?
+                            move. What do you experience? <b>In the following you can see how much each of the contemporary crisis were pressuring for people in Germany:</b>
                         </p>
                     </div>
                 </div>
                 <img class="col-start-3 col-span-8" v-if="!mobileAndTabletCheck()" src="./assets/images/polycrisis.png" alt="">
                 <img class="col-start-2 col-span-10 mt-16" v-if="mobileAndTabletCheck()" src="./assets/images/polycrisis_mobile.png" alt="">
-
+                <div class="content-container">
+                    <div class="w-full">
+                        <hr>
+                         <p class="source">Source: <a href="https://de.statista.com/statistik/daten/studie/28353/umfrage/wichtigste-von-der-politik-zu-loesende-probleme-in-deutschland/">statista.com</a>, ARD., 2024</p>
+                    </div>
+                </div>
             </GridComponent>
             <GridComponent id="who-is-concerned">
                 <div class="content-container">
@@ -150,18 +137,18 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                                 </select>
                         </div>
                         <div>
-
-                            <LinePlot @group-update="sethighestGroup" :data="data.statisticsTime ?? {}" :componentIndex="0"
+                            <LinePlot :data="data.statisticsTime ?? {}" :componentIndex="0"
                                 :selectedOption="selectedOptionWhoIsConcerned">
                             </LinePlot>
-                            <hr class="mt-4">
                             <p class="text-left vis-fontsize">{{ {
                             'Generations': 'GenZ (born after 1995), Young (1965 to 1994), Boomer (1945 - 1964) and Old (born before 1945)',
-                            'Gender': 'Gender is only divided into Men and Women due to small sample sizes for other Genders.',
+                            'Gender': 'Gender is divided into Men and Women due to small sample sizes for other Genders.',
                             'City - Rural': 'City (population density of ZIP > 150/km2), Rural(population density of ZIP < 150/km2)',
                             'Class': 'Poor (group with the lowest 25% of income), Rich (group with the highest 25% of income) ',
                             'East - West': 'Former East Germany, Former West Germany'
                             }[selectedOptionWhoIsConcerned] }}</p>
+                            <hr>
+                            <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
                         </div>
                     </div>
                 </div>
@@ -191,17 +178,18 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
                     <div>
                         <div>
                             <h2>Being in Crisis Mode Boosts Pessimistic Stance</h2>
-                            <p>We observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis. <b>See for yourself how people perceived their situation differently in comparison:</b></p>
+                            <p>We observe that <span class="underline decoration-primary">people who feel the crisis on an everyday basis are 5 to 8 times more likely to rate their own situation as bad</span>, than people who don't feel the crisis. <b>See for yourself how people perceive their situation differently in comparison:</b></p>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 md:grid-cols-4 mt-16">
+
+                        <div class="my-[100px]">
+                            <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
                                 <button class="button"
                                     v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})"
                                     :key="index" :value="index"
                                     :class="selectedOptionPerceivedTruthIndex == index ? 'bg-primary text-white' : ''"
                                     @click="updateSelectedOptionPerceivedTruth(option, index, this)">{{ option }}
                                 </button>
-                        </div>
-                        <div>
+                            </div>
                             <h3 class="text-center" v-html='[
             `"I am feeling a sort of doomsday mood. <br> <br>`,
             `"I am suffering more than others in the current situation."`,
@@ -209,54 +197,60 @@ function sethighestGroupDotonline(highestGroup, highestPercent,lowestGroup, lowe
             `"I am able to determine my own destiny."`
         ][selectedOptionPerceivedTruthIndex]'></h3>
                             <BarComparison :data="data.statistics?.Crisis?.FeltRealities ?? {}"
-                        :selectedOption="selectedOptionPerceivedTruth">
-                    </BarComparison>
+                            :selectedOption="selectedOptionPerceivedTruth">
+                            </BarComparison>
+                            <hr>
+                            <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
+
                     </div>
                 </div>
             </div>
             </GridComponent>
-            <GridComponent id="effects-on-democracy" class="md:mt-[10vh]">
+            <GridComponent id="effects-on-democracy" class="mt-[10vh] md:mt-[7.5vh]">
                 <div class="content-container">
                     <img class="rotate-[-45deg]" :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/burn.png" alt="">
                     <div>
                         <h1>Effects on Democracy</h1>
-                        <p> Different political groups and people confronted with crises 
-                            may feel similarly overloaded and left alone by politics. 
-                            Their Perceived urgent fields of actions and preferred solutions 
-                            are possibly not aligned with political decisions. Explore how 
-                            the felt crisis connects to trust in state system. </p>
+                        <p>Different political groups and people confronted with crises may feel similarly overloaded and left alone by politics. Their Perceived urgent fields of actions and preferred solutions are possibly not aligned with political decisions. Explore how the felt crisis connects to trust in democratic institutions and the call for a strong leader.</p>
                     </div>
                     <div>
                         <div>
                             <h2>Crisis Feeling Damages Trust in Democratic Institutions</h2>
+                            <p>How many participants agree to have trust in the government or the legal system? Again, we differentiate between who feel crisis and those who do not. Amongst those who do feel crisis, a lower percentage agrees to have trust. This percentage is even lower for those who feel crisis and also favor the right wing party "Alternative für Deutschland"</p>
                             <p>People that show a <span class="underline decoration-primary">high level of crisis perception</span> also show a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> The situation is <span class="underline decoration-primary">even worse</span> for people who have the <span class="underline decoration-primary">crisis feeling</span> and also <span class="underline decoration-primary">favor the "Alternative für Deutschland" (AfD) party.</span>
                             </p>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 mt-16">
+                        <div class="my-[100px]">
+                            <div class="grid grid-cols-2 gap-2">
                                     <button class="button"
                                         v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
                                         :key="index" :value="index"
                                         :class="selectedOptionTrustInInstitutionsIndex == index ? 'bg-primary text-white' : ''"
                                         @click="updateSelectedOptionTrustInInstitutions(option, index, this)">Trust in {{ option }}</button>
+                            </div>
+                            <h3 class="pb-0 pt-8">% of General Population</h3>
+                            <DotonlineComparison class="w-full mt-8" :data="data.statistics?.Crisis.Institutions ?? {}"
+                                :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
+                            </DotonlineComparison>
+                            <h3 class="pb-0 pt-8">% of People who Favor the AfD</h3>
+                            <DotonlineComparison class="w-full mt-8" :data="data.statistics?.Crisis.InstitutionsAFD ?? {}"
+                                :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="1">
+                            </DotonlineComparison>
+                            <hr>
+                            <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
                         </div>
-                        <h3 class="pb-0 pt-8">% of General Population</h3>
-                        <DotonlineComparison @group-update="sethighestGroupDotonline" class="w-full mt-8" :data="data.statistics?.Crisis.Institutions ?? {}"
-                            :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
-                        </DotonlineComparison>
-                        <h3 class="pb-0 pt-8">% of People who Favor the AfD</h3>
-                        <DotonlineComparison class="w-full mt-8" :data="data.statistics?.Crisis.InstitutionsAFD ?? {}"
-                            :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="1">
-                        </DotonlineComparison>
+ 
                     </div>
                     <div>
-                        <h2>Populist Narratives Longing for a Strong Leader</h2>
-                        <p>In Germany, not only is there a clear polarization between
-                            people favoring the Green party and the AFD. The datasets show, that as a dangerous reflex
-                            to crisis people who sympathise with the AfD, do also have a significant higher desire for a strong leader as well as a higher opinion towards
-                            nationalism.
+                        <h2>Longing for a Strong Leader in uncertain Times</h2>
+                        <p>In Germany, not only is there a clear polarization between people favoring the AFD versus the Green and Social party. The call for a strong leader is a dangerous reflex in uncertain times. This is what we observe: those who feel crisis and also symathize with the AFD have especially high agreement to dictatorship and desire a stronger sense of national identity.
+                        <b>See how people who favor the AfD and have the crisis feeling are more extreme then people who have the crisis feeling but do not favor the AfD:</b>
                         </p>
-                        <img class="mt-[50px]" v-if="mobileAndTabletCheck()" src="./assets/images/democracy_mobile.png" alt="">
-                        <img v-if="!mobileAndTabletCheck()" src="./assets/images/democracy.png" alt="">
+                        <img class="my-[50px]" v-if="mobileAndTabletCheck()" src="./assets/images/democracy_new_mobile.png" alt="">
+                        <img class="my-[50px]" v-if="!mobileAndTabletCheck()" src="./assets/images/democracy_new.png" alt="">
+                        <img src="./assets/images/legend.svg" alt="">
+                        <hr>
+                        <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
                     </div>
                 </div>
             </GridComponent>
@@ -294,9 +288,15 @@ Politics will have to adress the need for local participation. [Bezug zu Deutsch
         </ScrollytellingComponent>
         <GridComponent>
             <div class="content-container gap-4" id="sources">
-                <div class=" w-full px-4">
-                    <h2 class="text-left">References</h2>
-                    <p class="pb-4"><b>Dataset:</b>
+                <div class="w-full px-4">
+                    <div class="grid grid-cols-2">
+                        <h2 class="text-left p-0">References</h2>
+                        <img @click="showReferences = !showReferences" src="./assets/images/right-arrow-header.svg" :class="showReferences?'rotate-[180deg]':''" class="w-6 justify-self-end" alt="">
+                        <hr class="col-span-2">
+                    </div>
+                    <p :class="showReferences?'block':'hidden'" class="pb-4">
+                        <br>
+                        <b>Dataset:</b>
                         <br>
                         <br>
 FZI Research Center for Information Technology. (2023). Social Sentiment in Times of Crises (SOSEC). Available online: https://www.socialsentiment.org/sosec-projekt/

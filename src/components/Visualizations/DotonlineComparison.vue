@@ -34,9 +34,10 @@ onMounted(() => {
 
     scaleX.value = d3.scaleLinear().domain([0, 100]).range([0+padding.value, width.value-padding.value])
 
+    if(props.componentIndex > 0){
         const legend = svg.value.append('g')
                 .attr('class', 'legend')
-                .attr('transform', `translate(${0},${height.value-30})`)
+                .attr('transform', `translate(${0},${height.value-20})`)
                 .selectAll('.legend-item')
                 .data(["Doesn't feel Crisis",'Feels Crisis'])
                 .enter()
@@ -58,7 +59,7 @@ onMounted(() => {
                 .attr('y', 10)
                 .attr('class', 'legend-text')
                 .text(d => d);
-
+    }
     svg.value.append('path')
         .attr('d', `M${scaleX.value(0)},${(padding.value/2)+ (gap.value * 0)} L${scaleX.value(100)},${(padding.value/2)+ (gap.value * 0)}`)
         .attr('stroke', 'black')
@@ -154,7 +155,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="w-full h-[100px]">
+        <div class="w-full h-[120px]">
             <svg :id="'dotonlinecomparison'+componentIndex" height="100%" width="100%"></svg>
         </div>
 </template>

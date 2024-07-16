@@ -38,7 +38,7 @@ onMounted(() => {
 
     const legend = svg.value.append('g')
                 .attr('class', 'legend')
-                .attr('transform', `translate(${0},${height.value-15})`)
+                .attr('transform', `translate(${0},${height.value-25})`)
                 .selectAll('.legend-item')
                 .data(["Doesn't feel Crisis",'Feels Crisis'])
                 .enter()
@@ -100,7 +100,7 @@ function updateBarComparison() {
     let enterText = text.enter()
         .append('text')
         .attr('class', 'barComparisonText')
-        .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-5)
+        .attr('x', d => scaleX.value(props.data[props.selectedOption][d]))
         .attr('y', (d, i) => barHeight + 35)
         .text(d => props.data[props.selectedOption][d] + "%")
         .attr('text-anchor', 'middle')
@@ -111,7 +111,7 @@ function updateBarComparison() {
     enterText.merge(text)
         .transition()
         .duration(600)
-        .attr('x', d => scaleX.value(props.data[props.selectedOption][d])-5)
+        .attr('x', d => scaleX.value(props.data[props.selectedOption][d]))
         .text(d => props.data[props.selectedOption][d] + "%")
 
     let line= svg.value.selectAll('.barComparisonLine')

@@ -77,10 +77,10 @@ function updateLinePlot() {
                 .enter()
                 .append('g')
                 .attr('class', 'legend-item vis-fontsize')
-                .attr('transform', (d, i) => `translate(${i * 100},0)`)
-            
+                .attr('transform', (d, i) => `translate(${i * 60 + i*20},0)`)
+
                 legend.append('path')
-                .attr('d', 'M0,7 L25,7')
+                .attr('d', 'M0,7 L15,7')
                 .attr('stroke', 'black')
                 .attr('stroke-width', 1.5)
                 .attr('fill', 'none')
@@ -93,15 +93,14 @@ function updateLinePlot() {
                         case 2:
                             return '5 5'
                         case 3:
-                            return '15 15'
+                            return '10 10'
                     }
                 })
 
                 legend.append('text')
-                    .attr('x', 35)
+                    .attr('x', 20)
                     .attr('y', 10)
                     .attr('text-anchor', 'start')
-                    .attr('alignment-baseline', 'central')
                     .attr('class', 'legend-text')
                     .text(d => d);
 
@@ -127,7 +126,7 @@ function updateLinePlot() {
                         case 2:
                             return '5 5'
                         case 3:
-                            return '15 15'
+                            return '10 10'
                     }
                 })
             .transition()
@@ -149,7 +148,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="w-full h-[50vh] min-h-[300px] max-h-[350px] md:h-full md:max-h-[450px]">
+        <div class="w-full h-1/2  min-h-[300px] max-h-[350px] md:h-full md:min-h-[400px] md:max-h-[450px]">
             <svg :id="'linePlot'" class="h-full" width="100%" height="100%"></svg>
         </div>
 </template>
