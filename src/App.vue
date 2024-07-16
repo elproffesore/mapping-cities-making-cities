@@ -261,7 +261,7 @@ onMounted(async () => {
                     <img :class="mobileAndTabletCheck()?'absolute top-[-20%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
                     <h2>Crisis: A Chance for Transformation</h2>
                     <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a <span class="underline decoration-primary"> rise of protest activity in all political spectrums.</span> <br>
-                        What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br><br>
+                        What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">more means of direct democracy.</a> <br><br>
                     </p>
                     <p><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
@@ -318,6 +318,9 @@ August, V. (2021). Technologisches Regieren. Der Aufstieg des Netzwerk-Denkens i
 Bandura, A (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. In: Psychological Review. Vol.84 (2): 191–215. <a href="https://doi.org/10.1037/0033-295x.84.2.191." target="_blank">doi:10.1037/0033-295x.84.2.191.</a>
 <br>
 Eggers, W. (2008). The changing Nature of Government: Network Governance. London:Deloitte.
+<br>
+<br>
+Friedrich-Ebert-Stiftung. (2023). Vertrauen in Demokratie in Krisenzeiten. <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">Available Online</a> [01.07.2024]
 <br>
 <br>
 Hans-Böckler-Stiftung. (2024). Aufstieg des Rechtspopulismus: Erklärungsansätze und Analysen. <a href=" https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.htm" target="_blank">Available Online</a> [01.07.2024]
