@@ -259,7 +259,7 @@ onMounted(async () => {
                 <div class="content-container relative">
                     <img :class="mobileAndTabletCheck()?'absolute top-[-30%] left-[-10%]':'absolute top-[-50%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
                     <img :class="mobileAndTabletCheck()?'absolute top-[-20%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
-                    <h1>Crisis: A Chance for Transformation</h1>
+                    <h2>Crisis: A Chance for Transformation</h2>
                     <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a <span class="underline decoration-primary"> rise of protest activity in all political spectrums.</span> <br>
                         What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br><br>
                     </p>
@@ -267,8 +267,9 @@ onMounted(async () => {
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
                                 worked age requires governments to change the way they think and operate. [...]
                                 we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of government«,
-                        S. 28</p><br><br>
-                    
+                        S. 28</p>
+                    <br><br>
+                    <br>
                     <p>Especially in context of the polycrisis, the approach to involve citizens into processes of policy making, is the go-to strategy that recent studies suggest for future orientated models of democracy. Models of Citizen participation through citizen's assemblies are already tested allover Europe.</p>
                 </div>
                 <div class="content-container">
@@ -300,7 +301,7 @@ Politics will have to adress the need for local participation. [Bezug zu Deutsch
                         <b>Dataset:</b>
                         <br>
                         <br>
-FZI Research Center for Information Technology. (2023). Social Sentiment in Times of Crises (SOSEC). Available online: https://www.socialsentiment.org/sosec-projekt/
+FZI Research Center for Information Technology. (2023). Social Sentiment in Times of Crises (SOSEC). Available online: <a href="https://www.socialsentiment.org/sosec-projekt/" target="_blank">https://www.socialsentiment.org/sosec-projekt/</a>
 <br>
 <br>
 <b>Further References:</b>
@@ -309,22 +310,24 @@ FZI Research Center for Information Technology. (2023). Social Sentiment in Time
 Arendt, H. (2017). Elemente und Ursprünge totaler Herrschaft (10th ed.). Munich: Piper Verlag.
 <br>
 <br>
-Bandura, A (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. In: Psychological Review. Vol.84 (2): 191–215. doi:10.1037/0033-295x.84.2.191. PMID 847061. S2CID 7742072.
+August, V. (2021). Technologisches Regieren. Der Aufstieg des Netzwerk-Denkens in der Krise der Moderne. Foucault, Luhmann und die Kybernetik. Bielefeld: Transcript. <a href="https://www.transcript-verlag.de/media/pdf/22/60/a6/oa9783839455975.pdf" target="_blank">Available Online</a>                        
 <br>
+<br>
+Bandura, A (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. In: Psychological Review. Vol.84 (2): 191–215. <a href="https://doi.org/10.1037/0033-295x.84.2.191." target="_blank">doi:10.1037/0033-295x.84.2.191.</a>
 <br>
 Eggers, W. (2008). The changing Nature of Government: Network Governance. London:Deloitte.
 <br>
 <br>
-Hans-Böckler-Stiftung. (2024). Aufstieg des Rechtspopulismus: Erklärungsansätze und Analysen. URL:https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.htm [01.07.2024]
+Hans-Böckler-Stiftung. (2024). Aufstieg des Rechtspopulismus: Erklärungsansätze und Analysen. <a href=" https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.htm" target="_blank">Available Online</a> [01.07.2024]
 <br>
 <br>
-Langenkamp, A/ Bienstman, S. (2022). Populism and Layers of Social Belonging: Support of Populist Parties in Europe. In: Political Psychology. Vol.43(5): 931-949. https://doi.org/10.1111/pops.12827
+Langenkamp, A/ Bienstman, S. (2022). Populism and Layers of Social Belonging: Support of Populist Parties in Europe. In: Political Psychology. Vol.43(5): 931-949. <a href="https://doi.org/10.1111/pops.12827" target="_blank">doi:10.1111/pops.12827</a>
 <br>
 <br>
-Lietzmann, H. J., Renn, O., Freier, N., Kirby, N. E., & Oppold, D.(2021). Bürgerräte als eine zeitgemässe Ergänzung der repräsentativen Demokratie: Handreichung für eine Implementation deliberativer Bürgerräte. Potsdam/Wuppertal: Institute for Advanced Sustainability Studies e.V. (IASS), Institut für Demokratie- und Partizipationsforschung (IDPF).
+Lietzmann, H. J./ Renn, O./ Freier, N./ Kirby, N. E. & Oppold, D. (2021). Bürgerräte als eine zeitgemässe Ergänzung der repräsentativen Demokratie: Handreichung für eine Implementation deliberativer Bürgerräte. Potsdam/Wuppertal: Institute for Advanced Sustainability Studies e.V. (IASS), Institut für Demokratie- und Partizipationsforschung (IDPF). <a href="https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf" target="_blank">Available Online</a> [01.07.2024]
 <br>
 <br>
-Neu, C., Küpper, B., & Luhmann, M. (2023). Extrem einsam? Die demokratische Relevanz von Einsamkeitserfahrungen und Jugendlichen in Deutschland. Das Progressive Zentrum. URL: https://www.demokratie-leben.de/magazin/magazin-details/studie-extrem-einsam-166 [01.07.2024]
+Neu, C., Küpper, B., & Luhmann, M. (2023). Extrem einsam? Die demokratische Relevanz von Einsamkeitserfahrungen und Jugendlichen in Deutschland. Das Progressive Zentrum. <a href="https://www.demokratie-leben.de/magazin/magazin-details/studie-extrem-einsam-166" target="_blank">Available Online</a> [01.07.2024]
 <br>
 <br>
 Thomas, W.I. & Thomas, D.S. (1928). The Child in America: Behavior problems and programs. New York: Knopf.
