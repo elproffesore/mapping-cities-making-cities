@@ -140,6 +140,7 @@ onMounted(async () => {
                             <LinePlot :data="data.statisticsTime ?? {}" :componentIndex="0"
                                 :selectedOption="selectedOptionWhoIsConcerned">
                             </LinePlot>
+                            <br>
                             <p class="text-left vis-fontsize">{{ {
                             'Generations': 'GenZ (born after 1995), Young (1965 to 1994), Boomer (1945 - 1964) and Old (born before 1945)',
                             'Gender': 'Gender is divided into Men and Women due to small sample sizes for other Genders.',
@@ -206,7 +207,7 @@ onMounted(async () => {
                 </div>
             </div>
             </GridComponent>
-            <GridComponent id="effects-on-democracy" class="mt-[10vh] md:mt-[7.5vh]">
+            <GridComponent id="effects-on-democracy" class="mt-[5vh] md:mt-[7.5vh]">
                 <div class="content-container">
                     <img class="rotate-[-45deg]" :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/burn.png" alt="">
                     <div>
