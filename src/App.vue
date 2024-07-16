@@ -296,6 +296,7 @@ onMounted(async () => {
                     </p>
 
                 </div>
+                <img :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/lostbahnhof risored.png" alt="">
             </GridComponent>
         </ScrollytellingComponent>
         <GridComponent>
