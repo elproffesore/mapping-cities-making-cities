@@ -260,16 +260,16 @@ onMounted(async () => {
                     <img :class="mobileAndTabletCheck()?'absolute top-[-30%] left-[-10%]':'absolute top-[-50%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
                     <img :class="mobileAndTabletCheck()?'absolute top-[-20%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
                     <h1>Crisis: A Chance for Transformation</h1>
-                    <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a rise of protest activity, no matter thein different political spectrums. <br>
+                    <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a <span class="underline decoration-primary"> rise of protest activity in all political spectrums.</span> <br>
                         What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through more means of direct democracy. <br><br>
                     </p>
                     <p><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
                                 worked age requires governments to change the way they think and operate. [...]
-                                we need to update our thinking.«</b></i> <br>(Eggers: »The changing nature of government«,
-                        S. 28)</p>
-                    <br>
-                    <p>Especially in context of the polycrisis, is the approach to involve citizens into processes policy making, the go-to strategy that policy-makers as well as citizens favor the most. Models of Citizen participation through citizen's assemblies are already tested allover Europe.</p>
+                                we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of government«,
+                        S. 28</p><br><br>
+                    
+                    <p>Especially in context of the polycrisis, the approach to involve citizens into processes of policy making, is the go-to strategy that recent studies suggest for future orientated models of democracy. Models of Citizen participation through citizen's assemblies are already tested allover Europe.</p>
                 </div>
                 <div class="content-container">
                     <h1>Crisis Resilience</h1>
