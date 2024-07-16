@@ -218,7 +218,7 @@ onMounted(async () => {
                         <div>
                             <h2>Crisis Feeling Damages Trust in Democratic Institutions</h2>
                             <p>How many participants agree to have trust in the government or the legal system? Again, we differentiate between who feel crisis and those who do not. Amongst those who do feel crisis, a lower percentage agrees to have trust. This percentage is even lower for those who feel crisis and also favor the right wing party "Alternative für Deutschland"</p>
-                            <p>People that show a <span class="underline decoration-primary">high level of crisis perception</span> also show a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> The situation is <span class="underline decoration-primary">even worse</span> for people who have the <span class="underline decoration-primary">crisis feeling</span> and also <span class="underline decoration-primary">favor the "Alternative für Deutschland" (AfD) party.</span>
+                            <!--<p>People that show a <span class="underline decoration-primary">high level of crisis perception</span> also show a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> The situation is <span class="underline decoration-primary">even worse</span> for people who have the <span class="underline decoration-primary">crisis feeling</span> and also <span class="underline decoration-primary">favor the "Alternative für Deutschland" (AfD) party.</span>-->
                             </p>
                         </div>
                         <div class="my-[100px]">
