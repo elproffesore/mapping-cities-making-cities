@@ -260,8 +260,13 @@ onMounted(async () => {
                     <img :class="mobileAndTabletCheck()?'absolute top-[-30%] left-[-10%]':'absolute top-[-50%] left-[-60%]'" src="./assets/images/hand-left.png" alt="">
                     <img :class="mobileAndTabletCheck()?'absolute top-[-20%] right-[-10%]':'absolute top-[-20%] right-[-60%]'" src="./assets/images/hand-right.png" alt="">
                     <h2>Crisis: A Chance for Transformation</h2>
-                    <p> Although feeling crises can have on the one hand paralysing and atomising effects, we can also observe a <span class="underline decoration-primary"> rise of protest activity in all political spectrums.</span> <br>
-                        What also connects different political spectrums is the demand for a <b>transformation of the democratic system</b> through <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">more means of direct democracy.</a> <br><br>
+                    <p> We see how feeling crisis -- angry, uncertain, left behind -- goes hand in hand with people's financial status and generational outlook 
+                        more than their gender or living area. It connects to feeling in a Doomsday Mood, left behind and financially unstable. 
+                        Feeling crisis also translates into politics. Into lower trust in the current government and higher liking of right-wing parties. 
+                        If people both feel crisis and also sympathize with right-wing parties, trust is especially low and anti-democratic tendencies are high. <br>
+                        But those who agree with dictatorship are the minority. Trust in the government may be low, but the general trust in the legal system is still prominent. People increasingly express their opinion in demonstrations, no matter their political background. 
+                        Similarily, the demand for transforming the democratic system towards more <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">means of direct democracy</a> is rising. <br>
+                        Instead of blaming one or the other, we want to counter feeling crisis, paralysis and polarization by asking: what do we need to change? <b>transformation of the democratic system</b> through <br><br>
                     </p>
                     <p><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
