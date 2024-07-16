@@ -294,9 +294,8 @@ onMounted(async () => {
                         are hubs for cultivating the seeds of community resilience. <br><br>
                         Because only together we can strengthen us to go brave through the crises.
                     </p>
-
+                    <img :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/lostbahnhof risored.png" alt="">
                 </div>
-                <img :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/lostbahnhof risored.png" alt="">
             </GridComponent>
         </ScrollytellingComponent>
         <GridComponent>
