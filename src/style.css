@@ -51,7 +51,7 @@
         padding: 0px 2px 2px 6px
     }
     .headline {
-        @apply text-[130px] text-left leading-[0.9] pb-2;
+        @apply text-[110px] text-left leading-[0.9] pb-2;
     }
     .vis-fontsize{
         @apply text-[12px];

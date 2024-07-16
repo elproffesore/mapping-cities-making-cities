@@ -221,12 +221,6 @@ onMounted(async () => {
                                 Amongst those who do <i>feel crisis</i>, <span class="underline decoration-primary">less people agree to trust democratic institutions</span>. 
                                 This percentage is  <span class="underline decoration-primary">even lower for those who <i>feel crisis</i> and 
                                 <i>also</i> favor the right wing party "Alternative für Deutschland" (AFD)</span></p>
-                            <!--<p>People that show a <span class="underline decoration-primary">high level of crisis perception</span> 
-                            also show a <span class="underline decoration-primary">high level of distrust in democratic institutions.</span> 
-                            The situation is <span class="underline decoration-primary">even worse</span> 
-                            for people who have the <span class="underline decoration-primary">crisis feeling</span> and 
-                            also <span class="underline decoration-primary">favor the "Alternative für Deutschland" (AfD) party.</span>-->
-                            </p>
                         </div>
                         <div class="my-[100px]">
                             <div class="grid grid-cols-2 gap-2">
@@ -298,26 +292,10 @@ onMounted(async () => {
                         Places like <a href="https://offene-werkstaetten.org/de" target="_blank">open workshops</a> or <a href="(https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick" target="_blank">community gardening</a> are hubs for cultivating the seeds of community resilience. <br><br>
                         Because only together we can strengthen us to go brave through the crises.
                     </p>
+                    <img :class="mobileAndTabletCheck()?'w-full':'w-3/4'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
                 </div>
             </GridComponent>
         </ScrollytellingComponent>
-          <GridComponent>
-                <div class="content-container gap-4" id="sources">
-                    <div class="w-full px-4">
-                        <div class="grid grid-cols-2">
-                            <h2 class="text-left p-0">Data Work</h2>
-                            <img @click="showReferences = !showReferences" src="./assets/images/right-arrow-header.svg" :class="showReferences?'rotate-[180deg]':''" class="w-6 justify-self-end" alt="">
-                            <hr class="col-span-2">
-                        </div>
-                        <p :class="showReferences?'block':'hidden'" class="pb-4">
-                            <br>
-                            text
-                            <br>
-                        </p>
-                    </div>
-                <img :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/lostbahnhof risored.png" alt="">
-            </div>
-        </GridComponent>
         <GridComponent>
             <div class="content-container gap-4" id="sources">
                 <div class="w-full px-4">
@@ -366,7 +344,6 @@ Neu, C., Küpper, B., & Luhmann, M. (2023). Extrem einsam? Die demokratische Rel
 Thomas, W.I. & Thomas, D.S. (1928). The Child in America: Behavior problems and programs. New York: Knopf.
                     </p>                
                 </div>
-                <img :class="mobileAndTabletCheck()?'w-[250px]':'w-[400px]'" src="./assets/images/lostbahnhof risored.png" alt="">
             </div>
         </GridComponent>
     </div>
