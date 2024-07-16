@@ -268,7 +268,9 @@ onMounted(async () => {
                                 worked age requires governments to change the way they think and operate. [...]
                                 we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of government«,
                         S. 28</p>
-                    <br><br>
+                    <br>
+                    <p>              </p>
+                    <br>
                     <br>
                     <p>Especially in context of the polycrisis, the approach to involve citizens into processes of policy making, is the go-to strategy that recent studies suggest for future orientated models of democracy. Models of Citizen participation through citizen's assemblies are already tested allover Europe.</p>
                 </div>
