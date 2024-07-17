@@ -363,7 +363,9 @@ onMounted(async () => {
                 </div>
             </div>
         </GridComponent>
-        <img :class="mobileAndTabletCheck()?'w-full':'w-3/4'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
+        <div class="flex justify-center">
+            <img :class="mobileAndTabletCheck()?'w-3/4':'w-1/2'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
+        </div>
     </div>
     <AppFooter class="mt-[5vh]" />
 </template>
