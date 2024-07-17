@@ -295,12 +295,12 @@ onMounted(async () => {
                     </p>
                 </div>
             </GridComponent>
-             <div class="flex justify-center">
+             <div class="flex justify-center gap-4">
                  <img :class="mobileAndTabletCheck()?'w-3/4':'w-1/2'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
              </div>
         </ScrollytellingComponent>
         <GridComponent>
-            <div class="content-container gap-4" id="sources">
+            <div class="content-container mt-[50px]" id="sources">
                 <div class="w-full px-4">
                     <div class="grid grid-cols-2">
                         <h2 class="text-left p-0">Data Work</h2>
@@ -317,7 +317,7 @@ onMounted(async () => {
             </div>
         </GridComponent>
         <GridComponent>
-            <div class="content-container gap-4" id="sources">
+            <div class="content-container mt-[50px]" id="sources">
                 <div class="w-full px-4">
                     <div class="grid grid-cols-2">
                         <h2 class="text-left p-0">References</h2>
