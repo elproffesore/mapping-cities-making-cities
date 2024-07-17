@@ -392,7 +392,7 @@ onMounted(async () => {
             </div>
         </ScrollytellingComponent>
         <GridComponent>
-            <div class="content-container gap-10" id="sources">
+            <div class="content-container gap-10 text-left" id="sources">
                 <div class="w-full px-4">
                     <div class="grid grid-cols-2 items-center">
                         <h2 class="text-left pb-4">Dataset Description</h2>
