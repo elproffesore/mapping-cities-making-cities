@@ -295,6 +295,9 @@ onMounted(async () => {
                     </p>
                 </div>
             </GridComponent>
+             <div class="flex justify-center">
+                 <img :class="mobileAndTabletCheck()?'w-3/4':'w-1/2'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
+             </div>
         </ScrollytellingComponent>
         <GridComponent>
             <div class="content-container gap-4" id="sources">
@@ -363,9 +366,6 @@ onMounted(async () => {
                 </div>
             </div>
         </GridComponent>
-        <div class="flex justify-center">
-            <img :class="mobileAndTabletCheck()?'w-3/4':'w-1/2'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
-        </div>
     </div>
     <AppFooter class="mt-[5vh]" />
 </template>
