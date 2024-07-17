@@ -53,7 +53,7 @@ scroller
     .onStepExit(resp => {
         emit('step-exit', resp);
     })
-    },500)
+    },700)
 })
 </script>
 <template>

@@ -148,7 +148,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="w-full h-1/2  min-h-[300px] max-h-[350px] md:h-full md:min-h-[400px] md:max-h-[450px]">
+        <div class="w-full h-1/2 min-h-[300px] max-h-[350px] md:h-full md:min-h-[400px] md:max-h-[450px]">
             <svg :id="'linePlot'" class="h-full" width="100%" height="100%"></svg>
         </div>
 </template>

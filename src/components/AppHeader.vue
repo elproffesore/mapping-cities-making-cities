@@ -27,10 +27,10 @@ onMounted(() => {
     }
 })
 watch(() => props.updateMenuProgress, (nv) => {
-    document.getElementById('menu'+props.updateMenuNumber).style.backgroundImage = `linear-gradient(to right, #f15060 50%, #fff 50%)`;
-    document.getElementById('menu'+props.updateMenuNumber).style.backgroundPosition = -100-nv*100+'%';
-    if(props.updateMenuNumber == 0){
-        document.getElementById('menu').style.top = (nv*3) < 1?(-35 + (nv*3) * 55)+'px':'20px';
+    let ele = document.getElementById('menu'+props.updateMenuNumber);
+    if(ele != null){
+       ele.style.backgroundImage = `linear-gradient(to right, #f15060 50%, #fff 50%)`;
+       ele.style.backgroundPosition = -100-nv*100+'%';
     }
 })
 function scroll(location){
@@ -40,7 +40,7 @@ function scroll(location){
 
 </script>
 <template>
-    <nav id="menu" class="fixed top-[-35px] w-[100vw] z-10">
+    <nav id="menu" class="fixed top-[25px] w-[100vw] z-10">
         <ul class="flex flex-row justify-center text-center gap-8">
             <li @click="scroll('multicrisis')" id="menu0" data-anchor="multicrisis" ><b>Multicrisis</b></li>
             <li @click="scroll('who-is-concerned')" id="menu1" data-anchor="who-is-concerned" ><b>Who is concerned?</b></li>
@@ -51,17 +51,4 @@ function scroll(location){
     </nav>
 </template>
 <style>
- li {
-    font-weight: 200;
-    font-size: 14px;
-    color: #000;
-    padding: 6px 35px;
-    border: 0.2px solid #000;
-    border-radius: 30px;
-    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-    background-color: #fff;
-    background-position: -100%;
-    background-size: 200%;
-    cursor: pointer;
-} 
 </style>
