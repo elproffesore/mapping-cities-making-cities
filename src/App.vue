@@ -266,9 +266,9 @@ onMounted(async () => {
                     <p> We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's financial status and generational outlook 
                         more than their gender or living area. It connects to feeling in a Doomsday Mood, left behind and financially unstable. 
                         Feeling crisis also translates into politics. Into lower trust in the current government and higher liking of right-wing parties. 
-                        If people both feel crisis and also sympathize with right-wing parties, trust is especially low and anti-democratic tendencies are high. <br>
+                        If people both feel crisis and also sympathize with right-wing parties, trust is especially low and anti-democratic tendencies are high. <br><br>
                         But those who agree with dictatorship are the minority. Trust in the government may be low, but the general trust in the legal system is still prominent. People increasingly express their opinion in demonstrations, no matter their political background. 
-                        Similarly, the demand for transforming the democratic system towards more <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">means of direct democracy</a> is rising. <br>
+                        Similarly, the demand for transforming the democratic system towards more <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">means of direct democracy</a> is rising. <br><br>
                         Instead of blaming one or the other, we want to counter feeling crisis, paralysis and polarization by asking: what do we need to change?
                     </p>
                 </div>
@@ -279,6 +279,7 @@ onMounted(async () => {
                                 worked age requires governments to change the way they think and operate. [...]
                                 we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of government«, S. 28
                     </p>
+                    <br>
                     <p>The less people feel <a href="https://www.gesis.org/fileadmin/admin/Dateikatalog/pdf/Deutschland-Monitor23_Web.pdf" target="_blank">seen and represented in their direct living environment</a>, 
                         the more they turn away from politics. 
                         This means that local political institutions create the highest impact on a person's trust in political decisions. <br>
@@ -292,10 +293,26 @@ onMounted(async () => {
                         Places like <a href="https://offene-werkstaetten.org/de" target="_blank">open workshops</a> or <a href="(https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick" target="_blank">community gardening</a> are hubs for cultivating the seeds of community resilience. <br><br>
                         Because only together we can strengthen us to go brave through the crises.
                     </p>
-                    <img :class="mobileAndTabletCheck()?'w-full':'w-3/4'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
                 </div>
             </GridComponent>
         </ScrollytellingComponent>
+        <GridComponent>
+            <div class="content-container gap-4" id="sources">
+                <div class="w-full px-4">
+                    <div class="grid grid-cols-2">
+                        <h2 class="text-left p-0">Data Work</h2>
+                        <img @click="showReferences = !showReferences" src="./assets/images/right-arrow-header.svg" :class="showReferences?'rotate-[180deg]':''" class="w-6 justify-self-end" alt="">
+                        <hr class="col-span-2">
+                    </div>
+                    <p :class="showReferences?'block':'hidden'" class="pb-4">
+                        <br>
+                        <b>What Dataset did we work with?</b>
+                        <br>
+                        <br>
+                    </p>                
+                </div>
+            </div>
+        </GridComponent>
         <GridComponent>
             <div class="content-container gap-4" id="sources">
                 <div class="w-full px-4">
@@ -309,43 +326,44 @@ onMounted(async () => {
                         <b>Dataset:</b>
                         <br>
                         <br>
-FZI Research Center for Information Technology. (2023). Social Sentiment in Times of Crises (SOSEC). Available online: <a href="https://www.socialsentiment.org/sosec-projekt/" target="_blank">https://www.socialsentiment.org/sosec-projekt/</a>
-<br>
-<br>
-<b>Further References:</b>
-<br>
-<br>
-Arendt, H. (2017). Elemente und Ursprünge totaler Herrschaft (10th ed.). Munich: Piper Verlag.
-<br>
-<br>
-August, V. (2021). Technologisches Regieren. Der Aufstieg des Netzwerk-Denkens in der Krise der Moderne. Foucault, Luhmann und die Kybernetik. Bielefeld: Transcript. <a href="https://www.transcript-verlag.de/media/pdf/22/60/a6/oa9783839455975.pdf" target="_blank">Available Online</a>                        
-<br>
-<br>
-Bandura, A (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. In: Psychological Review. Vol.84 (2): 191–215. <a href="https://doi.org/10.1037/0033-295x.84.2.191." target="_blank">doi:10.1037/0033-295x.84.2.191.</a>
-<br>
-Eggers, W. (2008). The changing Nature of Government: Network Governance. London:Deloitte.
-<br>
-<br>
-Friedrich-Ebert-Stiftung. (2023). Vertrauen in Demokratie in Krisenzeiten. <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">Available Online</a> [01.07.2024]
-<br>
-<br>
-Hans-Böckler-Stiftung. (2024). Aufstieg des Rechtspopulismus: Erklärungsansätze und Analysen. <a href=" https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.htm" target="_blank">Available Online</a> [01.07.2024]
-<br>
-<br>
-Langenkamp, A/ Bienstman, S. (2022). Populism and Layers of Social Belonging: Support of Populist Parties in Europe. In: Political Psychology. Vol.43(5): 931-949. <a href="https://doi.org/10.1111/pops.12827" target="_blank">doi:10.1111/pops.12827</a>
-<br>
-<br>
-Lietzmann, H. J./ Renn, O./ Freier, N./ Kirby, N. E. & Oppold, D. (2021). Bürgerräte als eine zeitgemässe Ergänzung der repräsentativen Demokratie: Handreichung für eine Implementation deliberativer Bürgerräte. Potsdam/Wuppertal: Institute for Advanced Sustainability Studies e.V. (IASS), Institut für Demokratie- und Partizipationsforschung (IDPF). <a href="https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf" target="_blank">Available Online</a> [01.07.2024]
-<br>
-<br>
-Neu, C., Küpper, B., & Luhmann, M. (2023). Extrem einsam? Die demokratische Relevanz von Einsamkeitserfahrungen und Jugendlichen in Deutschland. Das Progressive Zentrum. <a href="https://www.demokratie-leben.de/magazin/magazin-details/studie-extrem-einsam-166" target="_blank">Available Online</a> [01.07.2024]
-<br>
-<br>
-Thomas, W.I. & Thomas, D.S. (1928). The Child in America: Behavior problems and programs. New York: Knopf.
+                        FZI Research Center for Information Technology. (2023). Social Sentiment in Times of Crises (SOSEC). Available online: <a href="https://www.socialsentiment.org/sosec-projekt/" target="_blank">https://www.socialsentiment.org/sosec-projekt/</a>
+                        <br>
+                        <br>
+                        <b>Further References:</b>
+                        <br>
+                        <br>
+                        Arendt, H. (2017). Elemente und Ursprünge totaler Herrschaft (10th ed.). Munich: Piper Verlag.
+                        <br>
+                        <br>
+                        August, V. (2021). Technologisches Regieren. Der Aufstieg des Netzwerk-Denkens in der Krise der Moderne. Foucault, Luhmann und die Kybernetik. Bielefeld: Transcript. <a href="https://www.transcript-verlag.de/media/pdf/22/60/a6/oa9783839455975.pdf" target="_blank">Available Online</a>                        
+                        <br>
+                        <br>
+                        Bandura, A (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. In: Psychological Review. Vol.84 (2): 191–215. <a href="https://doi.org/10.1037/0033-295x.84.2.191." target="_blank">doi:10.1037/0033-295x.84.2.191.</a>
+                        <br>
+                        Eggers, W. (2008). The changing Nature of Government: Network Governance. London:Deloitte.
+                        <br>
+                        <br>
+                        Friedrich-Ebert-Stiftung. (2023). Vertrauen in Demokratie in Krisenzeiten. <a href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">Available Online</a> [01.07.2024]
+                        <br>
+                        <br>
+                        Hans-Böckler-Stiftung. (2024). Aufstieg des Rechtspopulismus: Erklärungsansätze und Analysen. <a href=" https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.htm" target="_blank">Available Online</a> [01.07.2024]
+                        <br>
+                        <br>
+                        Langenkamp, A/ Bienstman, S. (2022). Populism and Layers of Social Belonging: Support of Populist Parties in Europe. In: Political Psychology. Vol.43(5): 931-949. <a href="https://doi.org/10.1111/pops.12827" target="_blank">doi:10.1111/pops.12827</a>
+                        <br>
+                        <br>
+                        Lietzmann, H. J./ Renn, O./ Freier, N./ Kirby, N. E. & Oppold, D. (2021). Bürgerräte als eine zeitgemässe Ergänzung der repräsentativen Demokratie: Handreichung für eine Implementation deliberativer Bürgerräte. Potsdam/Wuppertal: Institute for Advanced Sustainability Studies e.V. (IASS), Institut für Demokratie- und Partizipationsforschung (IDPF). <a href="https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf" target="_blank">Available Online</a> [01.07.2024]
+                        <br>
+                        <br>
+                        Neu, C., Küpper, B., & Luhmann, M. (2023). Extrem einsam? Die demokratische Relevanz von Einsamkeitserfahrungen und Jugendlichen in Deutschland. Das Progressive Zentrum. <a href="https://www.demokratie-leben.de/magazin/magazin-details/studie-extrem-einsam-166" target="_blank">Available Online</a> [01.07.2024]
+                        <br>
+                        <br>
+                        Thomas, W.I. & Thomas, D.S. (1928). The Child in America: Behavior problems and programs. New York: Knopf.
                     </p>                
                 </div>
             </div>
         </GridComponent>
+        <img :class="mobileAndTabletCheck()?'w-full':'w-3/4'" class="mt-[50px]" src="./assets/images/lostbahnhof risored.png" alt="">
     </div>
     <AppFooter class="mt-[5vh]" />
 </template>
