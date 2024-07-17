@@ -285,9 +285,8 @@ onMounted(async () => {
                         This means that local political institutions create the highest impact on a person's trust in political decisions. <br>
                         Especially in context of the polycrisis, <a href="https://www.rifs-potsdam.de/de/ergebnisse/dossiers/buergerraete" target="_blank">involving citizens into processes of policy making</a> is the suggested go-to strategy for future orientated models of democracy. 
                         Allover Europe models are tested, for example establishing <a href="https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf" target="_blank">citizen's assemblies</a> or implementing methods of <a href="https://liqd.net/de/" target="_blank">liquid democracy</a>. 
-                        Strengthening workers democratic self-image <a href="https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.html" target="_blank">at 
-                        workplaces and through workers unions</a>. 
-                        Enabling children to experience their political impact in schools and foster their sense of belonging in non-commercial activities. <br><br>
+                        In the day to day life, strengthening workers democratic self-image can happen <a href="https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.html" target="_blank">at 
+                        workplaces and through workers unions</a>. For younger citizens this means enabling children to experience their political impact in schools and foster their sense of belonging in non-commercial activities. <br><br>
 
                         More informal activities that still strengthen community live are projects to connect with one's neighborhood. 
                         Places like <a href="https://offene-werkstaetten.org/de" target="_blank">open workshops</a> or <a href="(https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick" target="_blank">community gardening</a> are hubs for cultivating the seeds of community resilience. <br><br>
