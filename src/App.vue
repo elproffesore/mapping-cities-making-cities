@@ -336,7 +336,7 @@ onMounted(async () => {
                         src="./assets/images/hand-left.png" alt="">
                     <img :class="mobileAndTabletCheck() ? 'absolute top-[-20%] right-[-10%]' : 'absolute top-[-20%] right-[-60%]'"
                         src="./assets/images/hand-right.png" alt="">
-                    <h2>Crisis: A Chance for Transformation</h2>
+                    <h1>Crisis: A Chance for Transformation</h1>
                     <p> We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's
                         financial status and generational outlook
                         more than their gender or living area. It connects to feeling in a Doomsday Mood, left behind
@@ -356,7 +356,7 @@ onMounted(async () => {
                     </p>
                 </div>
                 <div class="content-container">
-                    <h1>Crisis Resilience</h1>
+                    <h2>Crisis Resilience</h2>
                     <p><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
                                 worked age requires governments to change the way they think and operate. [...]
