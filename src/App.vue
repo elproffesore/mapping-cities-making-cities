@@ -154,7 +154,7 @@ onMounted(async () => {
                     </div>
                     <div class="flex flex-col h-full">
                         <div>
-                            <h2>The Young and the Poor have the Heighest 'Feeling of Crisis'</h2>
+                            <h2>The Young and the Poor have the highest 'Feeling of Crisis'</h2>
                             <p>Especially the <span class="underline decoration-primary">young generations</span>, <span
                                     class="underline decoration-primary">women</span> and the <span
                                     class="underline decoration-primary">low-income classes</span> are prone to <i>feel
