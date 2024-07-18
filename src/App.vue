@@ -247,7 +247,7 @@ onMounted(async () => {
                     </div>
                 </div>
             </GridComponent>
-            <GridComponent id="effects-on-democracy" class="mt-[5vh] md:mt-[7.5vh]">
+            <GridComponent id="effects-on-democracy" class="mt-[45vh] md:mt-[7.5vh]"> 
                 <div class="content-container">
                     <img class="rotate-[-45deg]" :class="mobileAndTabletCheck() ? 'w-[250px]' : 'w-[400px]'"
                         src="./assets/images/burn.png" alt="">
