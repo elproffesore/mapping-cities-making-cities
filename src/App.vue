@@ -216,7 +216,7 @@ onMounted(async () => {
                                 who don't feel crisis. <b>See for yourself how people perceive their situation
                                     differently in comparison:</b></p>
                         </div>
-
+                        
                         <div class="my-[100px]">
                             <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
                                 <button class="button"
@@ -233,8 +233,17 @@ onMounted(async () => {
                             </BarComparison>
                             <hr>
                             <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
-
                         </div>
+
+                        <div>
+                            <p> The Thomas Theorem explains why acknowledging the feeling of crisis is relevant, 
+                                independent of factual discussions: One's subjective interpretation of a situation is just as important as the 'objective' reality. 
+                                Both inform people's intentions and therefore their actions. No matter how irrational an interpretation may appear, it still leads to very real consequences. 
+                                A heightened sense of anxiety can hinder trust in our surroundings and lower openness to the unknown;
+                                it can make us prone to extreme positions which tend to black-and-white interpretations of our multi faceted and ever changing reality. <br><br>
+                                As we are living in a democratic system under pressure, <span class="underline decoration-primary">understanding feelings in times of crises is as crucial as the concrete discussions on solutions</span>.</p>
+                        </div>
+                        
                     </div>
                 </div>
             </GridComponent>
