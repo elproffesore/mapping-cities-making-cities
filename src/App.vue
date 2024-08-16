@@ -24,7 +24,7 @@ const selectedOptionWhoIsConcernedPhrases = {
     'Gender': 'Gender is divided into Men and Women due to small sample sizes for other Genders.',
     'City - Rural': 'City (population density of ZIP > 150/km2), Rural(population density of ZIP < 150/km2)',
     'Class': 'Poor (group with the lowest 25% of income), Rich (group with the highest 25% of income) ',
-    'East - West': 'Former East Germany, Former West Germany'
+    'East - West': 'East are represented by former East Germany Counties, and West by former West Germany Counties'
 }
 // Perceived Truths
 const selectedOptionPerceivedTruthPhrases = [
@@ -82,11 +82,11 @@ onMounted(async () => {
             <h1
                 class="text-[55px] mb-8 col-start-2 col-span-10 text-center md:text-left md:row-start-1 md:col-start-1 md:col-span-8 md:headline self-start pb-0">
                 F0REVER<br>L0ST<br>DEUTSCH<br>LAND?</h1>
-            <h2
-                class="row-start-3 text-center md:text-left text-text col-start-2 col-span-10 md:col-start-1 md:col-span-6 pt-0">
-                Concerned, Hopeless, Angry. <br> How feelings of crisis translate to political reality.</h2>
+
             <div
-                class="row-start-4 text-text text-justify md:text-left col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
+                class="row-start-3 text-text text-justify md:text-left col-start-2 col-span-10 md:col-start-1 md:col-span-6 self-end">
+                <h2 class="text-left">
+                Concerned, Hopeless, Angry. <br> How feelings of crisis translate to political reality.</h2>
                 <p>The phenomena of multiple crises are omnipresent and global – whether it's climate crisis, financial
                     crisis,
                     migration crisis or crisis of democracy, to name only few. We are constantly confronted with ever
@@ -94,24 +94,24 @@ onMounted(async () => {
                     crisis analyses, putting us into a permanent state of emergency. But what exactly does that mean for
                     us? And how do feelings of crisis, anger and concern affect the democracy we live in?<br> 
                 </p>
+                <br>
+                <!-- <p >Our Data
+                    story is based on the Survey <a href="https://www.socialsentiment.org/">'Social Sentiments in Times of Crises'</a> that investigates societal
+                    polarization and political attitudes in Germany in the period from December 2021 - February 2024.</p> -->
+
             </div>
             <img v-if="!mobileAndTabletCheck()" src="./assets/images/arrow.svg"
-                class="w-[30px] absolute bottom-5 left-[50%] translate-y-[-50%] animate-bounce" alt="">
+                class="w-[35px] absolute bottom-1 left-[50%] translate-y-[-50%] animate-bounce" alt="">
             <!-- <img class="row-start-2 col-start-2 col-span-10 md:row-span-3 md:col-start-9 scale-[1.2]" src="./assets/images/Welt.png" alt=""> -->
         </div>
-        <AppHeader class="invisible md:visible" :updateMenuNumber="updateMenuNumber"
+        <AppHeader :updateMenuNumber="updateMenuNumber"
             :updateMenuProgress="updateMenuProgress" />
         <ScrollytellingComponent :offset="0" :progress="true" :threshold="4" :once="false" :debug="false"
             @step-progress="updateMenu">
-            <GridComponent id="multicrisis" class="md:mt-[25vh]">
+            <GridComponent id="multicrisis" class="md:mt-[20vh]">
                 
                 <div class="content-container">
-                    <p class="mb-[15vh]" >Our Data
-                    story is based on the Survey <a href="https://www.socialsentiment.org/">'Social Sentiments in Times of Crises'</a> that investigates societal
-                    polarization and political attitudes in Germany in the period from December 2021 - February 2024.</p>
-
                     <div>
-                        
                         <h1>Can you feel Polycrisis yet?</h1>
                         <p>
                             Reality check: we are living in instable times. Climate change, the former number one topic
@@ -123,7 +123,7 @@ onMounted(async () => {
                         </p>
                     </div>
                 </div>
-                <img class="col-start-3 col-span-8" v-if="!mobileAndTabletCheck()" src="./assets/images/polycrisis.png"
+                <img class="col-start-4 col-span-6" v-if="!mobileAndTabletCheck()" src="./assets/images/polycrisis.png"
                     alt="">
                 <img class="col-start-2 col-span-10 mt-16" v-if="mobileAndTabletCheck()"
                     src="./assets/images/polycrisis_mobile.png" alt="">
@@ -155,9 +155,9 @@ onMounted(async () => {
                     <div class="flex flex-col h-full">
                         <div>
                             <h2>The Young and the Poor have the highest 'Feeling of Crisis'</h2>
-                            <p>Especially the <span class="underline decoration-primary">young generations</span>, <span
-                                    class="underline decoration-primary">women</span> and the <span
-                                    class="underline decoration-primary">low-income classes</span> are prone to <i>feel
+                            <p>Especially the <span class="underline ">young generations</span>, <span
+                                    class="underline ">women</span> and the <span
+                                    class="underline ">low-income classes</span> are prone to <i>feel
                                     crisis</i>, while differences between city and rural or east and west germany were
                                 not so significant. <b>Explore yourself the perceived crisis amongst </b>
                                 <select class="w-min select text-white bg-primary rounded"
@@ -181,11 +181,15 @@ onMounted(async () => {
                             <LinePlot :data="data.statisticsTime ?? {}" :componentIndex="0"
                                 :selectedOption="selectedOptionWhoIsConcerned">
                             </LinePlot>
-                            <br>
-                            <p class="text-left vis-fontsize">
-                                {{ selectedOptionWhoIsConcernedPhrases[selectedOptionWhoIsConcerned] }}</p>
+
                             <hr>
-                            <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
+                            <div class="grid grid-cols-2">
+                                <p class="text-left vis-fontsize">
+                                    {{ selectedOptionWhoIsConcernedPhrases[selectedOptionWhoIsConcerned] }}</p>
+                                    <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -194,7 +198,7 @@ onMounted(async () => {
             <GridComponent id="felt-realities">
                 <div class="content-container relative">
                     <div>
-                        <h1>About felt Realities <br> and Perceived Truths</h1>
+                        <h1>About felt Realities and <br> Perceived Truths</h1>
                         <p>
                             Now that we have a grasp on who is feeling the crisis overall, we look at more concrete
                             correlates of crisis:
@@ -211,13 +215,13 @@ onMounted(async () => {
                     <div>
                         <div>
                             <h2>Being in Crisis Mode Boosts Pessimistic Stance</h2>
-                            <p>We observe that <span class="underline decoration-primary">people who <i>feel crisis</i>
+                            <p>We observe that <span class="underline ">people who <i>feel crisis</i>
                                     are 5 to 8 times more likely to rate their own situation as bad</span>, than people
                                 who don't feel crisis. <b>See for yourself how people perceive their situation
                                     differently in comparison:</b></p>
                         </div>
                         
-                        <div class="my-[100px]">
+                        <div class="my-[50px]">
                             <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
                                 <button class="button"
                                     v-for="(option, index) in Object.keys(data.statistics?.Crisis.FeltRealities ?? {})"
@@ -232,16 +236,16 @@ onMounted(async () => {
                                 :selectedOption="selectedOptionPerceivedTruth">
                             </BarComparison>
                             <hr>
-                            <p class="source">Source: Social Sentiments in Times of Crises, 2024</p>
+                            <p class="pt-2 source">Source: Social Sentiments in Times of Crises, 2024</p>
                         </div>
 
                         <div>
-                            <p> The <span class="underline decoration-primary">Thomas Theorem</span> explains why acknowledging <i>feeling crisis</i> is relevant, 
+                            <p> The <span class="underline ">Thomas Theorem</span> explains why acknowledging <i>feeling crisis</i> is relevant, 
                                 independent of factual discussions: One's subjective interpretation of a situation is just as important as the 'objective' reality. 
                                 Both inform people's intentions and therefore their actions which lead to very real consequences. 
                                 A heightened sense of crisis can hinder trust in our surroundings and lower openness to the unknown;
                                 it can make us prone to extreme positions which tend to black-and-white interpretations of our multi faceted and ever changing reality. <br><br>
-                                As we are living in a democratic system under pressure, <span class="underline decoration-primary">understanding feelings in times of crises is as crucial as the concrete discussions on solutions</span>.</p>
+                                As we are living in a democratic system under pressure, <span class="underline ">understanding feelings in times of crises is as crucial as the concrete discussions on solutions</span>.</p>
                         </div>
                         
                     </div>
@@ -263,15 +267,16 @@ onMounted(async () => {
                             <h2>Feeling Crisis Damages Trust in Democratic Institutions</h2>
                             <p>How many participants agree to have trust in the government or the legal system?
                                 Again, we differentiate between who <i>feel crisis</i> and those who do not.
-                                Amongst those who do <i>feel crisis</i>, <span class="underline decoration-primary">less
+                                Amongst those who do <i>feel crisis</i>, <span class="underline">less
                                     people agree to trust democratic institutions</span>.
-                                This percentage is <span class="underline decoration-primary">even lower for those who
+                                This percentage is <span class="underline">even lower for those who
                                     <i>feel crisis</i> and
                                     <i>also</i> favor the right wing party "Alternative für Deutschland" (AFD).</span>
+                                    <b> Explore for yourself the difference of trust in democratic institutions between people who <i>feel crisis</i> and those without: </b>
                             </p>
                         </div>
-                        <div class="my-[100px]">
-                            <div class="grid grid-cols-2 gap-2">
+                        <div class="my-[50px]">
+                            <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
                                 <button class="button"
                                     v-for="(option, index) in Object.keys(data.statistics?.Crisis.Institutions ?? {})"
                                     :key="index" :value="index"
@@ -279,12 +284,12 @@ onMounted(async () => {
                                     @click="updateSelectedOptionTrustInInstitutions(option, index, this)">Trust in {{
                 option }}</button>
                             </div>
-                            <h3 class="pb-0 pt-8">% of General Population</h3>
-                            <DotonlineComparison class="w-full mt-8" :data="data.statistics?.Crisis.Institutions ?? {}"
+                            <h3 class="pb-0">Percentage of General Population</h3>
+                            <DotonlineComparison class="w-full mt-4" :data="data.statistics?.Crisis.Institutions ?? {}"
                                 :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="0">
                             </DotonlineComparison>
-                            <h3 class="pb-0 pt-8">% of People who Favor the AfD</h3>
-                            <DotonlineComparison class="w-full mt-8"
+                            <h3 class="pb-0">Percentage of People who Favor the AfD</h3>
+                            <DotonlineComparison class="w-full mt-4"
                                 :data="data.statistics?.Crisis.InstitutionsAFD ?? {}"
                                 :selectedOption="selectedOptionTrustInInstitutions" :componentIndex="1">
                             </DotonlineComparison>
@@ -298,12 +303,12 @@ onMounted(async () => {
                         <p>In Germany, not only is there a clear polarization between people favoring the AFD versus the
                             Green and Social party.
                             The call for a strong leader is a dangerous reflex in uncertain times.
-                            This is what we observe: those who <span class="underline decoration-primary"><i>feel
+                            This is what we observe: those who <span class="underline "><i>feel
                                     crisis</i> and <i>also</i> sympathize with the AFD</span> have especially high <span
-                                class="underline decoration-primary">agreement to dictatorship and desire a stronger
+                                class="underline ">agreement to dictatorship and desire a stronger
                                 sense of national identity</span>.
-                            See how people who <i>feel crisis</i> and <i>also</i> favor the AfD are more extreme than
-                            people who <i>feel crisis</i> but do not favor the AfD:
+                            <b>See how people who <i>feel crisis</i> and <i>also</i> favor the AfD are more extreme than
+                            people who <i>feel crisis</i> but do not favor the AfD:</b>
                         </p>
                         <img class="my-[50px]" v-if="mobileAndTabletCheck()"
                             src="./assets/images/democracy_new_mobile.png" alt="">
@@ -332,9 +337,9 @@ onMounted(async () => {
             </GridComponent>
             <GridComponent id="crisis-resilience" class="mt-[45vh]">
                 <div class="content-container relative">
-                    <img :class="mobileAndTabletCheck() ? 'absolute top-[-30%] left-[-10%]' : 'absolute top-[-50%] left-[-60%]'"
+                    <img :class="mobileAndTabletCheck() ? 'absolute top-[-30%] left-[-10%]' : 'absolute top-[-50%] left-[-60%] z-[-1]'"
                         src="./assets/images/hand-left.png" alt="">
-                    <img :class="mobileAndTabletCheck() ? 'absolute top-[-20%] right-[-10%]' : 'absolute top-[-20%] right-[-60%]'"
+                    <img :class="mobileAndTabletCheck() ? 'absolute top-[-20%] right-[-10%]' : 'absolute top-[-20%] right-[-60%] z-[-1]'"
                         src="./assets/images/hand-right.png" alt="">
                     <h1>Crisis: A Chance for Transformation</h1>
                     <p> We see how feeling crisis - angry, uncertain, left behind - goes hand in hand with people's
@@ -360,10 +365,10 @@ onMounted(async () => {
                     <p><i><b>»The traditional, hierarchical government model simply does not
                                 meet the demands of this complex, rapidly changing age. [...] thriving in the net
                                 worked age requires governments to change the way they think and operate. [...]
-                                we need to update our thinking.«</b></i> <br>Eggers: »The changing nature of
-                        government«, S. 28
+                                we need to update our thinking.«</b></i><br><br>
                     </p>
-                    <br>
+                    <p>Eggers: »The changing nature of government«, S. 28 <br><br></p>
+                    
                     <p>The less people feel <a
                             href="https://www.gesis.org/fileadmin/admin/Dateikatalog/pdf/Deutschland-Monitor23_Web.pdf"
                             target="_blank">seen and represented in their direct living environment</a>,
@@ -385,7 +390,7 @@ onMounted(async () => {
                         to experience their political impact in schools and foster their sense of belonging in
                         non-commercial activities. <br><br>
 
-                        More informal activities that still strengthen community live are projects to connect with one's
+                        More informal activities that still strengthen community life are projects to connect with one's
                         neighborhood.
                         Places like <a href="https://offene-werkstaetten.org/de" target="_blank">open workshops</a> or
                         <a href="(https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick"
@@ -395,31 +400,41 @@ onMounted(async () => {
                     </p>
                 </div>
             </GridComponent>
-            <div class="flex justify-center gap-4">
-                <img :class="mobileAndTabletCheck() ? 'w-3/4' : 'w-1/2'" class="mt-[50px]"
-                    src="./assets/images/lostbahnhof.png" alt="">
-            </div>
         </ScrollytellingComponent>
         <GridComponent>
             <div class="content-container gap-10 text-left" id="sources">
                 <div class="w-full px-4">
-                    <div class="grid grid-cols-2 items-center">
-                        <h2 class="text-left pb-4">Dataset Description</h2>
-                        <img @click="showDataset = !showDataset" src="./assets/images/arrow.svg"
+                    <div class="grid grid-cols-2 items-center cursor-pointer" @click="showDataset = !showDataset">
+                        <h2 class="text-left py-2">Dataset Description</h2>
+                        <img  src="./assets/images/arrow.svg"
                             :class="showDataset ? 'rotate-[180deg]' : ''" class="w-6 justify-self-end" alt="">
                         <hr class="col-span-2">
                     </div>
                     <p :class="showDataset ? 'block' : 'hidden'" class="pb-4">
                         <br>
-                        <b>What Dataset did we work with?</b>
-                        <br>
-                        <br>
+                        This data story is based on the dataset of the study <a href="https://www.socialsentiment.org">„Social Sentiments in Times of Crises“</a>. It is conducted by KIT (Karlsruher Institut für Technologie) and FZI (Forschungszentrum Informatik) in Germany and the USA since October 2022. It is a representative survey with questions on participants demographics, as well as (bi)weekly check-ins regarding their psychological wellbeing, media consumption as well as their economic and political stances. The survey is also regularly updated with concrete questions on participants opinions regarding current developments like the Ukraine war or COVID-19.
+
+<br><br>For our data story, we looked only at the German part of the dataset and nine selected time points.
+
+<br><br>Demographic information, participants liking of the political parties „Die Grünen“ and „Alternative für Deutschland“ were of our main interest. We excluded rows in the dataset with missing values for the respective party likings. Additionally, we excluded all participants with non-binary gender, because they were too few.
+
+<br><br>To make the correlations between items (questions) more comprehensible, we inverted the scales for the psychological questions, for system trust values // and for dictator agreement??// so that for all questions a low answer value would mean low agreement and a high answer value would mean high agreement with the item.
+
+<br><br>We divided the generations according to xxxxxxx: old generation (before 1946), boomer (1946 - 1964), generation X (1965 - 1979), geberation Y (1980 - 1994) and generation Z (after 1995). Generation alpha was not included as there was only one participant born after 2010.
+
+<br><br>We divided income groups by the lowest and the highest 25%.  // braucht noch mehr Details //
+
+<br><br>First, we looked at a correlation table of all factors. This revealed a strong correlation between questions regarding depressive, anxious and angry //aussagen//. For each feeling, one item was included into the feeling crisis factor.
+
+<br><br>The feeling crisis factor consists of the items: „I feel angry about the current situation“, „I don’t feel like I can stop worrying or control this“, „I feel nervous, anxious or tense“ and „I feel dejected, melancholy or hopeless“. The possible answers go from 1 (completely disagree) to 7 (completely agree), while 4 (half/half) marks the middle point.
+
+<br><br>We defined crisis mode as having feeling crisis values of 5 or above.
                     </p>
                 </div>
                 <div class="w-full px-4">
-                    <div class="grid grid-cols-2 items-center">
-                        <h2 class="text-left pb-4">References</h2>
-                        <img @click="showReferences = !showReferences" src="./assets/images/arrow.svg"
+                    <div class="grid grid-cols-2 items-center cursor-pointer" @click="showReferences = !showReferences">
+                        <h2 class="text-left py-2">References</h2>
+                        <img  src="./assets/images/arrow.svg"
                             :class="showReferences ? 'rotate-[180deg]' : ''" class="w-6 justify-self-end" alt="">
                         <hr class="col-span-2">
                     </div>

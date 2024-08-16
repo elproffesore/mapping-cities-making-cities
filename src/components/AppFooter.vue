@@ -4,7 +4,7 @@
     <div id="credits" class="flex flex-col gap-8 md:grid md:grid-cols-2 px-8 py-4 bg-[#222] text-white pb-[5vh]">
         <h1 class="section-heading text-left col-span-2"><b>Credits</b></h1>
         <div class="flex flex-col gap-2 self-start text-left">
-            <h4 ><b>Concept: </b><a href="">Juliane Müller</a>, <a href="">Louisa Fortwengel</a>, <a href="">Giuliana Mei</a>, <a href="https://philippproff.eu">Philipp Proff</a></h4>
+            <h4 ><b>Concept: </b><a href="">Juliane Müller</a>, <a href="">Louisa Fortwengel</a>, <a href="https://readymag.website/u4067123612/4241599">Giuliana Mei</a>, <a href="https://philippproff.eu">Philipp Proff</a></h4>
             <h4 ><b>Text & Content: </b>Juliane Müller, Louisa Fortwengel</h4>
             <h4 ><b>Design & UI: </b>Giuliana Mei</h4>
             <h4 ><b>Data Wrangling: </b>Louisa Fortwengel, Philipp Proff</h4>

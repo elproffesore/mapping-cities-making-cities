@@ -40,11 +40,11 @@ onMounted(() => {
                 .attr('class', 'legend')
                 .attr('transform', `translate(${0},${height.value-25})`)
                 .selectAll('.legend-item')
-                .data(["Doesn't feel Crisis",'Feels Crisis'])
+                .data(["Feels Crisis","Doesn't feel Crisis"])
                 .enter()
                 .append('g')
                 .attr('class', 'legend-item vis-fontsize')
-                .attr('transform', (d, i) => `translate(${i * 125},0)`)
+                .attr('transform', (d, i) => `translate(${i * 100},0)`)
             
             legend.append('rect')
                 .attr('x', 0)

@@ -71,7 +71,7 @@ function updateLinePlot() {
     svg.value.selectAll('.legend-rect').remove()
     const legend = svg.value.append('g')
                 .attr('class', 'legend')
-                .attr('transform', `translate(${0},${height.value-15})`)
+                .attr('transform', `translate(${0},${height.value-5})`)
                 .selectAll('.legend-item')
                 .data(Object.keys(props.data[props.selectedOption]))
                 .enter()
@@ -81,8 +81,8 @@ function updateLinePlot() {
 
                 legend.append('path')
                 .attr('d', 'M0,7 L15,7')
-                .attr('stroke', 'black')
-                .attr('stroke-width', 1.5)
+                .attr('stroke', 'var(--primary)')
+                .attr('stroke-width', 2)
                 .attr('fill', 'none')
                 .attr('stroke-dasharray',(d,i) => {
                     switch(i){
@@ -102,6 +102,7 @@ function updateLinePlot() {
                     .attr('y', 10)
                     .attr('text-anchor', 'start')
                     .attr('class', 'legend-text')
+                    .attr('fill', 'black')
                     .text(d => d);
 
     Object.keys(props.data[props.selectedOption]).map((option,optioni) => {
@@ -115,7 +116,7 @@ function updateLinePlot() {
             .attr('stroke', ()=> {
                 return 'var(--primary)'
             })
-            .attr('stroke-width', 1.5)
+            .attr('stroke-width', 2)
             .attr('fill', 'none')
             .attr('stroke-dasharray',(d,i) => {
                 switch(optioni){

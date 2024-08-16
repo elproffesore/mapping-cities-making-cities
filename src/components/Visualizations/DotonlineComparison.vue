@@ -39,11 +39,11 @@ onMounted(() => {
                 .attr('class', 'legend')
                 .attr('transform', `translate(${0},${height.value-20})`)
                 .selectAll('.legend-item')
-                .data(["Doesn't feel Crisis",'Feels Crisis'])
+                .data(["Feels Crisis","Doesn't feel Crisis"])
                 .enter()
                 .append('g')
                 .attr('class', 'legend-item vis-fontsize')
-                .attr('transform', (d, i) => `translate(${i * 135},0)`)
+                .attr('transform', (d, i) => `translate(${i * 100},0)`)
             
             legend.append('rect')
                 .attr('x', 0)
@@ -155,7 +155,7 @@ function emitGroupUpdate() {
 }
 </script>
 <template>
-        <div class="w-full h-[120px]">
+        <div class="w-full h-[100px]">
             <svg :id="'dotonlinecomparison'+componentIndex" height="100%" width="100%"></svg>
         </div>
 </template>
