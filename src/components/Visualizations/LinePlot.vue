@@ -10,6 +10,11 @@ const props = defineProps({
         type: String,
         required: false,
         default: () => ""
+    },
+    mobile: {
+        type: Boolean,
+        required: false,
+        default: () => false
     }
 })
 const padding = ref(50)
@@ -71,7 +76,7 @@ function updateLinePlot() {
     svg.value.selectAll('.legend-rect').remove()
     const legend = svg.value.append('g')
                 .attr('class', 'legend')
-                .attr('transform', `translate(${0},${height.value-5})`)
+                .attr('transform', `translate(${0},${height.value-(props.mobile?20:5)})`)
                 .selectAll('.legend-item')
                 .data(Object.keys(props.data[props.selectedOption]))
                 .enter()
