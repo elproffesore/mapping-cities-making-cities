@@ -274,7 +274,7 @@ onMounted(async () => {
                                 This percentage is <span class="underline">even lower for those who
                                     <i>feel crisis</i> and
                                     <i>also</i> favor the right wing party "Alternative für Deutschland" (AFD).</span>
-                                    <b> Explore for yourself the difference of trust in democratic institutions between people who <i>feel crisis</i> and those without: </b>
+                                    <b> Explore for yourself the difference of trust in democratic institutions between people who <i>feel crisis</i> and those who don't: </b>
                             </p>
                         </div>
                         <div class="my-[50px]">
