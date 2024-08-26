@@ -414,23 +414,49 @@ onMounted(async () => {
                     </div>
                     <p :class="showDataset ? 'block' : 'hidden'" class="pb-4">
                         <br>
-                        This data story is based on the dataset of the study <a href="https://www.socialsentiment.org">„Social Sentiments in Times of Crises“</a>. It is conducted by KIT (Karlsruher Institut für Technologie) and FZI (Forschungszentrum Informatik) in Germany and the USA since October 2022. It is a representative survey with questions on participants demographics, as well as (bi)weekly check-ins regarding their psychological wellbeing, media consumption as well as their economic and political stances. The survey is also regularly updated with concrete questions on participants opinions regarding current developments like the Ukraine war or COVID-19.
-
-<br><br>For our data story, we looked only at the German part of the dataset and nine selected time points.
-
-<br><br>Demographic information, participants liking of the political parties „Die Grünen“ and „Alternative für Deutschland“ were of our main interest. We excluded rows in the dataset with missing values for the respective party likings. Additionally, we excluded all participants with non-binary gender, because they were too few.
-
-<br><br>To make the correlations between items (questions) more comprehensible, we inverted the scales for the psychological questions, for system trust values // and for dictator agreement??// so that for all questions a low answer value would mean low agreement and a high answer value would mean high agreement with the item.
-
-<br><br>We divided the generations according to xxxxxxx: old generation (before 1946), boomer (1946 - 1964), generation X (1965 - 1979), geberation Y (1980 - 1994) and generation Z (after 1995). Generation alpha was not included as there was only one participant born after 2010.
-
-<br><br>We divided income groups by the lowest and the highest 25%.  // braucht noch mehr Details //
-
-<br><br>First, we looked at a correlation table of all factors. This revealed a strong correlation between questions regarding depressive, anxious and angry //aussagen//. For each feeling, one item was included into the feeling crisis factor.
-
-<br><br>The feeling crisis factor consists of the items: „I feel angry about the current situation“, „I don’t feel like I can stop worrying or control this“, „I feel nervous, anxious or tense“ and „I feel dejected, melancholy or hopeless“. The possible answers go from 1 (completely disagree) to 7 (completely agree), while 4 (half/half) marks the middle point.
-
-<br><br>We defined crisis mode as having feeling crisis values of 5 or above.
+                        This data story is based on the dataset of the study <a href="https://www.socialsentiment.org">“Social Sentiments in Times of Crises”</a>. It is conducted by KIT (Karlsruher Institut für Technologie) and FZI (Forschungszentrum Informatik) in Germany and the USA since October 2022. It is a representative survey with questions on the participant's demographics as well as (bi)weekly check-ins regarding their psychological wellbeing, media consumption, as well as their economic and political stances. The survey is also regularly updated with concrete questions on participants opinions regarding current developments like the Ukraine war or COVID-19.
+<br>
+<br>
+For our data story, we looked only at the German part of the dataset and nine selected time points between December 2022 and February 2024. Demographic information, psychological factors, political trust, extreme positions as well the liking of the political parties “Die Grünen” and “Alternative für Deutschland” were of our main interest. We only analyzed the according items. We also excluded rows in the dataset with missing values for the respective party likings. Additionally, we excluded all participants with non-binary genders because there were too few participants in this category.
+<br>
+<br>
+To make the correlations between items (questions) more comprehensible, we inverted the scales, if necessary, so that a low answer value always indicates low agreement with the item and a high answer value indicates high agreement. This concerns the psychological, system trust and extreme positions items.
+<br>
+<br>
+We divided the generations according to the youth researcher Simon Schnetzer: old generation (before 1946), the boomer generation (1946–1964), generation X (1965–1979), generation Y (1980–1994) and generation Z (after 1995). Generation Alpha was not included, as there was only one participant born after 2010.
+<br>
+<br>
+The 25% of participants with the lowest income were included in the “poor” group (less than €2000 monthly household net income). The 25% of participants with the highest income were included in the “rich” group (more than €3850 monthly household net income).
+<br>
+<br>
+First, we looked at a correlation table for all factors. This revealed a strong correlation between items regarding depressive, anxious and angry feelings. One item per category (depressive, anxious, or angry) was included in the feeling crisis factor, which was used for further analysis. Additionally, we included items regarding the feeling of control over one’s life.
+<br>
+<br>
+The feeling crisis factor consists of the items: “I feel angry about the current situation”, “I don’t feel like I can stop worrying or control this”, “I feel nervous, anxious or tense” and “I feel dejected, melancholy or hopeless”. The possible answers go from 1 (completely disagree) to 7 (completely agree), while 4 (half/half) marks the middle point.
+<br>
+<br>
+We defined crisis mode as having feeling crisis values of 5 or above.
+<br>
+<br>
+To obtain information about whether participants live in an urban or rural area, we merged the SOSEC dataset with a second dataset kindly provided by KIT. The second dataset contained information on population density for each zip code. Areas with a population density greater than 150 inhabitants per square kilometer were counted as urban areas.
+<br>
+<br>
+For the first graphic (“Who is feeling the Crisis?“), we asked: “How many percent of people feel crisis amongst a given group?”. The selected groups were the generations, genders, classes or living areas.
+<br>
+<br>
+For the second graphic (“About felt Realities and Perceived Truths“), we asked: “Amongst those who feel crisis (versus those who do not feel crisis), how many percent of people agree to the following items?” This item would be “I am feeling a sort of doomsday mood,“ “I am suffering more than others in the current situation,“ “To what extent are you concerned about no longer being able to pay your bills?” and “I am able to determine my own destiny.” The answers to those four items were measured on the 7-point scale described earlier. An answer value of X („mostly agree“?) or above would mark agreement with the respective items.
+<br>
+<br>
+Regarding the third graphic (“Effects on Democracy“), we asked: “Amongst those who feel crisis (versus those who do not feel crisis), how many percent of people have trust in the government or in the legal system?”. Whereby the trust items were measured on a five-point scale. We defined “trusting” the government or the legal system as an answer value of X (“agree”) or above. Additionally, we looked at those participants who favored the AFD and asked the same question.
+<br>
+<br>
+Party liking was measured on a 10-point scale. We defined “liking the AFD” as having an answer value of 8 or greater, as it marked the top 25% of answers. (könnte noch schöner formuliert werden)
+<br>
+<br>
+For the last graphic ("Longing for a Strong Leader in Uncertain Times“), we only looked at participants who feel crisis. We divided the dataset into those who favor the AFD and those who do not. We then asked: “Amongst those who feel crisis, how many percent also agree to the item “under certain circumstances, a dictatorship is the better form of government in the national interest”, or the item “we should finally regain the courage to have a strong sense of national identity”.
+<br>
+<br>
+Furthermore, we want to thank the KIT, especially David Borukhson for providing the dataset and being a sparring partner regarding its analysis, as well as Emily Gossmann and Katrin Erlewein from Uniklinik Ulm for their help and insight into the data work!
                     </p>
                 </div>
                 <div class="w-full px-4">
