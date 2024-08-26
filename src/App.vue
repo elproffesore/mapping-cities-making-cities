@@ -395,7 +395,7 @@ onMounted(async () => {
                         More informal activities that still strengthen community life are projects to connect with one's
                         neighborhood.
                         Places like <a href="https://offene-werkstaetten.org/de" target="_blank">open workshops</a> or
-                        <a href="(https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick"
+                        <a href="https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick"
                             target="_blank">community gardening</a> are hubs for cultivating the seeds of community
                         resilience. <br><br>
                         Because only together we can strengthen us to go brave through the crises.
