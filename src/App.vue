@@ -398,13 +398,15 @@ onMounted(async () => {
                         <a href="https://urbane-gaerten.de/urbane-gaerten/gaerten-im-ueberblick"
                             target="_blank">community gardening</a> are hubs for cultivating the seeds of community
                         resilience. <br><br>
-                        Because only together we can strengthen us to go brave through the crises.
+                        <b>Because only together we can strengthen us to go brave through the crises.</b>
                     </p>
                 </div>
             </GridComponent>
         </ScrollytellingComponent>
         <GridComponent>
             <div class="content-container gap-10 text-left" id="sources">
+                <p>The project was finished in August 2024. References where updated till this date.</p>
+
                 <div class="w-full px-4">
                     <div class="grid grid-cols-2 items-center cursor-pointer" @click="showDataset = !showDataset">
                         <h2 class="text-left py-2">Dataset Description</h2>
@@ -490,12 +492,12 @@ Furthermore, we want to thank the KIT, especially David Borukhson for providing 
                     <br>
                     Friedrich-Ebert-Stiftung. (2023). Vertrauen in Demokratie in Krisenzeiten. <a
                         href="https://library.fes.de/pdf-files/pbud/20287-20230505.pdf" target="_blank">Available
-                        Online</a> [01.07.2024]
+                        Online</a> (viewed 01.07.2024)
                     <br>
                     <br>
                     Hans-Böckler-Stiftung. (2024). Aufstieg des Rechtspopulismus: Erklärungsansätze und Analysen. <a
                         href=" https://www.boeckler.de/de/auf-einen-blick-17945-auf-einen-blick-rechtspopulismus-in-deutschland-37867.htm"
-                        target="_blank">Available Online</a> [01.07.2024]
+                        target="_blank">Available Online</a> (viewed 01.07.2024)
                     <br>
                     <br>
                     Langenkamp, A/ Bienstman, S. (2022). Populism and Layers of Social Belonging: Support of
@@ -508,13 +510,13 @@ Furthermore, we want to thank the KIT, especially David Borukhson for providing 
                     deliberativer Bürgerräte. Potsdam/Wuppertal: Institute for Advanced Sustainability Studies e.V.
                     (IASS), Institut für Demokratie- und Partizipationsforschung (IDPF). <a
                         href="https://deutschlands-rolle.buergerrat.de/fileadmin/downloads/handreichung-buergerrat-bundesweit.pdf"
-                        target="_blank">Available Online</a> [01.07.2024]
+                        target="_blank">Available Online</a> (viewed 01.07.2024)
                     <br>
                     <br>
                     Neu, C., Küpper, B., & Luhmann, M. (2023). Extrem einsam? Die demokratische Relevanz von
                     Einsamkeitserfahrungen und Jugendlichen in Deutschland. Das Progressive Zentrum. <a
                         href="https://www.demokratie-leben.de/magazin/magazin-details/studie-extrem-einsam-166"
-                        target="_blank">Available Online</a> [01.07.2024]
+                        target="_blank">Available Online</a> (viewed 01.07.2024)
                     <br>
                     <br>
                     Thomas, W.I. & Thomas, D.S. (1928). The Child in America: Behavior problems and programs. New
